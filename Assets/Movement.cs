@@ -18,14 +18,21 @@ public class Movement : MonoBehaviour {
 	void Update () {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        Vector2 dir = new Vector2(x, y).normalized;
+
+        Vector2 dir = Vector2.zero;
+        if (Mathf.Abs(x) > 0.05f || Mathf.Abs(y) > 0.05f) {
+            dir = new Vector2(x, y).normalized;
+        }
         Move(dir);
 	}
 
     void Move(Vector2 dir)
     {
         Vector3 vel = rb.velocity;
-        vel = vel - vel * drag;
+        if (dir.magnitude < 0.5)
+        {
+            vel = vel - vel * drag;
+        }
         vel = vel + new Vector3(dir.x,dir.y,0)* Time.deltaTime*acceleration;
         if (vel.magnitude > maxSpeed) {
             vel = vel.normalized * maxSpeed;
