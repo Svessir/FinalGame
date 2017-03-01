@@ -7,7 +7,8 @@ public class Movement : MonoBehaviour {
     public float acceleration = 10;
     public float drag = 0.3f;
 
-
+    private bool inAir = false;
+    private float gravity = 10f;
     private Rigidbody rb;
 	void Start () {
         rb = GetComponent<Rigidbody>();
@@ -52,14 +53,38 @@ public class Movement : MonoBehaviour {
     void Move(Vector2 dir)
     {
         Vector3 vel = rb.velocity;
-        if (dir.magnitude < 0.5 || Vector3.Angle(dir,vel) > 90)
+
+        if (inAir)
         {
-            vel = vel - (vel * drag*Time.deltaTime);
+            vel -= new Vector3(0, gravity, 0) * Time.deltaTime;
         }
-        vel = vel + new Vector3(dir.x,dir.y,0)* Time.deltaTime*acceleration;
-        if (vel.magnitude > maxSpeed) {
-            vel = vel.normalized * maxSpeed;
+        else {
+            if (dir.magnitude < 0.5 || Vector3.Angle(dir, vel) > 90)
+            {
+                vel = vel - (vel * drag * Time.deltaTime);
+            }
+            vel = vel + new Vector3(dir.x, dir.y, 0) * Time.deltaTime * acceleration;
+            if (vel.magnitude > maxSpeed)
+            {
+                vel = vel.normalized * maxSpeed;
+            }
         }
         rb.velocity = vel;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Air") {
+            inAir = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.transform.tag == "Air")
+        {
+            inAir = false;
+        }
     }
 }
