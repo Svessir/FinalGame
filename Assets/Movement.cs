@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour {
     public float maxSpeed = 10;
     public float acceleration = 10;
     public float drag = 0.3f;
+    public float reorientationFactor = 10;
 
     private bool inAir = false;
     private float gravity = 10f;
@@ -25,8 +26,12 @@ public class Movement : MonoBehaviour {
         {
             WasdMove();
         }
+        Reorient();
 	}
-
+    void Reorient() {
+        float angle = Vector3.Angle(transform.up, Vector3.up);
+        rb.angularVelocity += new Vector3(0, 0, 1) * angle * reorientationFactor*Mathf.Sign(transform.up.x)*Time.deltaTime;
+    }
     void WasdMove() {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
