@@ -16,15 +16,38 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetButton("Fire1"))
+        {
+            MouseMove();
+        }
+        else
+        {
+            WasdMove();
+        }
+	}
+
+    void WasdMove() {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
         Vector2 dir = Vector2.zero;
-        if (Mathf.Abs(x) > 0.05f || Mathf.Abs(y) > 0.05f) {
+        if (Mathf.Abs(x) > 0.05f || Mathf.Abs(y) > 0.05f)
+        {
             dir = new Vector2(x, y).normalized;
         }
         Move(dir);
-	}
+    }
+    public float mouseBaseDist = 30;
+    void MouseMove() {
+        Vector3 center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Vector2 diff = Input.mousePosition - center;
+        diff /= mouseBaseDist;
+        if (diff.magnitude > 1)
+        {
+            diff = diff.normalized;
+        }
+        Move(diff);
+    }
 
     void Move(Vector2 dir)
     {
