@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour {
     void Move(Vector2 dir)
     {
         Vector3 vel = rb.velocity;
-        if (dir.magnitude < 0.5)
+        if (dir.magnitude < 0.5 || Vector3.Angle(dir,vel) > 90)
         {
             vel = vel - vel * drag;
         }
