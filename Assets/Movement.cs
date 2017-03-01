@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour {
         Vector3 vel = rb.velocity;
         if (dir.magnitude < 0.5 || Vector3.Angle(dir,vel) > 90)
         {
-            vel = vel - vel * drag;
+            vel = vel - (vel * drag*Time.deltaTime);
         }
         vel = vel + new Vector3(dir.x,dir.y,0)* Time.deltaTime*acceleration;
         if (vel.magnitude > maxSpeed) {
