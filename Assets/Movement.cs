@@ -26,7 +26,6 @@ public class Movement : MonoBehaviour {
         {
             WasdMove();
         }
-        Reorient();
 	}
     void Reorient() {
         float angle = Vector3.Angle(transform.up, Vector3.up);
@@ -44,6 +43,7 @@ public class Movement : MonoBehaviour {
         Move(dir);
     }
     public float mouseBaseDist = 30;
+
     void MouseMove() {
         Vector3 center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         Vector2 diff = Input.mousePosition - center;
@@ -64,6 +64,7 @@ public class Movement : MonoBehaviour {
             vel -= new Vector3(0, gravity, 0) * Time.deltaTime;
         }
         else {
+            Reorient();
             if (dir.magnitude < 0.5 || Vector3.Angle(dir, vel) > 90)
             {
                 vel = vel - (vel * drag * Time.deltaTime);
