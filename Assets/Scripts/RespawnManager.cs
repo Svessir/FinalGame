@@ -59,6 +59,6 @@ public class RespawnManager : MonoBehaviour {
 		if (DeathableBehavior == null)
 			DeathableBehavior = GetComponentInChildren<IDeathable> ();
 		if (DeathableBehavior == null)
-			DeathableBehavior = GetComponentsInParent<IDeathable> ();
+			DeathableBehavior = GetComponentInParent<IDeathable> ();
 	}
 }
