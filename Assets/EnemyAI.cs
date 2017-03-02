@@ -50,7 +50,10 @@ public class EnemyAI : MonoBehaviour {
         Vector3 toPlayer = player.transform.position - eye;
         RaycastHit hitinfo;
         Physics.Raycast(eye, toPlayer,out hitinfo,(toPlayer).magnitude, ~(1 << 8));
-        return hitinfo.collider.gameObject.transform.tag == "Player";
+        if (hitinfo.collider != null) {
+            return hitinfo.collider.gameObject.transform.tag == "Player";
+        }
+        return false;
     }
     void RotateTowardsPlayer() {
         Vector3 toPlayer = player.transform.position - transform.position;
