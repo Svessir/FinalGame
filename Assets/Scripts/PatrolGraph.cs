@@ -32,8 +32,8 @@ public class PatrolGraph : MonoBehaviour {
             for (int j = i + 1; j < children.Length; j++) {
                 if (Physics.Linecast(children[i].position, children[j].position, ~(1 << 11))) {
                     Debug.Log("Connected: " + children[i].name + " to " + children[j].name);
-                    Edges[i].Add(j);
-                    Edges[j].Add(i);
+                    Edges[i-1].Add(j-1);
+                    Edges[j-1].Add(i-1);
                 }
             }
         }
