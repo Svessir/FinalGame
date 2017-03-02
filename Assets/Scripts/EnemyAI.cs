@@ -8,7 +8,12 @@ public class EnemyAI : MonoBehaviour {
     public float drag = 1;
     public float gravity = 10;
     public float MaxRotateAngle = 10;
+    public float AggressionDist = 5;
 
+    public GameObject PatrolGraph;
+    private Vector3 targetNode;
+    private List<Vector3> nodes;
+    private List<List<int>> edges;
     private Vector3 eye;
     private Transform eyeTransform;
     private GameObject player;
@@ -19,6 +24,19 @@ public class EnemyAI : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
+        if (PatrolGraph == null)
+        {
+            Debug.Log("No patrolGraph, AI will stay still if no player around");
+        }
+        else {
+            var script = PatrolGraph.GetComponent<PatrolGraph>();
+            nodes = script.Nodes;
+            edges = script.Edges;
+            if (nodes.Count == 0) {
+                Debug.Log("No nodes in PatrollGraph");
+            }
+            targetNode = nodes[0];
+        }
         Transform[] children = GetComponentsInChildren<Transform>();
         foreach (Transform t in children) {
             if (t.name == "Eye") {
@@ -36,21 +54,48 @@ public class EnemyAI : MonoBehaviour {
             Debug.Log("no player in scene");
             return;
         }
-        if (PlayerInLineOfSight())
+        if (PlayerInSight())
         {
             RotateTowards(player.transform.position);
-            MoveTowardsPlayer();
+            MoveTowards(player.transform.position);
         }
         else {
-            Move(Vector2.zero);
+            if (PatrolGraph == null) {
+                return;
+            }
+            if (!ValidTarget(targetNode)) {
+                List<Vector3> viable = GetViableNodes();
+                if (viable.Count > 0)
+                {
+                    targetNode = viable[Random.Range(0, viable.Count)];
+                }
+                else {
+                    Debug.Log("No viable nodes");
+                    return;
+                }
+            }
+            RotateTowards(targetNode);
+            MoveTowards(targetNode);
         }
 	}
+    bool ValidTarget(Vector3 target) {
+        return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 1;
+    }
+    List<Vector3> GetViableNodes() {
+        List<Vector3> viable = new List<Vector3>();
+        foreach (Vector3 t in nodes) {
+            if (ValidTarget(t)) {
+                viable.Add(t);
+            }
+        }
+        return viable;
+    }
 
-    bool PlayerInLineOfSight()
+    bool PlayerInSight()
     {
         Vector3 toPlayer = player.transform.position - eye;
         RaycastHit hitinfo;
-        Physics.Raycast(eye, toPlayer,out hitinfo,(toPlayer).magnitude, ~(1 << 8));
+        Physics.Raycast(eye, toPlayer,out hitinfo,AggressionDist, ~(1 << 8));
         if (hitinfo.collider != null) {
             return hitinfo.collider.gameObject.transform.tag == "Player";
         }
@@ -58,8 +103,6 @@ public class EnemyAI : MonoBehaviour {
     }
     void RotateTowards(Vector3 point) {
         Vector3 toTarget = point - transform.position;
-
-        float dot = toTarget.x * transform.right.x + toTarget.y * transform.right.y;
         float det = toTarget.x * transform.right.y - toTarget.y * transform.right.x;
         float anglediff = Vector3.Angle(transform.right, toTarget);
         if (anglediff > MaxRotateAngle*Time.deltaTime) {
@@ -72,13 +115,10 @@ public class EnemyAI : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    void MoveTowardsNode(Vector3 nodePos) {
-        
-    }
-
-    void MoveTowardsPlayer() {
-        Vector3 toPlayer = player.transform.position - transform.position;
-        Move(toPlayer);
+    void MoveTowards(Vector3 nodePos)
+    {
+        Vector3 toTarget = nodePos - transform.position;
+        Move(toTarget);
     }
 
     void Move(Vector2 dir)
