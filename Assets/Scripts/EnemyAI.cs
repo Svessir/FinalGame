@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour {
     public float acceleration = 2;
     public float drag = 1;
     public float gravity = 10;
+    public float MaxRotateAngle = 10;
 
     private Vector3 eye;
     private Transform eyeTransform;
@@ -37,7 +38,7 @@ public class EnemyAI : MonoBehaviour {
         }
         if (PlayerInLineOfSight())
         {
-            RotateTowardsPlayer();
+            RotateTowards(player.transform.position);
             MoveTowardsPlayer();
         }
         else {
@@ -55,10 +56,19 @@ public class EnemyAI : MonoBehaviour {
         }
         return false;
     }
-    void RotateTowardsPlayer() {
-        Vector3 toPlayer = player.transform.position - transform.position;
-        float angle = Vector3.Angle(Vector3.right, toPlayer);
-        angle *= Mathf.Sign(toPlayer.y);
+    void RotateTowards(Vector3 point) {
+        Vector3 toTarget = point - transform.position;
+
+        float dot = toTarget.x * transform.right.x + toTarget.y * transform.right.y;
+        float det = toTarget.x * transform.right.y - toTarget.y * transform.right.x;
+        float anglediff = Vector3.Angle(transform.right, toTarget);
+        if (anglediff > MaxRotateAngle*Time.deltaTime) {
+            anglediff = MaxRotateAngle * Time.deltaTime * -det;
+            toTarget = Quaternion.Euler(0, 0, anglediff) * transform.right;
+        }
+        float angle = Vector3.Angle(Vector3.right, toTarget);
+        angle *= Mathf.Sign(toTarget.y);
+        Vector3 angles = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
