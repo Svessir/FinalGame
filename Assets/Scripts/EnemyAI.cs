@@ -131,15 +131,6 @@ public class EnemyAI : MonoBehaviour {
     bool ValidTarget(Vector3 target) {
         return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 1;
     }
-    List<Vector3> GetViableNodes() {
-        List<Vector3> viable = new List<Vector3>();
-        foreach (Vector3 t in nodes) {
-            if (ValidTarget(t)) {
-                viable.Add(t);
-            }
-        }
-        return viable;
-    }
 
     bool PlayerInSight()
     {

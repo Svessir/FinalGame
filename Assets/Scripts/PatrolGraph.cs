@@ -44,7 +44,7 @@ public class PatrolGraph : MonoBehaviour {
                 //used so the raycast does not collide with itself
                 outside.Normalize();
                 outside *= 0.55f;
-                if (!Physics.Linecast(children[i].position-outside, children[j].position+outside)) {
+                if (!Physics.Linecast(children[i].position-outside, children[j].position+outside,~(3<<8))) {
                     Debug.Log("Connected: " + children[i].name + " to " + children[j].name);
                     Edges[i-1].myList.Add(j-1);
                     Edges[j-1].myList.Add(i-1);
