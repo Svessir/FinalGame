@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour {
     public float AggressionDist = 5;
 
     public GameObject PatrolGraph;
+    private List<int> CurrentPath = new List<int>();
+    private int targetNodeIndex;
     private Vector3 targetNode;
     private List<Vector3> nodes;
     private List<List<int>> edges;
@@ -31,10 +33,14 @@ public class EnemyAI : MonoBehaviour {
         else {
             var script = PatrolGraph.GetComponent<PatrolGraph>();
             nodes = script.Nodes;
-            edges = script.Edges;
+            edges = new List<List<int>>();
+            foreach (PatrolGraph.ListWrapper l in script.Edges) {
+                edges.Add(l.myList);
+            }
             if (nodes.Count == 0) {
                 Debug.Log("No nodes in PatrollGraph");
             }
+            targetNodeIndex = 0;
             targetNode = nodes[0];
         }
         Transform[] children = GetComponentsInChildren<Transform>();
@@ -64,12 +70,11 @@ public class EnemyAI : MonoBehaviour {
                 return;
             }
             if (!ValidTarget(targetNode)) {
-                List<Vector3> viable = GetViableNodes();
-                if (viable.Count > 0)
-                {
-                    targetNode = viable[Random.Range(0, viable.Count)];
-                }
-                else {
+                if (ExtendCurrentPath()) {
+                    targetNodeIndex = CurrentPath[0];
+                    targetNode = nodes[targetNodeIndex];
+                    CurrentPath.RemoveAt(0);
+                }else {
                     Debug.Log("No viable nodes");
                     return;
                 }
@@ -78,6 +83,51 @@ public class EnemyAI : MonoBehaviour {
             MoveTowards(targetNode);
         }
 	}
+    bool ExtendCurrentPath() {
+        bool[] inPath = new bool[nodes.Count];
+        for (int i = 0; i < CurrentPath.Count; i++) {
+            inPath[CurrentPath[i]] = true;
+        }
+        if (CurrentPath.Count == 0) {
+            int viable = NearestViableNode();
+            if (viable < 0) {
+                return false;
+            }
+            CurrentPath.Add(viable);
+        }
+        while (true) {
+            int last = CurrentPath[CurrentPath.Count - 1];
+            bool failed = true;
+            for (int j = 0; j < edges[last].Count; j++) {
+                int adj = edges[last][j];
+                if (!inPath[adj]) {
+                    inPath[adj] = true;
+                    CurrentPath.Add(adj);
+                    failed = false;
+                    break;
+                }
+            }
+            if (failed) {
+                break;
+            }
+        }
+        return true;
+    }
+    int NearestViableNode()
+    {
+        int curr = -1;
+        float val = float.MaxValue;
+        for (int i = 0; i < nodes.Count; i++) {
+            float dist = Vector3.Distance(nodes[i], transform.position);
+            if (dist < float.MaxValue && !Physics.Linecast(transform.position, nodes[i], ~(1 << 8))) {
+                curr = i;
+                val = dist;
+            }
+        }
+
+        return curr;
+    }
+
     bool ValidTarget(Vector3 target) {
         return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 1;
     }
