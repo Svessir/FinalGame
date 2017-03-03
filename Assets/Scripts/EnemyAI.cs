@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
-    public float maxSpeed = 10;
-    public float acceleration = 2;
-    public float drag = 1;
+    public float maxSpeed = 2;
+    public float acceleration = 1;
+    public float drag = 0.5f;
     public float gravity = 10;
-    public float MaxRotateAngle = 10;
+    public float RotationRate = 90;
     public float AggressionDist = 5;
 
     public GameObject PatrolGraph;
@@ -105,9 +105,12 @@ public class EnemyAI : MonoBehaviour {
         Vector3 toTarget = point - transform.position;
         float det = toTarget.x * transform.right.y - toTarget.y * transform.right.x;
         float anglediff = Vector3.Angle(transform.right, toTarget);
-        if (anglediff > MaxRotateAngle*Time.deltaTime) {
-            anglediff = MaxRotateAngle * Time.deltaTime * -det;
+        if (anglediff > RotationRate * Time.deltaTime) {
+            anglediff = RotationRate * Time.deltaTime * Mathf.Sign(-det);
             toTarget = Quaternion.Euler(0, 0, anglediff) * transform.right;
+          /*  Debug.Log("Limit:" + MaxRotateAngle * Time.deltaTime);
+            Debug.Log("After:" + anglediff);
+            Debug.Log("Vector angle:" +Vector3.Angle(transform.right, toTarget));*/
         }
         float angle = Vector3.Angle(Vector3.right, toTarget);
         angle *= Mathf.Sign(toTarget.y);
@@ -131,11 +134,14 @@ public class EnemyAI : MonoBehaviour {
         }
         else
         {
-            if (dir.magnitude < 0.5 || Vector3.Angle(dir, vel) > 90)
+            if (dir.magnitude < 0.5 || Vector3.Angle(dir, vel) > 90 || Vector3.Angle(dir, transform.right) > 90)
             {
                 vel = vel - (vel * drag * Time.deltaTime);
             }
-            vel = vel + new Vector3(dir.x, dir.y, 0) * Time.deltaTime * acceleration;
+            if (Vector3.Angle(dir, transform.right) < 90)
+            {
+                vel = vel + new Vector3(dir.x, dir.y, 0) * Time.deltaTime * acceleration;
+            }
             if (vel.magnitude > maxSpeed)
             {
                 vel = vel.normalized * maxSpeed;
