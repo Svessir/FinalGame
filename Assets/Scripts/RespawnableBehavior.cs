@@ -7,7 +7,7 @@ public abstract class RespawnableBehavior : MonoBehaviour
 	[SerializeField]
 	private CheckPointManager checkpointManager;
 
-	public abstract void Respawn (Vector3 respawnLocation);
+	public abstract void Respawn (Vector3 checkpointLocation);
 
 	void OnEnable() 
 	{
@@ -38,7 +38,7 @@ public abstract class RespawnableBehavior : MonoBehaviour
 	 * </summary>
 	 * 
 	 * */
-	private void OnCheckpointReached(CheckPoint checkpoint) 
+	protected virtual void OnCheckpointReached(CheckPoint checkpoint) 
 	{
 	}
 }

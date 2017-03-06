@@ -20,13 +20,17 @@ class CheckPointManager : MonoBehaviour {
 		}
 	}
 
+	void Start() {
+		if (currentCheckpoint != null && CheckpointReachedEvent != null)
+			CheckpointReachedEvent (currentCheckpoint);
+	}
+
 	void OnTriggerEnter(Collider other)
 	{
 		CheckPoint checkpoint = other.gameObject.GetComponent<CheckPoint> ();
 
 		if (checkpoint != null) 
 		{
-			Debug.Log ("CheckPoint Reached!");
 			currentCheckpoint = checkpoint;
 			currentCheckpoint.Activate ();
 
