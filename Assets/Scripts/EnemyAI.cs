@@ -116,12 +116,10 @@ public class EnemyAI : MonoBehaviour {
     int NearestViableNode()
     {
         int curr = -1;
-        float val = float.MaxValue;
         for (int i = 0; i < nodes.Count; i++) {
             float dist = Vector3.Distance(nodes[i], transform.position);
             if (dist < float.MaxValue && !Physics.Linecast(transform.position, nodes[i], ~(1 << 8))) {
                 curr = i;
-                val = dist;
             }
         }
 
