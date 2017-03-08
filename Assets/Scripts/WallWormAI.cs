@@ -12,6 +12,7 @@ public class WallWormAI : MonoBehaviour {
     public float AggressionTime = 1.5f;
     public float MinRecoveryAngle = 25;
     public float RecoveryTime = 0.5f;
+    public GameObject restingPos;
 
     private float Timer = 0;
     private bool aggressive = true;
@@ -76,6 +77,10 @@ public class WallWormAI : MonoBehaviour {
             }
         }
         else {
+            if (Vector3.Distance(restingPos.transform.position, transform.position) > 1)
+            {
+                MoveTowards(restingPos.transform.position);
+            }
             aggressive = true;
             Timer = AggressionTime;
         }
