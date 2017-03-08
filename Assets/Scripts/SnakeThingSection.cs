@@ -9,6 +9,10 @@ public class SnakeThingSection : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        var hj = GetComponent<HingeJoint>();
+        if (hj != null) {
+            Physics.IgnoreCollision(hj.connectedBody.GetComponent<Collider>(), GetComponent<Collider>());
+        }
 	}
 	
 	// Update is called once per frame
