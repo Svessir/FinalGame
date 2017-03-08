@@ -1,0 +1,1199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SubTestMovement
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 15.121, y: 264.88293, z: -13.745001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 11.383333
+        value: {x: 38.388, y: 263.69397, z: -16.332}
+        inSlope: {x: 5.629113, y: 0, z: 0}
+        outSlope: {x: 5.629113, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 16.533333
+        value: {x: 183.774, y: 274.94592, z: -12.734009}
+        inSlope: {x: 28.429794, y: 0, z: 1.2811841}
+        outSlope: {x: 28.429794, y: 0, z: 1.2811841}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 22.616667
+        value: {x: 357.74936, y: 12.53738, z: 147.37349}
+        inSlope: {x: 0, y: 0, z: 5.369335}
+        outSlope: {x: 0, y: 0, z: 5.369335}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 28.766666
+        value: {x: 182.60027, y: 411.12692, z: 165.05301}
+        inSlope: {x: 0, y: 49.50409, z: 0.71195936}
+        outSlope: {x: 0, y: 49.50409, z: 0.71195936}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 30.033333
+        value: {x: 261.18945, y: 444.63196, z: 165.495}
+        inSlope: {x: 34.08129, y: 0, z: 0}
+        outSlope: {x: 34.08129, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 30.1
+        value: {x: 263.031, y: 444.58783, z: 165.48602}
+        inSlope: {x: 20.915245, y: -1.313209, z: -0.26680222}
+        outSlope: {x: 20.915245, y: -1.313209, z: -0.26680222}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 32.083332
+        value: {x: 302.38214, y: 421.31, z: 161.1853}
+        inSlope: {x: 18.299314, y: -13.487396, z: -2.102296}
+        outSlope: {x: 18.299314, y: -13.487396, z: -2.102296}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 32.766666
+        value: {x: 314.37582, y: 406.52005, z: 160.3872}
+        inSlope: {x: 16.748625, y: -28.913448, z: 0}
+        outSlope: {x: 16.748625, y: -28.913448, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 36.95
+        value: {x: 353.7567, y: 261.11664, z: 178.74411}
+        inSlope: {x: 0, y: -7.3702164, z: 5.612302}
+        outSlope: {x: 0, y: -7.3702164, z: 5.612302}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 41.6
+        value: {x: 168.14153, y: 243.58167, z: 236.82959}
+        inSlope: {x: -58.499447, y: -7.880889, z: 14.910272}
+        outSlope: {x: -58.499447, y: -7.880889, z: 14.910272}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 45.85
+        value: {x: 5.9575653, y: 170.8646, z: 276.4318}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 54.466667
+        value: {x: 29.604002, y: 263.54895, z: 260.051}
+        inSlope: {x: 0, y: 0, z: -3.195619}
+        outSlope: {x: 0, y: 0, z: -3.195619}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 64.816666
+        value: {x: 9.4601345, y: 205.456, z: 215.82155}
+        inSlope: {x: 0, y: -6.991672, z: -3.7887068}
+        outSlope: {x: 0, y: -6.991672, z: -3.7887068}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 70.316666
+        value: {x: 31.633001, y: 152.73096, z: 200}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 75.71667
+        value: {x: 28.589025, y: 191.93896, z: 217.7389}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: foglight
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 69.28333
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 75.666664
+        value: {x: 15.076927, y: 0, z: 0}
+        inSlope: {x: 1.4491986, y: 0, z: 0}
+        outSlope: {x: 1.4491986, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 77.583336
+        value: {x: 16.105175, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -8.73, y: 25.12, z: 17.3}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 6.266667
+        value: {x: -12.33, y: 21.52, z: 17.3}
+        inSlope: {x: -0.649321, y: -1.0023203, z: 0}
+        outSlope: {x: -0.649321, y: -1.0023203, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 10.516666
+        value: {x: -15.558692, y: 14.368759, z: 17.3}
+        inSlope: {x: -0.86342686, y: -2.039118, z: 0}
+        outSlope: {x: -0.86342686, y: -2.039118, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 12.5
+        value: {x: -17.352345, y: 10.434195, z: 17.3}
+        inSlope: {x: -0.9437352, y: -1.8579818, z: 0}
+        outSlope: {x: -0.9437352, y: -1.8579818, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 13.716666
+        value: {x: -18.528059, y: 8.352497, z: 17.3}
+        inSlope: {x: -0.98835564, y: -1.5374483, z: 0}
+        outSlope: {x: -0.98835564, y: -1.5374483, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 14.366667
+        value: {x: -19.177822, y: 7.4275584, z: 17.3}
+        inSlope: {x: -1.010746, y: -1.3009388, z: 0}
+        outSlope: {x: -1.010746, y: -1.3009388, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 15.266666
+        value: {x: -20.100842, y: 6.4286275, z: 17.3}
+        inSlope: {x: -1.0400833, y: -0.9147714, z: 0}
+        outSlope: {x: -1.0400833, y: -0.9147714, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 17.366667
+        value: {x: -23.340256, y: 5.5314174, z: 17.3}
+        inSlope: {x: -1.9328367, y: 0.08280697, z: 0}
+        outSlope: {x: -1.9328367, y: 0.08280697, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 23.6
+        value: {x: -34.36855, y: 5.127024, z: 17.3}
+        inSlope: {x: -0.6168123, y: -0.14240089, z: 0}
+        outSlope: {x: -0.6168123, y: -0.14240089, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 28.95
+        value: {x: -38.318695, y: 4.607851, z: 17.3}
+        inSlope: {x: -0.7048662, y: 0, z: 0}
+        outSlope: {x: -0.7048662, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 31.4
+        value: {x: -39.754494, y: 7.7848825, z: 17.3}
+        inSlope: {x: -0.43470752, y: 2.343894, z: 0}
+        outSlope: {x: -0.43470752, y: 2.343894, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 33.6
+        value: {x: -40.29, y: 14.074224, z: 17.3}
+        inSlope: {x: -0.0259057, y: 3.1724315, z: 0}
+        outSlope: {x: -0.0259057, y: 3.1724315, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 39.066666
+        value: {x: -47.652508, y: 26.15, z: 17.3}
+        inSlope: {x: -2.3975537, y: 0.0028487144, z: 0}
+        outSlope: {x: -2.3975537, y: 0.0028487144, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 46.2
+        value: {x: -68.74, y: 27.162216, z: 17.3}
+        inSlope: {x: -3.0548546, y: 0.18893686, z: 0}
+        outSlope: {x: -3.0548546, y: 0.18893686, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 57.033333
+        value: {x: -111.852516, y: 26.17, z: 17.3}
+        inSlope: {x: -3.346866, y: -0.5843374, z: 0}
+        outSlope: {x: -3.346866, y: -0.5843374, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 57.116665
+        value: {x: -112.13, y: 26.11492, z: 17.3}
+        inSlope: {x: -3.312894, y: -0.73669016, z: 0}
+        outSlope: {x: -3.312894, y: -0.73669016, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 61.8
+        value: {x: -123.36417, y: 15.868555, z: 17.3}
+        inSlope: {x: -1.9844099, y: -0.8825213, z: 0}
+        outSlope: {x: -1.9844099, y: -0.8825213, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 64.416664
+        value: {x: -129.08987, y: 15.518306, z: 17.3}
+        inSlope: {x: -2.5479515, y: 0.48076555, z: 0}
+        outSlope: {x: -2.5479515, y: 0.48076555, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 64.51667
+        value: {x: -129.35083, y: 15.568203, z: 17.3}
+        inSlope: {x: -2.669775, y: 0.5169116, z: 0}
+        outSlope: {x: -2.669775, y: 0.5169116, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 66.35
+        value: {x: -135.55724, y: 16.992779, z: 17.3}
+        inSlope: {x: -3.7301261, y: 0.9713722, z: 0}
+        outSlope: {x: -3.7301261, y: 0.9713722, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 69.51667
+        value: {x: -143.72461, y: 22.233923, z: 17.3}
+        inSlope: {x: -0.32207015, y: 1.2233275, z: 0}
+        outSlope: {x: -0.32207015, y: 1.2233275, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 69.816666
+        value: {x: -143.82147, y: 22.553938, z: 17.3}
+        inSlope: {x: -0.30406657, y: 0.900134, z: 0}
+        outSlope: {x: -0.30406657, y: 0.900134, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 69.86667
+        value: {x: -143.83632, y: 22.598696, z: 17.3}
+        inSlope: {x: -0.28959185, y: 0.8900878, z: 0}
+        outSlope: {x: -0.28959185, y: 0.8900878, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 71.03333
+        value: {x: -143.60783, y: 23.506325, z: 17.3}
+        inSlope: {x: 0.9787574, y: 0.6706254, z: 0}
+        outSlope: {x: 0.9787574, y: 0.6706254, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 74.9
+        value: {x: -136.33649, y: 24.987759, z: 17.3}
+        inSlope: {x: 1.0859178, y: 0.14808212, z: 0}
+        outSlope: {x: 1.0859178, y: 0.14808212, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 75.71667
+        value: {x: -135.58281, y: 25.079107, z: 17.3}
+        inSlope: {x: 0.7686338, y: 0.07796832, z: 0}
+        outSlope: {x: 0.7686338, y: 0.07796832, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 81.066666
+        value: {x: -134.54004, y: 24.927742, z: 17.3}
+        inSlope: {x: 0, y: -0.03414611, z: 0}
+        outSlope: {x: 0, y: -0.03414611, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 81.85
+        value: {x: -134.54004, y: 24.913527, z: 17.3}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.05
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 70.316666
+        value: 6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Intensity
+    path: foglight
+    classID: 108
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.71667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Intensity
+    path: foglight/Ambient Light
+    classID: 108
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 50.816666
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: 3a535523484d5ef4295caf6612d18440, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 30.886038
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Range
+    path: foglight
+    classID: 108
+    script: {fileID: 0}
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 0
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3063012945
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - path: 3063012945
+      attribute: 898800009
+      script: {fileID: 0}
+      classID: 108
+      customType: 25
+      isPPtrCurve: 0
+    - path: 2957434222
+      attribute: 898800009
+      script: {fileID: 0}
+      classID: 108
+      customType: 25
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 3305885265
+      script: {fileID: 11500000, guid: 3a535523484d5ef4295caf6612d18440, type: 3}
+      classID: 114
+      customType: 24
+      isPPtrCurve: 0
+    - path: 3063012945
+      attribute: 514968105
+      script: {fileID: 0}
+      classID: 108
+      customType: 25
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 81.85
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -8.73
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 6.266667
+        value: -12.33
+        inSlope: -0.649321
+        outSlope: -0.649321
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 10.516666
+        value: -15.558692
+        inSlope: -0.86342686
+        outSlope: -0.86342686
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 15.266666
+        value: -20.100842
+        inSlope: -1.0400833
+        outSlope: -1.0400833
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 23.6
+        value: -34.36855
+        inSlope: -0.6168123
+        outSlope: -0.6168123
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 33.6
+        value: -40.29
+        inSlope: -0.0259057
+        outSlope: -0.0259057
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 46.2
+        value: -68.74
+        inSlope: -3.0548546
+        outSlope: -3.0548546
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 57.116665
+        value: -112.13
+        inSlope: -3.312894
+        outSlope: -3.312894
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.416664
+        value: -129.08987
+        inSlope: -2.5479515
+        outSlope: -2.5479515
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 69.51667
+        value: -143.72461
+        inSlope: -0.32207015
+        outSlope: -0.32207015
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 71.03333
+        value: -143.60783
+        inSlope: 0.9787574
+        outSlope: 0.9787574
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 74.9
+        value: -136.33649
+        inSlope: 1.0859178
+        outSlope: 1.0859178
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 81.066666
+        value: -134.54004
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 25.12
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 6.266667
+        value: 21.52
+        inSlope: -1.0023203
+        outSlope: -1.0023203
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 14.366667
+        value: 7.4275584
+        inSlope: -1.3009388
+        outSlope: -1.3009388
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 17.366667
+        value: 5.5314174
+        inSlope: 0.08280697
+        outSlope: 0.08280697
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 28.95
+        value: 4.607851
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 39.066666
+        value: 26.15
+        inSlope: 0.0028487144
+        outSlope: 0.0028487144
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 57.033333
+        value: 26.17
+        inSlope: -0.5843374
+        outSlope: -0.5843374
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 61.8
+        value: 15.868555
+        inSlope: -0.8825213
+        outSlope: -0.8825213
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 66.35
+        value: 16.992779
+        inSlope: 0.9713722
+        outSlope: 0.9713722
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 69.816666
+        value: 22.553938
+        inSlope: 0.900134
+        outSlope: 0.900134
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 81.85
+        value: 24.913527
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 6.266667
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 12.5
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 13.716666
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 23.6
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 31.4
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 46.2
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 57.116665
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.51667
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 69.86667
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.71667
+        value: 17.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 15.121
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 11.383333
+        value: 38.388
+        inSlope: 5.629113
+        outSlope: 5.629113
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 16.533333
+        value: 183.774
+        inSlope: 28.429794
+        outSlope: 28.429794
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 22.616667
+        value: 357.74936
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 28.766666
+        value: 182.60027
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 30.1
+        value: 263.031
+        inSlope: 20.915245
+        outSlope: 20.915245
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 36.95
+        value: 353.7567
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 45.85
+        value: 5.9575653
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 54.466667
+        value: 29.604002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.816666
+        value: 9.4601345
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 70.316666
+        value: 31.633001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.71667
+        value: 28.589025
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: foglight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 264.88293
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 11.383333
+        value: 263.69397
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 16.533333
+        value: 274.94592
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 22.616667
+        value: 12.53738
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 30.033333
+        value: 444.63196
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 32.083332
+        value: 421.31
+        inSlope: -13.487396
+        outSlope: -13.487396
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 36.95
+        value: 261.11664
+        inSlope: -7.3702164
+        outSlope: -7.3702164
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 41.6
+        value: 243.58167
+        inSlope: -7.880889
+        outSlope: -7.880889
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 45.85
+        value: 170.8646
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 54.466667
+        value: 263.54895
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.816666
+        value: 205.456
+        inSlope: -6.991672
+        outSlope: -6.991672
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 70.316666
+        value: 152.73096
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.71667
+        value: 191.93896
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: foglight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -13.745001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 11.383333
+        value: -16.332
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 16.533333
+        value: -12.734009
+        inSlope: 1.2811841
+        outSlope: 1.2811841
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 22.616667
+        value: 147.37349
+        inSlope: 5.369335
+        outSlope: 5.369335
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 30.033333
+        value: 165.495
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 32.766666
+        value: 160.3872
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 36.95
+        value: 178.74411
+        inSlope: 5.612302
+        outSlope: 5.612302
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 45.85
+        value: 276.4318
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 54.466667
+        value: 260.051
+        inSlope: -3.195619
+        outSlope: -3.195619
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.816666
+        value: 215.82155
+        inSlope: -3.7887068
+        outSlope: -3.7887068
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 70.316666
+        value: 200
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.71667
+        value: 217.7389
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: foglight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 64.05
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 70.316666
+        value: 6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Intensity
+    path: foglight
+    classID: 108
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.71667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Intensity
+    path: foglight/Ambient Light
+    classID: 108
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 69.28333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 75.666664
+        value: 15.076927
+        inSlope: 1.4491986
+        outSlope: 1.4491986
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 77.583336
+        value: 16.105175
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 69.28333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 50.816666
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: 3a535523484d5ef4295caf6612d18440, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 30.886038
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Range
+    path: foglight
+    classID: 108
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: foglight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: foglight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: foglight
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 1
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_IsEmpty: 0
+  m_Events: []
