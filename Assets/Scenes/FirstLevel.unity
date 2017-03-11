@@ -318,22 +318,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 91758781}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &106831825 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1595610801127498, guid: c117d18cc34314587921d7fc20858830,
-    type: 2}
-  m_PrefabInternal: {fileID: 1098183698}
---- !u!114 &106831833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 106831825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1785f3f8100b4f42962cb2cb1f84a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &171851040 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4705427005042590, guid: b76da39ff34a5c5499134dbea9c54481,
@@ -1047,6 +1031,9 @@ MonoBehaviour:
   gravity: 10
   RotationRate: 90
   AggressionDist: 5
+  SonarAggressionDist: 80
+  SonarSpeed: 20
+  SonarCooldown: 11
   PatrolGraph: {fileID: 1356619719}
 --- !u!64 &1048165503
 MeshCollider:
@@ -1119,27 +1106,6 @@ Prefab:
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1860920564866046, guid: c117d18cc34314587921d7fc20858830, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 20358807960265240, guid: c117d18cc34314587921d7fc20858830,
-        type: 2}
-      propertyPath: m_RenderingPath
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1069029501929790, guid: c117d18cc34314587921d7fc20858830, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1069029501929790, guid: c117d18cc34314587921d7fc20858830, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333487688655064, guid: c117d18cc34314587921d7fc20858830, type: 2}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c117d18cc34314587921d7fc20858830, type: 2}

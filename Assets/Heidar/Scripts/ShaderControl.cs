@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ShaderControl : MonoBehaviour {
 	public float currentRadius = -5;
-	public float speed = 1;
-	public float coolDown = 100;
+	public float speed = 45;
+	public float coolDown = 11;
+    private float timer = 0;
 	private float length = 500;
 	public GameObject subMarine;
 	public bool animated = false;
@@ -19,7 +20,9 @@ public class ShaderControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        if (length / speed > coolDown) {
+            Debug.Log("cooldown in shadercontrol is too short, this will cause problems with hte AISonarDetection");
+        }
 		active = currentRadius > 0;
 
 		sonarSound = GetComponent<AudioSource> ();
@@ -63,9 +66,9 @@ public class ShaderControl : MonoBehaviour {
 			return;
 		}
 
-		currentRadius += speed;
+		currentRadius += speed*Time.fixedDeltaTime;
 			
-		if (currentRadius > coolDown + length) {
+		if (currentRadius > length) {
 			currentRadius = -5;
 			active = false;
 
@@ -77,14 +80,16 @@ public class ShaderControl : MonoBehaviour {
 
 	void Update() {
 		if (!active) {
-			if (animated || Input.GetKeyDown(KeyCode.Space)) {
+			if (animated || (Input.GetKeyDown(KeyCode.Space) && timer <= 0)) {
+                timer = coolDown;
 				active = true;
 				setMaterialCenter ();
 				sonarSound.Play();
 			} else {
 				return;
 			}
-		}
+        }
+        timer -= Time.deltaTime;
 	}
 
 

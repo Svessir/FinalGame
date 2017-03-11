@@ -9,8 +9,20 @@ public class EnemyAI : MonoBehaviour {
     public float gravity = 10;
     public float RotationRate = 90;
     public float AggressionDist = 5;
+    public float SonarAggressionDist = 80;
+    public float SonarSpeed = 45;
+    public float SonarCooldown = 11;
+    public float AggressiveModifier = 2;
+
 
     public GameObject PatrolGraph;
+
+    private int AggressionNodes = 0;
+    private float modifier = 1;
+    private bool canBeTriggered = false;
+    private float triggerTime;
+    private float triggerCD;
+    private Vector3 triggerOrigin;
     private List<int> CurrentPath = new List<int>();
     private int targetNodeIndex;
     private Vector3 targetNode;
@@ -55,6 +67,22 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        triggerCD -= Time.deltaTime;
+        if (triggerTime < 0 && canBeTriggered)
+        {
+            canBeTriggered = false;
+            Triggered();
+            modifier = AggressiveModifier;
+        }
+        else {
+            triggerTime -= Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && Vector3.Distance(transform.position,player.transform.position) < SonarAggressionDist && triggerCD <= 0) {
+            canBeTriggered = true;
+            triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
+            triggerCD = SonarCooldown;
+            triggerOrigin = player.transform.position;
+        }
         eye = eyeTransform.position;
         if (player == null) {
             Debug.Log("no player in scene");
@@ -70,6 +98,11 @@ public class EnemyAI : MonoBehaviour {
                 return;
             }
             if (!ValidTarget(targetNode)) {
+                if (AggressionNodes <= 0)
+                {
+                    modifier = 1;
+                }
+                AggressionNodes--;
                 if (ExtendCurrentPath()) {
                     targetNodeIndex = CurrentPath[0];
                     targetNode = nodes[targetNodeIndex];
@@ -79,10 +112,68 @@ public class EnemyAI : MonoBehaviour {
                     return;
                 }
             }
+            //Debug.Log("is Targeting:: " + targetNode);
             RotateTowards(targetNode);
             MoveTowards(targetNode);
         }
+        DrawPath();
 	}
+    void DrawPath() {
+        if (targetNode != null)
+        {
+            Debug.DrawLine(transform.position, targetNode, Color.red);
+            if (CurrentPath.Count > 0)
+            {
+                Debug.DrawLine(nodes[CurrentPath[0]], targetNode, Color.yellow);
+            }
+        }
+        for (int i = 1; i < CurrentPath.Count; i++) {
+            Debug.DrawLine(nodes[CurrentPath[i - 1]], nodes[CurrentPath[i]],Color.green);
+        }
+    }
+    void Triggered()
+    {
+        int curr = -1;
+        float bestDist = float.MaxValue;
+        CurrentPath.Clear();
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            float dist = Vector3.Distance(nodes[i], triggerOrigin);
+            if (dist < bestDist && !Physics.Linecast(transform.position, nodes[i], ~(1 << 8)))
+            {
+                bestDist = dist;
+                curr = i;
+            }
+        }
+        if (curr < 0) {
+            Debug.Log("Enemy could not be ANGERY!");
+            return;
+        }
+        AggressionNodes = 0;
+        targetNodeIndex = curr;
+        targetNode = nodes[curr];
+        int champ = minDist(edges[curr], bestDist);
+        int counter = 0;
+        while (champ >= 0 && counter < 20) {
+            AggressionNodes++;
+            CurrentPath.Add(champ);
+            float champDist = Vector3.Distance(nodes[champ], triggerOrigin);
+            champ = minDist(edges[champ], champDist);
+            counter++;
+        }
+        ExtendCurrentPath();
+    }
+    int minDist(List<int> adj, float best) {
+        int champ = -1;
+        for (int i = 0; i < adj.Count; i++) {
+            float dist = Vector3.Distance(nodes[adj[i]], triggerOrigin);
+            if (dist < best) {
+                best = dist;
+                champ = adj[i];
+            }
+        }
+        return champ;
+    }
     bool ExtendCurrentPath() {
         bool[] inPath = new bool[nodes.Count];
         for (int i = 0; i < CurrentPath.Count; i++) {
@@ -127,7 +218,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     bool ValidTarget(Vector3 target) {
-        return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 1;
+        return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 2;
     }
 
     bool PlayerInSight()
@@ -144,12 +235,9 @@ public class EnemyAI : MonoBehaviour {
         Vector3 toTarget = point - transform.position;
         float det = toTarget.x * transform.right.y - toTarget.y * transform.right.x;
         float anglediff = Vector3.Angle(transform.right, toTarget);
-        if (anglediff > RotationRate * Time.deltaTime) {
-            anglediff = RotationRate * Time.deltaTime * Mathf.Sign(-det);
+        if (anglediff > RotationRate * Time.deltaTime*modifier) {
+            anglediff = RotationRate * Time.deltaTime * Mathf.Sign(-det)*modifier;
             toTarget = Quaternion.Euler(0, 0, anglediff) * transform.right;
-          /*  Debug.Log("Limit:" + MaxRotateAngle * Time.deltaTime);
-            Debug.Log("After:" + anglediff);
-            Debug.Log("Vector angle:" +Vector3.Angle(transform.right, toTarget));*/
         }
         float angle = Vector3.Angle(Vector3.right, toTarget);
         angle *= Mathf.Sign(toTarget.y);
@@ -175,15 +263,15 @@ public class EnemyAI : MonoBehaviour {
         {
             if (dir.magnitude < 0.5 || Vector3.Angle(dir, vel) > 90 || Vector3.Angle(dir, transform.right) > 90)
             {
-                vel = vel - (vel * drag * Time.deltaTime);
+                vel = vel - (vel * drag * Time.deltaTime)*modifier;
             }
             if (Vector3.Angle(dir, transform.right) < 90)
             {
-                vel = vel + new Vector3(dir.x, dir.y, 0) * Time.deltaTime * acceleration;
+                vel = vel + new Vector3(dir.x, dir.y, 0) * Time.deltaTime * acceleration*modifier;
             }
-            if (vel.magnitude > maxSpeed)
+            if (vel.magnitude > maxSpeed*modifier)
             {
-                vel = vel.normalized * maxSpeed;
+                vel = vel.normalized * maxSpeed*modifier;
             }
         }
         rb.velocity = vel;
