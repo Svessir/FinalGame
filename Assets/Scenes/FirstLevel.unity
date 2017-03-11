@@ -1034,6 +1034,7 @@ MonoBehaviour:
   SonarAggressionDist: 80
   SonarSpeed: 20
   SonarCooldown: 11
+  AggressiveModifier: 2
   PatrolGraph: {fileID: 1356619719}
 --- !u!64 &1048165503
 MeshCollider:
