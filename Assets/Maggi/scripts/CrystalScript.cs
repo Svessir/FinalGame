@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class CrystalScript : MonoBehaviour, IChargeable {
 
-    public GameObject crystal;
+    public List<GameObject> veins;
 
-    public float maxEmission;
-    private float minEmission;
+    public List<Light> lights;
+
+    public float minBrightness;
+    public float maxBrightness;
 
     public float intensityGrowthSpeed;
     public float intensityRegressionSpeed;
 
-    public float timeUntilRegression = 0;
+    //time from charging crystal stopped until it starts regressing
+    public float timeUntilRegression;
 
-    private Material crystalMat;
+    //% of how much emission changes relative to lightIntensity
+    public float emissionGrowthFactor;
 
+    private List<Material> crystalMats;
+
+    //put name of emissive value of veins here
     private string emissiveName = "_CubemapEmessive";
 
+
     private float lastChargeTime;
+
+    private float currentBrightness = 0;
 
     //used later for the outward visibility of light to monsters
     //private float maxRadius;
@@ -27,11 +37,18 @@ public class CrystalScript : MonoBehaviour, IChargeable {
     // Use this for initialization
     void Start()
     {
-        crystalMat = crystal.GetComponent<Renderer>().material;
-        minEmission = crystalMat.GetFloat(emissiveName);
+        crystalMats = new List<Material>();
+        if (veins.Count != 0)
+        {
+            foreach (var vein in veins)
+            {
+                crystalMats.Add(vein.GetComponent<Renderer>().material);
+            }
+            veins.Clear();
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey("return"))
         {
@@ -45,27 +62,45 @@ public class CrystalScript : MonoBehaviour, IChargeable {
     //light source is charging this crystal
     public void Charge()
     {
-        float currEmission = crystalMat.GetFloat(emissiveName);
-        if(currEmission < maxEmission)
+        float lightDelta = intensityGrowthSpeed * Time.deltaTime;
+
+        if (currentBrightness + lightDelta < maxBrightness)
         {
-            crystalMat.SetFloat(emissiveName, currEmission + intensityGrowthSpeed * Time.deltaTime);
+            currentBrightness += lightDelta;
+
+            foreach (var mat in crystalMats)
+            {
+                mat.SetFloat(emissiveName, currentBrightness * emissionGrowthFactor);
+            }
+
+            foreach (var light in lights)
+            {
+                light.intensity = currentBrightness;
+            }
         }
-
         lastChargeTime = Time.time;
-
     }
 
     private void Uncharge()
     {
-        if((lastChargeTime + timeUntilRegression) > Time.time)
+        float lightDelta = intensityRegressionSpeed * Time.deltaTime;
+
+        if(((lastChargeTime + timeUntilRegression) > Time.time) || ((currentBrightness - lightDelta) < minBrightness))
         {
             return;
         }
 
-        float currEmission = crystalMat.GetFloat(emissiveName);
-        if (currEmission > minEmission)
+        currentBrightness -= lightDelta;
+
+        foreach (var mat in crystalMats)
         {
-            crystalMat.SetFloat(emissiveName, currEmission - intensityRegressionSpeed * Time.deltaTime);
+            mat.SetFloat(emissiveName, currentBrightness  * emissionGrowthFactor);
+        }
+
+        foreach (var light in lights)
+        {
+            
+            light.intensity = currentBrightness;
         }
     }
 

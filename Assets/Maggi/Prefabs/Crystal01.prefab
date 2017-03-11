@@ -116,7 +116,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 696b6900ec765c14c9e34c6c8c7508d9, type: 2}
+  - {fileID: 2100000, guid: a2dee2cb0038b4ad999304e5a0be0762, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,11 +186,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c1e62a3861e724db5e60df71ac7343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystal: {fileID: 1532194832350362}
-  maxEmission: 20
+  veins: []
+  lights:
+  - {fileID: 0}
+  maxBrightness: 0
   intensityGrowthSpeed: 5
   intensityRegressionSpeed: 5
   timeUntilRegression: 5
+  emissionGrowthFactor: 0
 --- !u!135 &135868864459299154
 SphereCollider:
   m_ObjectHideFlags: 1
