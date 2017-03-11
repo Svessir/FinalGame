@@ -9,35 +9,38 @@ public class Facing : MonoBehaviour {
     private Vector3 rotationVec = Vector3.zero;
     bool right = true;
 
+	void Start() {
+		rotationVec = transform.rotation.eulerAngles;
+	}
 	// Update is called once per frame
 	void Update ()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        if (x > 0.5)
+        float y = Input.GetAxisRaw("Horizontal");
+        if (y > 0.5)
         {
             right = true;
         }
-        else if (x < -0.5f)
+        else if (y < -0.5f)
         {
             right = false;
         }
         if (right)
         {
-            if (rotationVec.x < 0) {
-                rotationVec.x += rotationRate * Time.deltaTime;
-                if (rotationVec.x > 0) {
-                    rotationVec.x = 0;
+            if (rotationVec.y < 0) {
+                rotationVec.y += rotationRate * Time.deltaTime;
+                if (rotationVec.y > 0) {
+                    rotationVec.y = 0;
                 }
             }
         }
         else
         {
-            if (rotationVec.x > -180)
+            if (rotationVec.y > -180)
             {
-                rotationVec.x -= rotationRate * Time.deltaTime;
-                if (rotationVec.x < -180)
+                rotationVec.y -= rotationRate * Time.deltaTime;
+                if (rotationVec.y < -180)
                 {
-                    rotationVec.x = -180;
+                    rotationVec.y = -180;
                 }
             }
         }
