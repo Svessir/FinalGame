@@ -1141,7 +1141,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1493,8 +1493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRadius: 600
-  speed: 0.9
-  coolDown: 100
+  speed: 45
+  coolDown: 11
   subMarine: {fileID: 1926587676809958}
   animated: 0
 --- !u!114 &114959001878944414
