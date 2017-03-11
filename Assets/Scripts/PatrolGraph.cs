@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class PatrolGraph : MonoBehaviour {
 	#if UNITY_EDITOR
-	[CustomEditor(typeof(PatrolGraph))]
+    [CustomEditor(typeof(PatrolGraph))]
     public class ObjectBuilderEditor : Editor
     {
         public override void OnInspectorGUI()
