@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class PatrolGraph : MonoBehaviour {
+	#if UNITY_EDITOR
     [CustomEditor(typeof(PatrolGraph))]
     public class ObjectBuilderEditor : Editor
     {
@@ -18,6 +22,8 @@ public class PatrolGraph : MonoBehaviour {
             }
         }
     }
+	#endif
+
     [System.Serializable]
     public class ListWrapper
     {

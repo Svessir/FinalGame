@@ -27,10 +27,13 @@ public class Movement : MonoBehaviour {
             WasdMove();
         }
 	}
+
     void Reorient() {
+		
         float angle = Vector3.Angle(transform.up, Vector3.up);
         rb.angularVelocity += new Vector3(0, 0, 1) * angle * reorientationFactor*Mathf.Sign(transform.up.x)*Time.deltaTime;
     }
+
     void WasdMove() {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
@@ -42,6 +45,7 @@ public class Movement : MonoBehaviour {
         }
         Move(dir);
     }
+
     public float mouseBaseDist = 30;
 
     void MouseMove() {
@@ -54,6 +58,7 @@ public class Movement : MonoBehaviour {
         }
         Move(diff);
     }
+
 
     void Move(Vector2 dir)
     {
@@ -78,12 +83,14 @@ public class Movement : MonoBehaviour {
         rb.velocity = vel;
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Air") {
             inAir = true;
         }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
