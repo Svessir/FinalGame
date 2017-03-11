@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class CrystalScript : MonoBehaviour, IChargeable {
 
-    public Light light;
     public GameObject crystal;
 
-    private float minLightIntensity;
-    public float maxLightIntensity;
+    public float maxEmission;
+    private float minEmission;
 
-    //public float maxMatEmission;
+    public float intensityGrowthSpeed;
+    public float intensityRegressionSpeed;
 
-    public float lightIntensityGrowthSpeed;
-    public float lightIntensityRegressionSpeed;
+    public float timeUntilRegression = 0;
 
-    private bool charging = false;
+    private Material crystalMat;
 
+    private string emissiveName = "_CubemapEmessive";
 
-    //private Material crystalMat;
-
-
-    //private float minMatEmission;
+    private float lastChargeTime;
 
     //used later for the outward visibility of light to monsters
     //private float maxRadius;
@@ -30,16 +27,14 @@ public class CrystalScript : MonoBehaviour, IChargeable {
     // Use this for initialization
     void Start()
     {
-        //Renderer crystalRenderer = crystal.GetComponent<Renderer>();
-        //crystalMat = crystalRenderer.material;
-        minLightIntensity = light.intensity;
+        crystalMat = crystal.GetComponent<Renderer>().material;
+        minEmission = crystalMat.GetFloat(emissiveName);
     }
 
     void Update()
     {
         if (Input.GetKey("return"))
         {
-
             Charge();
         }else
         {
@@ -50,17 +45,27 @@ public class CrystalScript : MonoBehaviour, IChargeable {
     //light source is charging this crystal
     public void Charge()
     {
-        if(light.intensity < maxLightIntensity)
+        float currEmission = crystalMat.GetFloat(emissiveName);
+        if(currEmission < maxEmission)
         {
-            light.intensity += lightIntensityGrowthSpeed * Time.deltaTime;
+            crystalMat.SetFloat(emissiveName, currEmission + intensityGrowthSpeed * Time.deltaTime);
         }
+
+        lastChargeTime = Time.time;
+
     }
 
     private void Uncharge()
     {
-        if(light.intensity > minLightIntensity)
+        if((lastChargeTime + timeUntilRegression) > Time.time)
         {
-            light.intensity -= lightIntensityGrowthSpeed * Time.deltaTime;
+            return;
+        }
+
+        float currEmission = crystalMat.GetFloat(emissiveName);
+        if (currEmission > minEmission)
+        {
+            crystalMat.SetFloat(emissiveName, currEmission - intensityRegressionSpeed * Time.deltaTime);
         }
     }
 

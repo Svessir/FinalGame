@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class fogLightCollision : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void OnTriggerStay(Collider other)
+    {
+        IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
+        if(chargeable != null)
+        {
+            chargeable.Charge();
+        }
+    }
 }
