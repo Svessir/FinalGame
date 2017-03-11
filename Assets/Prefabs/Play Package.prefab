@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4166705670635168}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Play Package
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4148593300113888}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 54843447651501100}
   - component: {fileID: 114409124363387404}
   - component: {fileID: 114924814909536406}
+  - component: {fileID: 114044631463139800}
   m_Layer: 11
   m_Name: SubMarine
   m_TagString: Player
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 135564117579968418}
   m_Layer: 11
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,7 +462,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069029501929790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 84.6, y: -152.1, z: 0}
+  m_LocalPosition: {x: -0.9, y: 64.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4995766703101862}
@@ -1048,7 +1049,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -1091,7 +1092,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1226,6 +1227,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashLight: {fileID: 1400548506441322}
   animated: 0
+--- !u!114 &114044631463139800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595610801127498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1785f3f8100b4f42962cb2cb1f84a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114058139564377056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1426,8 +1438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRadius: 600
-  speed: 0.9
-  coolDown: 100
+  speed: 45
+  coolDown: 11
   subMarine: {fileID: 1873619482956212}
   animated: 0
 --- !u!114 &114924814909536406
