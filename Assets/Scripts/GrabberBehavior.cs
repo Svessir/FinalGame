@@ -77,12 +77,16 @@ public class GrabberBehavior : MonoBehaviour
 		if (Physics.Raycast (grabberForwardTransform.position, grabberForwardTransform.forward, out hit, tractorBeamLength)) 
 		{
 			grabbed = hit.collider.gameObject.GetComponent<GrabableBehavior> ();
+
+			if (grabbed != null)
+				grabbed.SetWorldSpaceAnchor (hit.point);
 		}
 		return grabbed;
 	}
 
 	private IEnumerator PullGrabableTowardsMe()
 	{
+		currentlyGrabbed.UseGravity (false);
 		Vector3 between = (transform.position - currentlyGrabbed.transform.position);
 		while (between.magnitude > distanceGromGrabber) 
 		{
@@ -101,6 +105,7 @@ public class GrabberBehavior : MonoBehaviour
 			between = (transform.position - currentlyGrabbed.transform.position);
 		}
 		currentlyGrabbed.SetHinges (grabbedHingeSettings, grabberRigidbody);
+		currentlyGrabbed.UseGravity (true);
 		yield return null;
 	}
 
@@ -119,6 +124,7 @@ public class GrabberBehavior : MonoBehaviour
 
 	private void Drop() 
 	{
+		currentlyGrabbed.UseGravity (true);
 		currentlyGrabbed.Drop ();
 		currentlyGrabbed = null;
 	}

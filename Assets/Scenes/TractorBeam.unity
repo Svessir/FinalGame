@@ -259,7 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280778643
 GameObject:
@@ -341,7 +341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &280778648
 Rigidbody:
@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 451612826}
   - component: {fileID: 451612831}
   - component: {fileID: 451612830}
+  - component: {fileID: 451612832}
   m_Layer: 0
   m_Name: GrabableObject
   m_TagString: Untagged
@@ -439,7 +440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &451612830
 MonoBehaviour:
@@ -452,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47839aea070bb34cbe5c3f875bbdfe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabbedMass: 0.1
+  grabbedMass: 0.01
 --- !u!54 &451612831
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,14 +461,46 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 451612825}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.01
+  m_Drag: 2
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!59 &451612832
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451612825}
+  m_ConnectedBody: {fileID: 1813804778}
+  m_Anchor: {x: 0, y: 0.5, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.00999999, y: -1.98, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: -50
+    max: 50
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!1 &890726716 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1797661761671778, guid: c66127311cf40fd4b8fe022c9a0d2bf1,
@@ -492,12 +525,17 @@ MonoBehaviour:
   grabberForwardTransform: {fileID: 1813804776}
   grabbedHingeSettings:
     axis: {x: 0, y: 0, z: 1}
-    minLimit: -12
-    maxLimit: 12
+    minLimit: -20
+    maxLimit: 20
   grabKey: 32
   tractorBeamLength: 5
   distanceGromGrabber: 2
   pullSpeed: 2
+--- !u!54 &890726720 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 54308979163985392, guid: c66127311cf40fd4b8fe022c9a0d2bf1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1464348857}
 --- !u!1001 &1464348857
 Prefab:
   m_ObjectHideFlags: 0
@@ -507,7 +545,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4949996360063148, guid: c66127311cf40fd4b8fe022c9a0d2bf1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.51
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 4949996360063148, guid: c66127311cf40fd4b8fe022c9a0d2bf1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -616,6 +654,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1813804776}
+  - component: {fileID: 1813804779}
+  - component: {fileID: 1813804778}
+  - component: {fileID: 1813804777}
   m_Layer: 0
   m_Name: GrabTransform
   m_TagString: Untagged
@@ -629,10 +670,69 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1813804775}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 890726718}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!59 &1813804777
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813804775}
+  m_ConnectedBody: {fileID: 890726720}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: -0.55, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: -50
+    max: 50
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+--- !u!54 &1813804778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813804775}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 56
+  m_CollisionDetection: 0
+--- !u!65 &1813804779
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813804775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}

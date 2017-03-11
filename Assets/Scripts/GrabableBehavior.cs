@@ -12,6 +12,7 @@ public class GrabableBehavior : MonoBehaviour
 	private HingeJoint grabableHingeJoint;
 	private Rigidbody grabableRigidbody;
 	private float originalMass;
+	private Vector3 anchor;
 
 	void Awake () {
 		grabableRigidbody = GetComponent<Rigidbody> ();
@@ -30,7 +31,6 @@ public class GrabableBehavior : MonoBehaviour
 
 	public void Drop()
 	{
-		grabableRigidbody.mass = originalMass;
 		grabableRigidbody.useGravity = true;
 		Destroy (grabableHingeJoint);
 		grabableHingeJoint = null;
@@ -38,7 +38,9 @@ public class GrabableBehavior : MonoBehaviour
 
 	public void SetHinges(GrabbedHingeSettings hingeSettings, Rigidbody grabberRigidbody) 
 	{
+		grabableRigidbody.useGravity = false;
 		grabableHingeJoint = gameObject.AddComponent<HingeJoint> ();
+		grabableHingeJoint.anchor = anchor;
 		grabableHingeJoint.axis = hingeSettings.axis;
 		grabableHingeJoint.useLimits = true;
 		JointLimits limits = grabableHingeJoint.limits;
@@ -46,6 +48,16 @@ public class GrabableBehavior : MonoBehaviour
 		limits.max = hingeSettings.maxLimit;
 		grabableHingeJoint.limits = limits;
 		grabableHingeJoint.connectedBody = grabberRigidbody;
+	}
+
+	public void UseGravity(bool useGravity) 
+	{
+		grabableRigidbody.useGravity = useGravity;
+	}
+
+	public void SetWorldSpaceAnchor(Vector3 anchor)
+	{
+		this.anchor = transform.InverseTransformPoint(anchor);
 	}
 }
 
