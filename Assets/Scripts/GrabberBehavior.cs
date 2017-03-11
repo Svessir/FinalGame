@@ -37,14 +37,14 @@ public class GrabberBehavior : MonoBehaviour
 	void Update () 
 	{
 		isGrabKeyPressed = Input.GetKeyDown (grabKey);
-	}
-
-	void FixedUpdate()
-	{
 		if (currentlyGrabbed != null)
 			WhileGrabbedUpdate (); 
 		else
 			WhileEmptyUpdate();
+	}
+
+	void FixedUpdate()
+	{
 	}
 
 	void WhileGrabbedUpdate()
@@ -90,10 +90,9 @@ public class GrabberBehavior : MonoBehaviour
 		Vector3 between = (transform.position - currentlyGrabbed.transform.position);
 		while (between.magnitude > distanceGromGrabber) 
 		{
-			if (IsObscured ()) {
-				Drop ();
+			if (currentlyGrabbed == null)
 				yield return null;
-			} else if (currentlyGrabbed == null)
+			else if (currentlyGrabbed == null)
 				yield return null;
 
 			Vector3 pos = currentlyGrabbed.transform.position;

@@ -18,7 +18,7 @@ public class WallWormAI : MonoBehaviour {
     private bool aggressive = true;
     private Vector3 eye;
     private Transform eyeTransform;
-    private GameObject player;
+    private GameObject target;
     private Rigidbody rb;
     private bool inAir = false;
 	// Use this for initialization
@@ -26,7 +26,7 @@ public class WallWormAI : MonoBehaviour {
     {
         Timer = AggressionTime;
         rb = GetComponent<Rigidbody>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
         Transform[] children = GetComponentsInChildren<Transform>();
         foreach (Transform t in children) {
             if (t.name == "Eye") {
@@ -40,7 +40,7 @@ public class WallWormAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         eye = eyeTransform.position;
-        if (player == null) {
+        if (target == null) {
             Debug.Log("no player in scene");
             return;
         }
@@ -60,20 +60,20 @@ public class WallWormAI : MonoBehaviour {
                 }
                 aggressive = !aggressive;
             }
-            if (!aggressive && MinRecoveryAngle < Vector3.Angle(transform.right, player.transform.position - eye))
+            if (!aggressive && MinRecoveryAngle < Vector3.Angle(transform.right, target.transform.position - eye))
             {
                 aggressive = true;
                 Timer = AggressionTime;
             }
             if (aggressive)
             {
-                RotateTowards(player.transform.position);
-                MoveTowards(player.transform.position);
+                RotateTowards(target.transform.position);
+                MoveTowards(target.transform.position);
             }
             else
             {
-                MoveAwayFrom(player.transform.position);
-                RotateTowards(player.transform.position);
+                MoveAwayFrom(target.transform.position);
+                RotateTowards(target.transform.position);
             }
         }
         else {
@@ -92,7 +92,7 @@ public class WallWormAI : MonoBehaviour {
 
     bool PlayerInSight()
     {
-        Vector3 toPlayer = player.transform.position - eye;
+        Vector3 toPlayer = target.transform.position - eye;
         RaycastHit hitinfo;
         Physics.Raycast(eye, toPlayer,out hitinfo,AggressionDist, ~(1 << 8));
         if (hitinfo.collider != null) {

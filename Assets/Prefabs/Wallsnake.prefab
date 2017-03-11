@@ -371,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1932547561105588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9, y: -1.5, z: 0}
+  m_LocalPosition: {x: -11.16, y: -6.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4705427005042590}
@@ -410,8 +410,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047441863184552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.48223, y: 1.3663821, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 75.2, y: 29.76, z: 1.33}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4800250451602528}
   - {fileID: 4288104376896142}
@@ -494,7 +494,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -525,7 +525,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -587,7 +587,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -618,7 +618,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -649,7 +649,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -680,7 +680,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -711,7 +711,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -742,7 +742,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8fbaa6b15bfa8094e8158bc74d013413, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -773,7 +773,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -804,7 +804,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 318dd0edab21ebc4db1edcb43b2d8031, type: 2}
+  - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1395,12 +1395,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76be4704872afd2418635da67e6088a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
-  acceleration: 5
+  maxSpeed: 6
+  acceleration: 20
   drag: 0.5
   gravity: 10
   RotationRate: 90
-  AggressionDist: 10
+  AggressionDist: 20
   AggressionTime: 1.5
   MinRecoveryAngle: 25
   RecoveryTime: 0.5
