@@ -9,6 +9,11 @@ public class GrabableBehavior : MonoBehaviour
 	[SerializeField]
 	float grabbedMass = 0.1f;
 
+	[SerializeField]
+	private float requiredDistance;
+
+	public float RequiredDistance { get{ return requiredDistance; } }
+
 	private HingeJoint grabableHingeJoint;
 	private Rigidbody grabableRigidbody;
 	private float originalMass;
