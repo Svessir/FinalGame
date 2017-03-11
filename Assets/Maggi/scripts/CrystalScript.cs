@@ -1,0 +1,114 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CrystalScript : MonoBehaviour, IChargeable {
+
+    public List<GameObject> veins;
+
+    public List<Light> lights;
+
+    public float minBrightness;
+    public float maxBrightness;
+
+    public float intensityGrowthSpeed;
+    public float intensityRegressionSpeed;
+
+    //time from charging crystal stopped until it starts regressing
+    public float timeUntilRegression;
+
+    //% of how much emission changes relative to lightIntensity
+    public float emissionGrowthFactor;
+
+    private List<Material> crystalMats;
+
+    //put name of emissive value of veins here
+    private string emissiveName = "_CubemapEmessive";
+
+
+    private float lastChargeTime;
+
+    private float currentBrightness = 0;
+
+    //used later for the outward visibility of light to monsters
+    //private float maxRadius;
+    //private float minRadius;
+
+    // Use this for initialization
+    void Start()
+    {
+        crystalMats = new List<Material>();
+        if (veins.Count != 0)
+        {
+            foreach (var vein in veins)
+            {
+                crystalMats.Add(vein.GetComponent<Renderer>().material);
+            }
+            veins.Clear();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKey("return"))
+        {
+            Charge();
+        }else
+        {
+            Uncharge();
+        }
+    }
+
+    //light source is charging this crystal
+    public void Charge()
+    {
+        float lightDelta = intensityGrowthSpeed * Time.deltaTime;
+
+        if (currentBrightness + lightDelta < maxBrightness)
+        {
+            currentBrightness += lightDelta;
+
+            foreach (var mat in crystalMats)
+            {
+                mat.SetFloat(emissiveName, currentBrightness * emissionGrowthFactor);
+            }
+
+            foreach (var light in lights)
+            {
+                light.intensity = currentBrightness;
+            }
+        }
+        lastChargeTime = Time.time;
+    }
+
+    private void Uncharge()
+    {
+        float lightDelta = intensityRegressionSpeed * Time.deltaTime;
+
+        if(((lastChargeTime + timeUntilRegression) > Time.time) || ((currentBrightness - lightDelta) < minBrightness))
+        {
+            return;
+        }
+
+        currentBrightness -= lightDelta;
+
+        foreach (var mat in crystalMats)
+        {
+            mat.SetFloat(emissiveName, currentBrightness  * emissionGrowthFactor);
+        }
+
+        foreach (var light in lights)
+        {
+            
+            light.intensity = currentBrightness;
+        }
+    }
+
+
+
+    //When the crystals Light is shining on something
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
+}
