@@ -218,12 +218,16 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1548683762390264
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4014469579146434}
+  - component: {fileID: 54346427255682712}
+  - component: {fileID: 59971780997218078}
+  - component: {fileID: 114804726547741508}
+  - component: {fileID: 120086877630671480}
   m_Layer: 11
   m_Name: Grabber
   m_TagString: Untagged
@@ -244,7 +248,6 @@ GameObject:
   - component: {fileID: 114432703989985276}
   - component: {fileID: 54843447651501100}
   - component: {fileID: 114409124363387404}
-  - component: {fileID: 114924814909536406}
   - component: {fileID: 114044631463139800}
   m_Layer: 11
   m_Name: SubMarine
@@ -392,12 +395,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548683762390264}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.28, y: -1.663, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.28, y: -1.6630001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4019605018498034}
-  m_RootOrder: 4
+  m_Father: {fileID: 4166705670635168}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4019605018498034
 Transform:
@@ -413,10 +416,9 @@ Transform:
   - {fileID: 4879007599622892}
   - {fileID: 4647213844275668}
   - {fileID: 4474743156173814}
-  - {fileID: 4014469579146434}
   - {fileID: 4559427912697182}
   m_Father: {fileID: 4166705670635168}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4075478811411552
 Transform:
@@ -470,7 +472,7 @@ Transform:
   - {fileID: 4279029308524266}
   - {fileID: 4221448877364646}
   m_Father: {fileID: 4166705670635168}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4166705670635168
 Transform:
@@ -479,9 +481,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069029501929790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68.4, y: 0.1, z: 0}
+  m_LocalPosition: {x: -0.1, y: 14.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4014469579146434}
   - {fileID: 4995766703101862}
   - {fileID: 4019605018498034}
   - {fileID: 4148593300113888}
@@ -596,7 +599,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4019605018498034}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4647213844275668
 Transform:
@@ -691,7 +694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4166705670635168}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20358807960265240
 Camera:
@@ -953,6 +956,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092597717774258}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54346427255682712
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548683762390264}
+  serializedVersion: 2
+  m_Mass: 0.01
+  m_Drag: 2
+  m_AngularDrag: 2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54843447651501100
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -968,6 +986,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!59 &59971780997218078
+HingeJoint:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548683762390264}
+  m_ConnectedBody: {fileID: 54843447651501100}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.28, y: -1.6630001, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: -50
+    max: 50
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!64 &64423571910648278
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1452,6 +1502,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e771e445beedea4b93bea135a8050d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114804726547741508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548683762390264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72115faccebee641b206add9c45f5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabberForwardTransform: {fileID: 4014469579146434}
+  grabbedHingeSettings:
+    axis: {x: 0, y: 0, z: 0}
+    minLimit: 0
+    maxLimit: 0
+  grabKey: 101
+  tractorBeamLength: 20
+  distanceGromGrabber: 8
+  pullSpeed: 20
+  lineRenderer: {fileID: 120086877630671480}
 --- !u!114 &114820043786931410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1494,31 +1565,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRadius: 600
-  speed: 45
+  speed: 46
   coolDown: 12
   subMarine: {fileID: 1873619482956212}
   animated: 0
---- !u!114 &114924814909536406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1595610801127498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72115faccebee641b206add9c45f5bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabberForwardTransform: {fileID: 4014469579146434}
-  grabbedHingeSettings:
-    axis: {x: 0, y: 0, z: 0}
-    minLimit: 0
-    maxLimit: 0
-  grabKey: 101
-  tractorBeamLength: 10
-  distanceGromGrabber: 5
-  pullSpeed: 1
-  lineRenderer: {fileID: 0}
 --- !u!114 &114956851963457844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1544,6 +1594,110 @@ MonoBehaviour:
   NoiseIntensityOffset: 0.3
   NoiseVelocity: {x: 8, y: 3}
   MaxRayLength: 400
+--- !u!120 &120086877630671480
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548683762390264}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.061403513
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.96675897
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    colorGradient:
+      key0:
+        serializedVersion: 2
+        rgba: 989855743
+      key1:
+        serializedVersion: 2
+        rgba: 4286513122
+      key2:
+        serializedVersion: 2
+        rgba: 0
+      key3:
+        serializedVersion: 2
+        rgba: 0
+      key4:
+        serializedVersion: 2
+        rgba: 0
+      key5:
+        serializedVersion: 2
+        rgba: 0
+      key6:
+        serializedVersion: 2
+        rgba: 0
+      key7:
+        serializedVersion: 2
+        rgba: 0
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+  m_UseWorldSpace: 1
 --- !u!124 &124635206834750844
 Behaviour:
   m_ObjectHideFlags: 1
