@@ -130,13 +130,10 @@ public class EnemyAI : MonoBehaviour {
         DrawPath();
 	}
     void DrawPath() {
-        if (targetNode != null)
+        Debug.DrawLine(transform.position, targetNode, Color.red);
+        if (CurrentPath.Count > 0)
         {
-            Debug.DrawLine(transform.position, targetNode, Color.red);
-            if (CurrentPath.Count > 0)
-            {
-                Debug.DrawLine(nodes[CurrentPath[0]], targetNode, Color.yellow);
-            }
+            Debug.DrawLine(nodes[CurrentPath[0]], targetNode, Color.yellow);
         }
         for (int i = 1; i < CurrentPath.Count; i++) {
             Debug.DrawLine(nodes[CurrentPath[i - 1]], nodes[CurrentPath[i]],Color.green);
