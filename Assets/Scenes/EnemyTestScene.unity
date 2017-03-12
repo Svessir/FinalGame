@@ -586,6 +586,39 @@ Prefab:
       propertyPath: PatrolGraph
       value: 
       objectReference: {fileID: 965819827}
+    - target: {fileID: 95019870177386116, guid: eaa667fda5b096741b1b8169ce2af020,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 138edc54a8539cc47ac75f7ab5d9b145, type: 2}
+    - target: {fileID: 4125784200211304, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125784200211304, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353506907996134, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353506907996134, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353506907996134, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353506907996134, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353506907996134, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90.00001
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 33480779132547884, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
     - {fileID: 23262751437900858, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
