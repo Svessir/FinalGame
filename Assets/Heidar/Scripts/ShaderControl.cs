@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShaderControl : MonoBehaviour {
 	public float currentRadius = -5;
 	public float speed = 45;
-	public float coolDown = 11;
+	public float coolDown = 12;
     private float timer = 0;
 	private float length = 500;
 	public GameObject subMarine;
@@ -20,7 +20,10 @@ public class ShaderControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (length / speed > coolDown) {
+        if (length / speed > coolDown)
+        {
+            Debug.Log(length / speed);
+            Debug.Log(coolDown);
             Debug.Log("cooldown in shadercontrol is too short, this will cause problems with hte AISonarDetection");
         }
 		active = currentRadius > 0;

@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour {
 
     public GameObject PatrolGraph;
 
+    private int IgnoredLayers;
     private bool StayHome;
     private float ANGERY = 0;
     private float modifier = 1;
@@ -39,6 +40,7 @@ public class EnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        IgnoredLayers = 1 << 8 | 1 << 11;
         if (PrefersHomeNodes) {
             StayHome = true;
         }
@@ -101,10 +103,12 @@ public class EnemyAI : MonoBehaviour {
         }
         if (PlayerInSight(sightDist))
         {
+            modifier = AggressiveModifier;
             RotateTowards(player.transform.position);
             MoveTowards(player.transform.position);
         }
-        else {
+        else
+        {
             if (PatrolGraph == null) {
                 return;
             }
@@ -122,7 +126,6 @@ public class EnemyAI : MonoBehaviour {
                     return;
                 }
             }
-            //Debug.Log("is Targeting:: " + targetNode);
             RotateTowards(targetNode);
             MoveTowards(targetNode);
         }
@@ -147,7 +150,7 @@ public class EnemyAI : MonoBehaviour {
         for (int i = 0; i < nodes.Count; i++)
         {
             float dist = Vector3.Distance(nodes[i], triggerOrigin);
-            if (dist < bestDist && !Physics.Linecast(transform.position, nodes[i], ~(1 << 8)))
+            if (dist < bestDist && !Physics.Linecast(transform.position, nodes[i], ~IgnoredLayers))
             {
                 bestDist = dist;
                 curr = i;
@@ -157,6 +160,7 @@ public class EnemyAI : MonoBehaviour {
             Debug.Log("Enemy could not be ANGERY!");
             return;
         }
+        CurrentPath.Add(curr);
         StayHome = false;
         ANGERY = SonarAggressionTime;
         targetNodeIndex = curr;
@@ -226,7 +230,7 @@ public class EnemyAI : MonoBehaviour {
     {
         int curr = -1;
         for (int i = 0; i < nodes.Count; i++) {
-            if (!Physics.Linecast(transform.position, nodes[i], ~(1 << 8))) {
+            if (!Physics.Linecast(transform.position, nodes[i], ~IgnoredLayers)) {
                 if (StayHome)
                 {
                     if (home[i])
@@ -251,7 +255,7 @@ public class EnemyAI : MonoBehaviour {
                     CurrentPath.Clear();
                 }
             }
-            return (!Physics.Linecast(transform.position, target, ~(1 << 8)));
+            return (!Physics.Linecast(transform.position, target, ~IgnoredLayers));
         }
         return false;
         
@@ -263,7 +267,7 @@ public class EnemyAI : MonoBehaviour {
         RaycastHit hitinfo;
         Physics.Raycast(eye, toPlayer,out hitinfo,Dist, ~(1 << 8));
         if (hitinfo.collider != null) {
-            return hitinfo.collider.gameObject.transform.tag == "Player";
+            return hitinfo.collider.gameObject.layer == 11;
         }
         return false;
     }
