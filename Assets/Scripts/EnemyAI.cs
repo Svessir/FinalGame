@@ -12,22 +12,25 @@ public class EnemyAI : MonoBehaviour {
     public float SonarAggressionDist = 80;
     public float SonarSpeed = 45;
     public float SonarCooldown = 11;
+    public float SonarAggressionTime = 11;
     public float AggressiveModifier = 2;
-
+    public bool PrefersHomeNodes = true;
 
     public GameObject PatrolGraph;
 
-    private int AggressionNodes = 0;
+    private bool StayHome;
+    private float ANGERY = 0;
     private float modifier = 1;
     private bool canBeTriggered = false;
     private float triggerTime;
     private float triggerCD;
     private Vector3 triggerOrigin;
+    private List<Vector3> nodes;
+    private List<List<int>> edges;
+    private List<bool> home;
     private List<int> CurrentPath = new List<int>();
     private int targetNodeIndex;
     private Vector3 targetNode;
-    private List<Vector3> nodes;
-    private List<List<int>> edges;
     private Vector3 eye;
     private Transform eyeTransform;
     private GameObject player;
@@ -36,6 +39,9 @@ public class EnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        if (PrefersHomeNodes) {
+            StayHome = true;
+        }
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         if (PatrolGraph == null)
@@ -46,6 +52,7 @@ public class EnemyAI : MonoBehaviour {
             var script = PatrolGraph.GetComponent<PatrolGraph>();
             nodes = script.Nodes;
             edges = new List<List<int>>();
+            home = script.Home;
             foreach (PatrolGraph.ListWrapper l in script.Edges) {
                 edges.Add(l.myList);
             }
@@ -88,7 +95,11 @@ public class EnemyAI : MonoBehaviour {
             Debug.Log("no player in scene");
             return;
         }
-        if (PlayerInSight())
+        float sightDist = AggressionDist;
+        if (ANGERY > 0) {
+            sightDist = AggressionDist * 10;
+        }
+        if (PlayerInSight(sightDist))
         {
             RotateTowards(player.transform.position);
             MoveTowards(player.transform.position);
@@ -98,11 +109,10 @@ public class EnemyAI : MonoBehaviour {
                 return;
             }
             if (!ValidTarget(targetNode)) {
-                if (AggressionNodes <= 0)
+                if (ANGERY <= 0)
                 {
                     modifier = 1;
                 }
-                AggressionNodes--;
                 if (ExtendCurrentPath()) {
                     targetNodeIndex = CurrentPath[0];
                     targetNode = nodes[targetNodeIndex];
@@ -116,6 +126,7 @@ public class EnemyAI : MonoBehaviour {
             RotateTowards(targetNode);
             MoveTowards(targetNode);
         }
+        ANGERY -= Time.deltaTime;
         DrawPath();
 	}
     void DrawPath() {
@@ -149,13 +160,13 @@ public class EnemyAI : MonoBehaviour {
             Debug.Log("Enemy could not be ANGERY!");
             return;
         }
-        AggressionNodes = 0;
+        StayHome = false;
+        ANGERY = SonarAggressionTime;
         targetNodeIndex = curr;
         targetNode = nodes[curr];
         int champ = minDist(edges[curr], bestDist);
         int counter = 0;
         while (champ >= 0 && counter < 20) {
-            AggressionNodes++;
             CurrentPath.Add(champ);
             float champDist = Vector3.Distance(nodes[champ], triggerOrigin);
             champ = minDist(edges[champ], champDist);
@@ -192,10 +203,20 @@ public class EnemyAI : MonoBehaviour {
             for (int j = 0; j < edges[last].Count; j++) {
                 int adj = edges[last][j];
                 if (!inPath[adj]) {
-                    inPath[adj] = true;
-                    CurrentPath.Add(adj);
-                    failed = false;
-                    break;
+                    if (StayHome && home[adj])
+                    {
+                        inPath[adj] = true;
+                        CurrentPath.Add(adj);
+                        failed = false;
+                        break;
+                    }
+                    else if (!StayHome)
+                    {
+                        inPath[adj] = true;
+                        CurrentPath.Add(adj);
+                        failed = false;
+                        break;
+                    }
                 }
             }
             if (failed) {
@@ -208,9 +229,17 @@ public class EnemyAI : MonoBehaviour {
     {
         int curr = -1;
         for (int i = 0; i < nodes.Count; i++) {
-            float dist = Vector3.Distance(nodes[i], transform.position);
-            if (dist < float.MaxValue && !Physics.Linecast(transform.position, nodes[i], ~(1 << 8))) {
-                curr = i;
+            if (!Physics.Linecast(transform.position, nodes[i], ~(1 << 8))) {
+                if (StayHome)
+                {
+                    if (home[i])
+                    {
+                        curr = i;
+                    }
+                }
+                else {
+                    curr = i;
+                }
             }
         }
 
@@ -218,14 +247,24 @@ public class EnemyAI : MonoBehaviour {
     }
 
     bool ValidTarget(Vector3 target) {
-        return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 2;
+        if ((transform.position - target).magnitude > 2) {
+            if (!StayHome && ANGERY <= 0) {
+                if (home[targetNodeIndex] && PrefersHomeNodes && !Physics.Linecast(transform.position, target, ~(1 << 8))) {
+                    StayHome = true;
+                    CurrentPath.Clear();
+                }
+            }
+            return (!Physics.Linecast(transform.position, target, ~(1 << 8)));
+        }
+        return false;
+        
     }
 
-    bool PlayerInSight()
+    bool PlayerInSight(float Dist)
     {
         Vector3 toPlayer = player.transform.position - eye;
         RaycastHit hitinfo;
-        Physics.Raycast(eye, toPlayer,out hitinfo,AggressionDist, ~(1 << 8));
+        Physics.Raycast(eye, toPlayer,out hitinfo,Dist, ~(1 << 8));
         if (hitinfo.collider != null) {
             return hitinfo.collider.gameObject.transform.tag == "Player";
         }
@@ -274,6 +313,7 @@ public class EnemyAI : MonoBehaviour {
                 vel = vel.normalized * maxSpeed*modifier;
             }
         }
+        rb.angularVelocity = Vector3.zero;
         rb.velocity = vel;
     }
 

@@ -35,16 +35,19 @@ public class PatrolGraph : MonoBehaviour {
     }
     public List<Vector3> Nodes = new List<Vector3>();
     public List<ListWrapper> Edges;
+    public List<bool> Home = new List<bool>();
     public int test;
     public void ConnectNodes() {
         Transform[] children = GetComponentsInChildren<Transform>();
         Nodes = new List<Vector3>();
         Edges = new List<ListWrapper>();
+        Home = new List<bool>();
         for (int i = 0; i < children.Length - 1; i++) {
             Edges.Add(new ListWrapper());
         }
         for (int i = 1; i < children.Length; i++) {
             Nodes.Add(children[i].position);
+            Home.Add(children[i].tag == "Home");
             for (int j = i + 1; j < children.Length; j++) {
                 Vector3 outside = children[i].position - children[j].position;
                 //used so the raycast does not collide with itself
