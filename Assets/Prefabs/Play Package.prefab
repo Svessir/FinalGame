@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 4756222331930734}
   - component: {fileID: 64423571910648278}
   - component: {fileID: 114731045180796394}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LightTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

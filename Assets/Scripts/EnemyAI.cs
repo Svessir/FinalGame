@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        IgnoredLayers = 1 << 8 | 1 << 11;
+        IgnoredLayers = 1 << 8 | 1 << 11 | 1 << 13;
         if (PrefersHomeNodes) {
             StayHome = true;
         }
@@ -265,9 +265,9 @@ public class EnemyAI : MonoBehaviour {
     {
         Vector3 toPlayer = player.transform.position - eye;
         RaycastHit hitinfo;
-        Physics.Raycast(eye, toPlayer,out hitinfo,Dist, ~(1 << 8));
+        Physics.Raycast(eye, toPlayer,out hitinfo,Dist, ~(IgnoredLayers) | 1 << 11);
         if (hitinfo.collider != null) {
-            return hitinfo.collider.gameObject.layer == 11;
+            return hitinfo.collider.gameObject.tag == "Player";
         }
         return false;
     }
