@@ -161,7 +161,7 @@ public class GrabberBehavior : MonoBehaviour
 	private bool IsObscured()
 	{
 		RaycastHit hit;
-		Vector3 between = (currentlyGrabbed.transform.position - grabberForwardTransform.position);
+		Vector3 between = (currentlyGrabbed.GrabbedPoint - grabberForwardTransform.position);
 
 		if (Physics.Raycast (grabberForwardTransform.position, between.normalized, out hit, between.magnitude, raycastIgnore.value)) 
 		{
