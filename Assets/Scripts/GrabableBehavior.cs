@@ -13,6 +13,7 @@ public class GrabableBehavior : MonoBehaviour
 	private float requiredDistance;
 
 	public float RequiredDistance { get{ return requiredDistance; } }
+	public Vector3 GrabbedPoint { get{ return transform.TransformPoint(anchor); }}
 
 	private HingeJoint grabableHingeJoint;
 	private Rigidbody grabableRigidbody;

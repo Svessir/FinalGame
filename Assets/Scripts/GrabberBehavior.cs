@@ -22,7 +22,7 @@ public class GrabberBehavior : MonoBehaviour
 	private float distanceGromGrabber = 1f;
 
 	[SerializeField]
-	private float pullSpeed = 1f;
+	private float shootSpeed = 1f;
 
 	[SerializeField]
 	private LineRenderer lineRenderer;
@@ -34,6 +34,7 @@ public class GrabberBehavior : MonoBehaviour
 
 	private GrabableBehavior currentlyGrabbed;
 	private bool isGrabKeyPressed = false;
+	private bool isGrabbing = false;
 	private Quaternion originalRotation;
 
 	void Awake() 
@@ -53,33 +54,87 @@ public class GrabberBehavior : MonoBehaviour
 			WhileEmptyUpdate();
 	}
 
-	void FixedUpdate()
-	{
-	}
-
 	void WhileGrabbedUpdate()
 	{
 		if (isGrabKeyPressed || IsObscured ()) {
 			Drop ();
 		} else {
 			lineRenderer.SetPosition (0, grabberForwardTransform.position);
-			lineRenderer.SetPosition (1, currentlyGrabbed.transform.position);
+			lineRenderer.SetPosition (1, currentlyGrabbed.GrabbedPoint);
 		}
 	}
 
 	void WhileEmptyUpdate()
 	{
-		if (isGrabKeyPressed) 
+		if (isGrabKeyPressed && !isGrabbing) 
 		{
-			currentlyGrabbed = GetGrabable ();
-
-			if (currentlyGrabbed != null) 
-			{
-				lineRenderer.enabled = true;
-				currentlyGrabbed.Grab ();
-				StartCoroutine (PullGrabableTowardsMe ());
-			}
+			StartCoroutine (ExtendGrabber ());
 		}
+	}
+
+	private IEnumerator ExtendGrabber()
+	{
+		isGrabbing = true;
+
+		float distance = 0;
+
+		RaycastHit hit;
+
+		lineRenderer.enabled = true;
+
+		Vector3 between = Vector3.zero;
+
+		while (distance < tractorBeamLength) 
+		{
+			distance += shootSpeed * Time.deltaTime;
+
+			between = grabberForwardTransform.forward * distance;
+
+			lineRenderer.SetPosition (0, grabberForwardTransform.position);
+			lineRenderer.SetPosition (1, grabberForwardTransform.position + between);
+
+			if (Physics.Raycast (grabberForwardTransform.position, grabberForwardTransform.forward, out hit, distance, raycastIgnore.value)) 
+			{
+				currentlyGrabbed = hit.collider.gameObject.GetComponent<GrabableBehavior> ();
+
+				if (currentlyGrabbed != null) {
+					currentlyGrabbed.SetWorldSpaceAnchor (hit.point);
+					currentlyGrabbed.SetHinges (grabbedHingeSettings, grabberRigidbody);
+					currentlyGrabbed.Grab ();
+				}
+				break;
+			}
+
+			yield return new WaitForEndOfFrame ();
+		}
+
+		if (currentlyGrabbed == null) 
+		{
+			yield return StartCoroutine (Retract(between));
+		}
+
+		isGrabbing = false;
+	}
+
+	private IEnumerator Retract(Vector3 between)
+	{
+		isGrabbing = true;
+		lineRenderer.enabled = true;
+		float distance = between.magnitude;
+
+		while (distance > 0) 
+		{
+			distance -= shootSpeed * Time.deltaTime;
+
+			Vector3 between2 = between.normalized * distance;
+
+			lineRenderer.SetPosition (0, grabberForwardTransform.position);
+			lineRenderer.SetPosition (1, grabberForwardTransform.position + between2);
+
+			yield return new WaitForEndOfFrame ();
+		}
+		isGrabbing = false;
+		lineRenderer.enabled = false;
 	}
 
 	private GrabableBehavior GetGrabable()
@@ -97,25 +152,16 @@ public class GrabberBehavior : MonoBehaviour
 		return grabbed;
 	}
 
-	private IEnumerator PullGrabableTowardsMe()
+	private void Grab()
 	{
-		float distance = currentlyGrabbed.RequiredDistance + distanceGromGrabber;
-		currentlyGrabbed.UseGravity (false);
-		Vector3 between = (transform.position - currentlyGrabbed.transform.position);
-		Vector3 test = new Vector3 (between.x, between.y);
-
-		if (currentlyGrabbed != null) {
-			currentlyGrabbed.SetHinges (grabbedHingeSettings, grabberRigidbody);
-			currentlyGrabbed.UseGravity (true);
-		}
-
-		yield return null;
+		currentlyGrabbed.SetHinges (grabbedHingeSettings, grabberRigidbody);
+		currentlyGrabbed.UseGravity (true);
 	}
 
 	private bool IsObscured()
 	{
 		RaycastHit hit;
-		Vector3 between = (currentlyGrabbed.transform.position - transform.position);
+		Vector3 between = (currentlyGrabbed.transform.position - grabberForwardTransform.position);
 
 		if (Physics.Raycast (grabberForwardTransform.position, between.normalized, out hit, between.magnitude, raycastIgnore.value)) 
 		{
@@ -127,8 +173,8 @@ public class GrabberBehavior : MonoBehaviour
 
 	private void Drop() 
 	{
+		StartCoroutine (Retract((currentlyGrabbed.transform.position - grabberForwardTransform.position)));
 		currentlyGrabbed.UseGravity (true);
-		lineRenderer.enabled = false;
 		currentlyGrabbed.Drop ();
 		currentlyGrabbed = null;
 		grabberForwardTransform.rotation = originalRotation;
