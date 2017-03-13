@@ -81,18 +81,17 @@ public class ShaderControl : MonoBehaviour {
 	}
 
 
-	void Update() {
-		if (!active) {
+	void Update()
+    {
+        timer -= Time.deltaTime;
+        if (!active) {
 			if (animated || (Input.GetKeyDown(KeyCode.Space) && timer <= 0)) {
                 timer = coolDown;
 				active = true;
 				setMaterialCenter ();
 				sonarSound.Play();
-			} else {
-				return;
 			}
         }
-        timer -= Time.deltaTime;
 	}
 
 
