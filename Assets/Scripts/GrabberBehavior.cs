@@ -27,6 +27,9 @@ public class GrabberBehavior : MonoBehaviour
 	[SerializeField]
 	private LineRenderer lineRenderer;
 
+	[SerializeField]
+	private LayerMask raycastIgnore;
+
 	private Rigidbody grabberRigidbody;
 
 	private GrabableBehavior currentlyGrabbed;
@@ -35,6 +38,7 @@ public class GrabberBehavior : MonoBehaviour
 
 	void Awake() 
 	{
+		raycastIgnore.value = ~raycastIgnore.value;
 		grabberRigidbody = GetComponent<Rigidbody> ();
 		originalRotation = grabberForwardTransform.rotation;
 		lineRenderer.enabled = false;
@@ -99,25 +103,6 @@ public class GrabberBehavior : MonoBehaviour
 		currentlyGrabbed.UseGravity (false);
 		Vector3 between = (transform.position - currentlyGrabbed.transform.position);
 		Vector3 test = new Vector3 (between.x, between.y);
-		while (test.magnitude > distance) 
-		{
-			Debug.Log (test.magnitude);
-			Vector3 pos = currentlyGrabbed.transform.position;
-			//currentlyGrabbed.transform.position = new Vector3 (transform.position.x, pos.y, pos.z);
-			Vector3 pullVector = grabberForwardTransform.forward;
-			Vector3 betweenNormalized = between.normalized;
-			currentlyGrabbed.transform.position -= pullVector * pullSpeed * Time.deltaTime;
-			yield return new WaitForEndOfFrame ();
-
-			if (currentlyGrabbed == null) {
-				yield return null;
-				break;
-			}
-			else {
-				between = (transform.position - currentlyGrabbed.transform.position);
-				test = new Vector3 (between.x, between.y);
-			}
-		}
 
 		if (currentlyGrabbed != null) {
 			currentlyGrabbed.SetHinges (grabbedHingeSettings, grabberRigidbody);
@@ -132,7 +117,7 @@ public class GrabberBehavior : MonoBehaviour
 		RaycastHit hit;
 		Vector3 between = (currentlyGrabbed.transform.position - transform.position);
 
-		if (Physics.Raycast (grabberForwardTransform.position, between.normalized, out hit, between.magnitude)) 
+		if (Physics.Raycast (grabberForwardTransform.position, between.normalized, out hit, between.magnitude, raycastIgnore.value)) 
 		{
 			return hit.collider.gameObject != currentlyGrabbed.gameObject;
 		}
