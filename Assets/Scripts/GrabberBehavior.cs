@@ -103,7 +103,7 @@ public class GrabberBehavior : MonoBehaviour
 		{
 			Debug.Log (test.magnitude);
 			Vector3 pos = currentlyGrabbed.transform.position;
-			currentlyGrabbed.transform.position = new Vector3 (transform.position.x, pos.y, pos.z);
+			//currentlyGrabbed.transform.position = new Vector3 (transform.position.x, pos.y, pos.z);
 			Vector3 pullVector = grabberForwardTransform.forward;
 			Vector3 betweenNormalized = between.normalized;
 			currentlyGrabbed.transform.position -= pullVector * pullSpeed * Time.deltaTime;
