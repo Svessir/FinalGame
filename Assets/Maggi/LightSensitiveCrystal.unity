@@ -187,14 +187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   veins: []
-  lights:
-  - {fileID: 144681645}
+  crystals:
+  - {fileID: 1344813210}
   minBrightness: 0
   maxBrightness: 10
   intensityGrowthSpeed: 5
   intensityRegressionSpeed: 5
   timeUntilRegression: 0
   emissionGrowthFactor: 0
+  RadiusGrowthFactor: 1
 --- !u!1 &1344813208
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +310,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.33
   m_Center: {x: -0.02, y: 0.26, z: 0.05}
 --- !u!1001 &1548103478
 Prefab:

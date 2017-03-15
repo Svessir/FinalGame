@@ -6,7 +6,7 @@ public class CrystalScript : MonoBehaviour{
 
     public List<GameObject> veins;
 
-    public List<Light> lights;
+    public List<SingleCrystal> crystals;
 
     public float minBrightness;
     public float maxBrightness;
@@ -19,6 +19,9 @@ public class CrystalScript : MonoBehaviour{
 
     //% of how much emission changes relative to lightIntensity
     public float emissionGrowthFactor;
+
+    public float RadiusGrowthFactor;
+    private float currentRadius = 0;
 
     private List<Material> crystalMats;
 
@@ -50,11 +53,10 @@ public class CrystalScript : MonoBehaviour{
             }
             veins.Clear();
         }
-        var children = this.transform.GetComponentsInChildren(typeof(SingleCrystal));
-        foreach(var child in children)
+        
+        foreach(var c in crystals)
         {
-            SingleCrystal s = child.gameObject.GetComponent(typeof(SingleCrystal)) as SingleCrystal;
-            s.parent = this;
+            c.parent = this;
         }
     }
 
@@ -83,6 +85,7 @@ public class CrystalScript : MonoBehaviour{
         {
             Uncharge();
         }
+
     }
 
     //light source is charging this crystal
@@ -99,9 +102,10 @@ public class CrystalScript : MonoBehaviour{
                 mat.SetFloat(emissiveName, currentBrightness * emissionGrowthFactor);
             }
 
-            foreach (var light in lights)
+            foreach (var c in crystals)
             {
-                light.intensity = currentBrightness;
+                c.lightCollider.radius += RadiusGrowthFactor * Time.deltaTime;
+                c.light.intensity = currentBrightness;
             }
         }
         lastChargeTime = Time.time;
@@ -123,10 +127,10 @@ public class CrystalScript : MonoBehaviour{
             mat.SetFloat(emissiveName, currentBrightness  * emissionGrowthFactor);
         }
 
-        foreach (var light in lights)
+        foreach (var c in crystals)
         {
-            
-            light.intensity = currentBrightness;
+            c.lightCollider.radius -= RadiusGrowthFactor * Time.deltaTime;
+            c.light.intensity = currentBrightness;
         }
     }
 }
