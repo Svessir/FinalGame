@@ -17,7 +17,7 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
     private int RaycastIgnores;
     private float Timer = 0;
     private bool aggressive = true;
-    private List<ILightSource> lights;
+    private List<ILightSource> lights = new List<ILightSource>();
     private Vector3 eye;
     private Transform eyeTransform;
     private GameObject player;
