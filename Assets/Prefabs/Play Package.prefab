@@ -1519,7 +1519,7 @@ MonoBehaviour:
     minLimit: -50
     maxLimit: 50
   grabKey: 101
-  tractorBeamLength: 20
+  tractorBeamLength: 10
   distanceGromGrabber: 8
   shootSpeed: 20
   lineRenderer: {fileID: 120086877630671480}
@@ -1645,7 +1645,7 @@ LineRenderer:
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 0.25
+        value: 0.25925925
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1655,10 +1655,10 @@ LineRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 989855743
+        rgba: 4294967295
       key1:
         serializedVersion: 2
-        rgba: 4286513122
+        rgba: 4294967295
       key2:
         serializedVersion: 2
         rgba: 0

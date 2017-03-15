@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void FlashlightToggleAction(bool isOn);
+
 public class PointToLight : MonoBehaviour {
 
 	public GameObject flashLight;
 	public bool animated = false;
 	//public GameObject MousePointer;
 	private float lightDepth;
+
+	public static event FlashlightToggleAction FlashlightToggleEvent;
 
 	void Update () {
 		
@@ -17,6 +21,9 @@ public class PointToLight : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.F)) {
 			flashLight.SetActive (!flashLight.activeSelf);
+
+			if (FlashlightToggleEvent != null)
+				FlashlightToggleEvent (flashLight.activeSelf);
 		}
 
 		if (!flashLight.activeSelf) {
