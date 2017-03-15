@@ -14,19 +14,22 @@ public class WallWormAI : MonoBehaviour {
     public float RecoveryTime = 0.5f;
     public GameObject restingPos;
 
+    private int RaycastIgnores;
     private float Timer = 0;
     private bool aggressive = true;
     private Vector3 eye;
     private Transform eyeTransform;
+    private GameObject player;
     private GameObject target;
     private Rigidbody rb;
     private bool inAir = false;
 	// Use this for initialization
 	void Start ()
     {
+        RaycastIgnores = ~((1<<8)|(1<<13));
         Timer = AggressionTime;
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         Transform[] children = GetComponentsInChildren<Transform>();
         foreach (Transform t in children) {
             if (t.name == "Eye") {
@@ -40,12 +43,12 @@ public class WallWormAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         eye = eyeTransform.position;
-        if (target == null) {
+        if (player == null) {
             Debug.Log("no player in scene");
             return;
         }
 
-        if (PlayerInSight())
+        if (FindTarget())
         {
             Timer -= Time.deltaTime;
             if (Timer < 0)
@@ -86,15 +89,20 @@ public class WallWormAI : MonoBehaviour {
         }
 	}
 
-    bool ValidTarget(Vector3 target) {
-        return (!Physics.Linecast(transform.position, target, ~(1 << 8))) && (transform.position - target).magnitude > 1;
+    bool FindTarget() {
+        bool targetFound = false;
+        if (PlayerInSight()) {
+            target = player;
+            targetFound = true;
+        }
+        return targetFound;
     }
 
     bool PlayerInSight()
     {
-        Vector3 toPlayer = target.transform.position - eye;
+        Vector3 toPlayer = player.transform.position - eye;
         RaycastHit hitinfo;
-        Physics.Raycast(eye, toPlayer,out hitinfo,AggressionDist, ~(1 << 8));
+        Physics.Raycast(eye, toPlayer,out hitinfo,AggressionDist, RaycastIgnores);
         if (hitinfo.collider != null) {
             return hitinfo.collider.gameObject.transform.tag == "Player";
         }
