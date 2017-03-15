@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour {
     public float drag = 0.3f;
     public float reorientationFactor = 10;
 
-    private bool inAir = false;
+    public bool inAir = false;
     private float gravity = 10f;
     private Rigidbody rb;
 	void Start () {

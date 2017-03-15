@@ -45,7 +45,7 @@ Material:
       second: 0.4743592
     - first:
         name: _Radius
-      second: 0
+      second: 300
     - first:
         name: _node_4351
       second: 1.9

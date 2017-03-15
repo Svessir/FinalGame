@@ -45,7 +45,7 @@ Material:
       second: 0.3
     - first:
         name: _Radius
-      second: 0
+      second: 200
     - first:
         name: _node_1594
       second: 1
@@ -58,7 +58,7 @@ Material:
       second: {r: -18.5, g: 20.5, b: 81.3, a: 0}
     - first:
         name: _Origin
-      second: {r: 0, g: 0, b: 0, a: 0}
+      second: {r: 20, g: -50, b: 0, a: 0}
     - first:
         name: _node_1740
       second: {r: 0, g: 0.08627451, b: 0.03529412, a: 1}
