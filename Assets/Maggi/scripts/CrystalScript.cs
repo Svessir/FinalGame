@@ -32,6 +32,8 @@ public class CrystalScript : MonoBehaviour{
 
     private bool isCharging = false;
 
+    private float intensity = 0;
+
     //used later for the outward visibility of light to monsters
     //private float maxRadius;
     //private float minRadius;
@@ -54,6 +56,12 @@ public class CrystalScript : MonoBehaviour{
             SingleCrystal s = child.gameObject.GetComponent(typeof(SingleCrystal)) as SingleCrystal;
             s.parent = this;
         }
+    }
+
+    //maybe change this so that dark things that have low maxBrightness are not as bright as others
+    public float GetIntensity()
+    {
+        return (maxBrightness - minBrightness) / currentBrightness;
     }
 
     public void Charging()

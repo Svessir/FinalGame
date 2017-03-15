@@ -6,6 +6,10 @@ public class SingleCrystal : MonoBehaviour, IChargeable, ILightSource {
 
     public CrystalScript parent;
 
+    public Light light;
+
+    public SphereCollider lightCollider;
+
     public void Charging()
     {
         parent.Charging();
@@ -18,12 +22,12 @@ public class SingleCrystal : MonoBehaviour, IChargeable, ILightSource {
 
     public float GetIntensity()
     {
-        return 0;
+        return parent.GetIntensity();
     }
 
     public float GetRadius()
     {
-        return 0;
+        return lightCollider.radius / gameObject.transform.localScale.x;
     }
 
     public Transform GetTransform()
@@ -40,5 +44,16 @@ public class SingleCrystal : MonoBehaviour, IChargeable, ILightSource {
             monster.DetectingLightsource(this);
         }
        
+    }
+
+    //When the crystals Light is shining on something
+    private void OnTriggerExit(Collider other)
+    {
+        ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
+        if (monster != null)
+        {
+            monster.UndetectLightsource(this);
+        }
+
     }
 }
