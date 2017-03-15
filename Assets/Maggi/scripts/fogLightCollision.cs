@@ -5,12 +5,21 @@ using UnityEngine;
 public class fogLightCollision : MonoBehaviour {
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
         if(chargeable != null)
         {
-            chargeable.Charge();
+            chargeable.Charging();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
+        if(chargeable != null)
+        {
+            chargeable.UnCharging();
         }
     }
 }
