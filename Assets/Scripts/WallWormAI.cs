@@ -43,6 +43,7 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(lights.Count);
         eye = eyeTransform.position;
         if (player == null) {
             Debug.Log("no player in scene");
