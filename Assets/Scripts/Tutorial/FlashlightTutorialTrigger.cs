@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlashlightTutorialTrigger : TutorialTrigger {
-	
+
+	[SerializeField]
+	GameObject flashlightGameObject;
+
 	protected override void OnPlayerEnter ()
 	{
-		PointToLight.FlashlightToggleEvent += OnFlashlightToggle;
+		if (flashlightGameObject != null && flashlightGameObject.activeSelf)
+			Destroy (gameObject);
+		else
+			PointToLight.FlashlightToggleEvent += OnFlashlightToggle;
 	}
 
 	protected override void OnPlayerExit ()

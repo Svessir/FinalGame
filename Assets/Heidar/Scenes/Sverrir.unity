@@ -1764,11 +1764,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378590513}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!108 &400774692 stripped
-Light:
-  m_PrefabParentObject: {fileID: 108209684460879360, guid: 5a1bf96ddd322c746b56e417e244951f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1934262581}
 --- !u!1 &430335442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,11 +2169,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114349121335803444, guid: d86cb7ba266012b4da07f5494743167d,
+        type: 2}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 333999973}
     - target: {fileID: 114170201679821568, guid: d86cb7ba266012b4da07f5494743167d,
         type: 2}
       propertyPath: tutorialText
       value: 
       objectReference: {fileID: 333999973}
+    - target: {fileID: 114170201679821568, guid: d86cb7ba266012b4da07f5494743167d,
+        type: 2}
+      propertyPath: flashlightGameObject
+      value: 
+      objectReference: {fileID: 1311362314}
     - target: {fileID: 114908173476634206, guid: d86cb7ba266012b4da07f5494743167d,
         type: 2}
       propertyPath: tutorialText
@@ -2506,8 +2511,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603188321}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.6, y: 17.939999, z: -56.75}
+  m_LocalRotation: {x: -0.011685207, y: -0.024898617, z: 0.0002911289, w: -0.9996217}
+  m_LocalPosition: {x: -12.010687, y: 101.12741, z: -171.4006}
   m_LocalScale: {x: 0.5, y: 0.9528835, z: 0.5471164}
   m_Children: []
   m_Father: {fileID: 836231496}
@@ -4289,6 +4294,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1306688337}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1311362314 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1400548506441322, guid: c117d18cc34314587921d7fc20858830,
+    type: 2}
+  m_PrefabInternal: {fileID: 1756693365}
 --- !u!1 &1314833591
 GameObject:
   m_ObjectHideFlags: 0
@@ -6624,11 +6634,15 @@ Prefab:
         type: 2}
       propertyPath: lights.Array.data[0]
       value: 
-      objectReference: {fileID: 400774692}
+      objectReference: {fileID: 0}
     - target: {fileID: 108209684460879360, guid: 5a1bf96ddd322c746b56e417e244951f,
         type: 2}
       propertyPath: m_Intensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165763530304434, guid: 5a1bf96ddd322c746b56e417e244951f, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a1bf96ddd322c746b56e417e244951f, type: 2}

@@ -28,6 +28,14 @@ public abstract class TutorialTrigger : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag.Equals ("Player") && tutorialText.IsEmpty) 
+		{
+			tutorialText.SetText (instruction);
+		}
+	}
+
 	void OnDestroy()
 	{
 		tutorialText.RemoveText (instruction);
