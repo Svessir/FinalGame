@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+public delegate void GrabAction();
+
 [RequireComponent(typeof(Rigidbody))]
 public class GrabberBehavior : MonoBehaviour 
 {
@@ -37,6 +39,8 @@ public class GrabberBehavior : MonoBehaviour
 	private bool isGrabbing = false;
 	private Quaternion originalRotation;
 
+	public static event GrabAction GrabEvent;
+
 	void Awake() 
 	{
 		raycastIgnore.value = ~raycastIgnore.value;
@@ -68,6 +72,8 @@ public class GrabberBehavior : MonoBehaviour
 	{
 		if (isGrabKeyPressed && !isGrabbing) 
 		{
+			if (GrabEvent != null)
+				GrabEvent ();
 			StartCoroutine (ExtendGrabber ());
 		}
 	}
