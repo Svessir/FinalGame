@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallWormAI : MonoBehaviour {
+public class WallWormAI : MonoBehaviour, ILightTriggerable {
     public float maxSpeed = 3;
     public float acceleration = 5;
     public float drag = 0.5f;
@@ -17,6 +17,7 @@ public class WallWormAI : MonoBehaviour {
     private int RaycastIgnores;
     private float Timer = 0;
     private bool aggressive = true;
+    private List<ILightSource> lights;
     private Vector3 eye;
     private Transform eyeTransform;
     private GameObject player;
@@ -89,13 +90,36 @@ public class WallWormAI : MonoBehaviour {
         }
 	}
 
+    public void DetectingLightsource(ILightSource obj) {
+        lights.Add(obj);
+    }
+    public void UndetectLightsource(ILightSource obj)
+    {
+        lights.Remove(obj);
+    }
+
+
     bool FindTarget() {
         bool targetFound = false;
+        float BestVal = 0;
         if (PlayerInSight()) {
             target = player;
             targetFound = true;
         }
+        foreach (ILightSource light in lights) {
+            Vector3 dir = light.GetTransform().position - eye;
+            float val = GetValue(light);
+            if (val > BestVal) {
+                BestVal = val;
+                target = light.GetTransform().gameObject;
+                targetFound = true;
+            }
+        }
         return targetFound;
+    }
+
+    float GetValue(ILightSource light) {
+        return Vector3.Distance(eye, light.GetTransform().position) * light.GetIntensity() / light.GetRadius();
     }
 
     bool PlayerInSight()
