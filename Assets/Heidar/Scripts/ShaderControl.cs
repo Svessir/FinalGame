@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void SonarAction();
+
 public class ShaderControl : MonoBehaviour {
 	public float currentRadius = -5;
 	public float speed = 45;
@@ -17,6 +19,8 @@ public class ShaderControl : MonoBehaviour {
 	AudioSource sonarSound;
 
 	bool active;
+
+	public static event SonarAction SonarEvent;
 
 	// Use this for initialization
 	void Start () {
@@ -90,6 +94,9 @@ public class ShaderControl : MonoBehaviour {
 				active = true;
 				setMaterialCenter ();
 				sonarSound.Play();
+
+				if (SonarEvent != null)
+					SonarEvent ();
 			}
         }
 	}

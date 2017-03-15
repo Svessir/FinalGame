@@ -8,6 +8,8 @@ public class TutorialText : MonoBehaviour {
 	[SerializeField]
 	private Text tutorialText;
 
+	public bool IsEmpty {get { return string.IsNullOrEmpty (tutorialText.text); }}
+
 	void Start () 
 	{
 	}
