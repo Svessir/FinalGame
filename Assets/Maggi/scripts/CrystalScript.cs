@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrystalScript : MonoBehaviour, IChargeable {
+public class CrystalScript : MonoBehaviour{
 
     public List<GameObject> veins;
 
@@ -30,6 +30,10 @@ public class CrystalScript : MonoBehaviour, IChargeable {
 
     private float currentBrightness = 0;
 
+    private bool isCharging = false;
+
+    private float intensity = 0;
+
     //used later for the outward visibility of light to monsters
     //private float maxRadius;
     //private float minRadius;
@@ -46,11 +50,33 @@ public class CrystalScript : MonoBehaviour, IChargeable {
             }
             veins.Clear();
         }
+        var children = this.transform.GetComponentsInChildren(typeof(SingleCrystal));
+        foreach(var child in children)
+        {
+            SingleCrystal s = child.gameObject.GetComponent(typeof(SingleCrystal)) as SingleCrystal;
+            s.parent = this;
+        }
     }
 
-    void FixedUpdate()
+    //maybe change this so that dark things that have low maxBrightness are not as bright as others
+    public float GetIntensity()
     {
-        if (Input.GetKey("return"))
+        return (maxBrightness - minBrightness) / currentBrightness;
+    }
+
+    public void Charging()
+    {
+        isCharging = true;
+    }
+
+    public void UnCharging()
+    {
+        isCharging = false;
+    }
+
+    private void Update()
+    {
+        if (isCharging)
         {
             Charge();
         }else
@@ -102,13 +128,5 @@ public class CrystalScript : MonoBehaviour, IChargeable {
             
             light.intensity = currentBrightness;
         }
-    }
-
-
-
-    //When the crystals Light is shining on something
-    private void OnTriggerEnter(Collider other)
-    {
-
     }
 }

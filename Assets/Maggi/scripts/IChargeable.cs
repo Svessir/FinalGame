@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IChargeable {
 
-    void Charge();
-	
+    void Charging();
+    void UnCharging();	
 }
