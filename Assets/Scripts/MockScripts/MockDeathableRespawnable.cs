@@ -15,4 +15,9 @@ public class MockDeathableRespawnable : RespawnableBehavior, IDeathable {
 	{
 		transform.position = respawnLocation;
 	}
+
+	public void TakeDamage (float damage)
+	{
+		throw new System.NotImplementedException ();
+	}
 }

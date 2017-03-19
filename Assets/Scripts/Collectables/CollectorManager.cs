@@ -45,7 +45,7 @@ public class CollectorManager : MonoBehaviour {
 	public void OnTriggerEnter(Collider collider)
 	{
 		CollectableBehavior collectable = collider.GetComponent<CollectableBehavior> ();
-		Debug.Log (collectable.IsCollected);
+
 		if (collectable != null) 
 		{
 			if (collectables.Contains (collectable) && !collectable.IsCollected) 
