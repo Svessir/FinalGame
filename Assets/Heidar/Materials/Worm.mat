@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Worm
-  m_Shader: {fileID: 4800000, guid: 189ba5b4c286749ffa34d0546aec45da, type: 3}
+  m_Shader: {fileID: 4800000, guid: af71a68a9d6a140d8b23c106b46bf5c1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -25,4 +25,19 @@ Material:
     - first:
         name: _Brightness
       second: 0.443
-    m_Colors: []
+    - first:
+        name: _Radius
+      second: 0
+    m_Colors:
+    - first:
+        name: _HAHAH
+      second: {r: 0, g: 0, b: 1, a: 0}
+    - first:
+        name: _Origin
+      second: {r: 0, g: 0, b: 1, a: 0}
+    - first:
+        name: _Origun
+      second: {r: 20, g: -50, b: 0, a: 0}
+    - first:
+        name: _node_90
+      second: {r: 1, g: 0, b: 0, a: 1}

@@ -10,10 +10,19 @@ public class FlowStopper : MonoBehaviour {
 	public ParticleSystem particleFlow2;
 
 	void OnTriggerEnter(Collider other) {
+		print ("Trigger");
 		if (other.transform.tag == "BockerStone")
 		{
+			print ("Should be blocked");
+
 			particleFlow.Stop();
 			particleFlow2.Stop();
+			var part1 = particleFlow.main;
+			var part2 = particleFlow2.main;
+
+			part1.gravityModifier = -0.5f;
+			part2.gravityModifier = -0.5f;
+
 			submarine.inAir = false;
 			AirPocket.SetActive (false);
 		}
@@ -24,6 +33,11 @@ public class FlowStopper : MonoBehaviour {
 		{
 			particleFlow.Play();
 			particleFlow2.Play();
+			var part1 = particleFlow.main;
+			var part2 = particleFlow2.main;
+			part1.gravityModifier = 1;
+			part2.gravityModifier = 1;
+
 			//submarine.inAir = false;
 			AirPocket.SetActive (true);
 		}
