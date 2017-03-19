@@ -107,7 +107,6 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
             targetFound = true;
         }
         foreach (ILightSource light in lights) {
-            Vector3 dir = light.GetTransform().position - eye;
             float val = GetValue(light);
             if (val > BestVal) {
                 BestVal = val;
