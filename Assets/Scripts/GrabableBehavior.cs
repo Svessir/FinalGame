@@ -31,8 +31,9 @@ public class GrabableBehavior : MonoBehaviour
 
 	public void Grab() 
 	{
-		grabableRigidbody.useGravity = false;
 		grabableRigidbody.mass = grabbedMass;
+        grabableRigidbody.angularDrag = 3;
+        grabableRigidbody.drag = 0.5f;
 	}
 
 	public void Drop()
@@ -44,7 +45,6 @@ public class GrabableBehavior : MonoBehaviour
 
 	public void SetHinges(GrabbedHingeSettings hingeSettings, Rigidbody grabberRigidbody) 
 	{
-		grabableRigidbody.useGravity = false;
 		grabableHingeJoint = gameObject.AddComponent<HingeJoint> ();
 		grabableHingeJoint.anchor = anchor;
 		grabableHingeJoint.axis = hingeSettings.axis;
@@ -56,10 +56,6 @@ public class GrabableBehavior : MonoBehaviour
 		grabableHingeJoint.connectedBody = grabberRigidbody;
 	}
 
-	public void UseGravity(bool useGravity) 
-	{
-		grabableRigidbody.useGravity = useGravity;
-	}
 
 	public void SetWorldSpaceAnchor(Vector3 anchor)
 	{
