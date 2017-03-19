@@ -27,7 +27,7 @@ public class PointToLight : MonoBehaviour {
             }
             else
             {
-                flashLight.transform.position = transform.parent.position;
+                flashLight.transform.position = flashLight.transform.parent.position;
 
             }
             on = !on;
