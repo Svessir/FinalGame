@@ -95,6 +95,7 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
     }
     public void UndetectLightsource(ILightSource obj)
     {
+        //Debug.Log("undetected");
         lights.Remove(obj);
     }
 

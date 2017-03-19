@@ -70,19 +70,20 @@ public class SingleCrystal : MonoBehaviour, IChargeable, ILightSource
         ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
         if (monster != null)
         {
+           // Debug.Log(visibleStuff.Count);
             RaycastHit hitInfo = new RaycastHit();
             LayerMask mask = ~((1 << 13) | (1 << 8));
             Vector3 lightToMon = other.gameObject.transform.position - transform.position;
             Ray ray = new Ray(transform.position, lightToMon);
 
-            bool hit = Physics.Raycast(ray, out hitInfo, GetRadius(), mask);
+            bool hit = Physics.Raycast(ray, out hitInfo, lightToMon.magnitude, mask);
 
             if (hit)
             {
                 if (visibleStuff.Contains(other.gameObject))
                 {
                     monster.UndetectLightsource(this);
-                    visibleStuff.Remove(this.gameObject);
+                    visibleStuff.Remove(other.gameObject);
                     return;
                 }
             }
