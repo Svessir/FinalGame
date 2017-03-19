@@ -249,6 +249,8 @@ GameObject:
   - component: {fileID: 54843447651501100}
   - component: {fileID: 114409124363387404}
   - component: {fileID: 114044631463139800}
+  - component: {fileID: 114560163386824014}
+  - component: {fileID: 114899883885010418}
   m_Layer: 11
   m_Name: SubMarine
   m_TagString: Player
@@ -299,6 +301,8 @@ GameObject:
   - component: {fileID: 135564117579968418}
   - component: {fileID: 135183210232647740}
   - component: {fileID: 114981386966129320}
+  - component: {fileID: 114114244284587420}
+  - component: {fileID: 114215017996600010}
   m_Layer: 11
   m_Name: Collider
   m_TagString: Player
@@ -483,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069029501929790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -81.6, z: 0}
+  m_LocalPosition: {x: -0.1, y: -10.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4014469579146434}
@@ -639,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 1354134391746916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.6599982, y: 3, z: 9.199992}
+  m_LocalScale: {x: 22.33, y: 20, z: 30}
   m_Children: []
   m_Father: {fileID: 4474335098830304}
   m_RootOrder: 1
@@ -998,7 +1002,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.28, y: -1.663002, z: 0}
+  m_ConnectedAnchor: {x: 0.28, y: -1.6630001, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1349,6 +1353,30 @@ MonoBehaviour:
   target: {fileID: 4019605018498034}
   offset: {x: 0, y: 0, z: -30}
   smoothTime: 0.3
+--- !u!114 &114114244284587420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860920564866046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4ea3455bb34a7458860056e084db90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointManager: {fileID: 114215017996600010}
+--- !u!114 &114215017996600010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860920564866046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4bb4c5d382ff540a4e1b10a5aaa06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckpoint: {fileID: 0}
 --- !u!114 &114315157371049512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1494,6 +1522,17 @@ MonoBehaviour:
   adaptionSpeed: 1.5
   tonemapper: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
   validRenderTextureFormat: 1
+--- !u!114 &114560163386824014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595610801127498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cefb796b9573bd4c81e116bddcfaee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114731045180796394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1519,7 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabberForwardTransform: {fileID: 4014469579146434}
   grabbedHingeSettings:
-    axis: {x: 0, y: 0, z: 0}
+    axis: {x: 0, y: 0, z: 1}
     minLimit: -50
     maxLimit: 50
   grabKey: 101
@@ -1558,6 +1597,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d09e1d8225d14439b47f80d4f7c5616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114899883885010418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595610801127498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4661484e13332cf4aa582d05f60f0318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114907792662131638
@@ -1802,7 +1852,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1416168946
+  randomSeed: -1037174400
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4451,7 +4501,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1172421129
+  randomSeed: -198796224
   InitialModule:
     serializedVersion: 3
     enabled: 1

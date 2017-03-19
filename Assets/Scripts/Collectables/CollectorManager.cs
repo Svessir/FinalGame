@@ -48,7 +48,7 @@ public class CollectorManager : MonoBehaviour {
 
 		if (collectable != null) 
 		{
-			if (collectables.Contains (collectable) && !collectable.IsCollected) 
+            if (collectables.Contains (collectable) && !collectable.IsCollected) 
 			{
 				collectable.Collect ();
 

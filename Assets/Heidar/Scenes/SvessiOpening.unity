@@ -2355,7 +2355,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603188321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.05, y: 40.739998, z: -56.75}
+  m_LocalPosition: {x: -6.05, y: 40.72, z: -46.75}
   m_LocalScale: {x: 0.5, y: 0.9528835, z: 0.5471164}
   m_Children: []
   m_Father: {fileID: 836231496}
@@ -3877,28 +3877,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1595610801127498, guid: c117d18cc34314587921d7fc20858830,
     type: 2}
   m_PrefabInternal: {fileID: 1939368701}
---- !u!114 &1059618537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1059618529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cefb796b9573bd4c81e116bddcfaee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1059618538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1059618529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4661484e13332cf4aa582d05f60f0318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1080708186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6799,38 +6777,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114215017996600010, guid: c117d18cc34314587921d7fc20858830,
+        type: 2}
+      propertyPath: currentCheckpoint
+      value: 
+      objectReference: {fileID: 432201225}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c117d18cc34314587921d7fc20858830, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1939368702 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1860920564866046, guid: c117d18cc34314587921d7fc20858830,
-    type: 2}
-  m_PrefabInternal: {fileID: 1939368701}
---- !u!114 &1939368707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1939368702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4ea3455bb34a7458860056e084db90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointManager: {fileID: 1939368708}
---- !u!114 &1939368708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1939368702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b4bb4c5d382ff540a4e1b10a5aaa06d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCheckpoint: {fileID: 432201225}
 --- !u!1 &1956772024
 GameObject:
   m_ObjectHideFlags: 0

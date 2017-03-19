@@ -161,7 +161,7 @@ public class GrabberBehavior : MonoBehaviour
 	private void Grab()
 	{
 		currentlyGrabbed.SetHinges (grabbedHingeSettings, grabberRigidbody);
-		currentlyGrabbed.UseGravity (true);
+		//currentlyGrabbed.UseGravity (true);
 	}
 
 	private bool IsObscured()
@@ -180,7 +180,7 @@ public class GrabberBehavior : MonoBehaviour
 	private void Drop() 
 	{
 		StartCoroutine (Retract((currentlyGrabbed.transform.position - grabberForwardTransform.position)));
-		currentlyGrabbed.UseGravity (true);
+//		currentlyGrabbed.UseGravity (true);
 		currentlyGrabbed.Drop ();
 		currentlyGrabbed = null;
 		grabberForwardTransform.rotation = originalRotation;
