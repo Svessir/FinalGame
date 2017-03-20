@@ -90,9 +90,17 @@ public class fogLightCollision : MonoBehaviour, ILightSource
             Vector3 lightToMon = other.gameObject.transform.position - transform.position;
             Ray ray = new Ray(transform.position, lightToMon);
 
-//            float rayLength = Mathf.Min(lightToMon.magnitude, GetRadius());
+            //            float rayLength = Mathf.Min(lightToMon.magnitude, GetRadius());
 
-            bool hit = Physics.Raycast(ray, out hitInfo, lightToMon.magnitude, mask);
+            float length = 0;
+
+            if(other.gameObject.layer == 13)
+            {
+                SingleCrystal cry = other.gameObject.GetComponent(typeof(SingleCrystal)) as SingleCrystal;
+                length -= cry.GetPhysicalRadius();
+            }
+
+            bool hit = Physics.Raycast(ray, out hitInfo, length + lightToMon.magnitude, mask);
 
             if (hit)
             {

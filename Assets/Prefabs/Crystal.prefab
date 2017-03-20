@@ -190,6 +190,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   light: {fileID: 108787863301630046}
   lightCollider: {fileID: 135269266137961036}
+  physicalCollider: {fileID: 135972310541753132}
 --- !u!114 &114899594155090808
 MonoBehaviour:
   m_ObjectHideFlags: 1

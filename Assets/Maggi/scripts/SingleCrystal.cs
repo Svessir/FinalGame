@@ -12,6 +12,8 @@ public class SingleCrystal : MonoBehaviour, ILightTriggerable, ILightSource
 
     public SphereCollider lightCollider;
 
+    public SphereCollider physicalCollider;
+
     private List<GameObject> visibleStuff;
 
     public void Start()
@@ -47,6 +49,11 @@ public class SingleCrystal : MonoBehaviour, ILightTriggerable, ILightSource
     public float GetRadius()
     {
         return lightCollider.radius * gameObject.transform.localScale.x;
+    }
+
+    public float GetPhysicalRadius()
+    {
+        return physicalCollider.radius * gameObject.transform.localScale.x;
     }
 
     public Transform GetTransform()
