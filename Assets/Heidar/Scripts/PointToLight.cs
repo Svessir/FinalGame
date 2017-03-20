@@ -14,6 +14,8 @@ public class PointToLight : MonoBehaviour {
 
 	public static event FlashlightToggleAction FlashlightToggleEvent;
 
+	public bool IsOn { get{ return on; } }
+
 	void Update () {
 		
 		if (animated) {
@@ -31,6 +33,9 @@ public class PointToLight : MonoBehaviour {
 
             }
             on = !on;
+
+			if (FlashlightToggleEvent != null)
+				FlashlightToggleEvent (on);
 		}
 
 		if (!flashLight.activeSelf) {

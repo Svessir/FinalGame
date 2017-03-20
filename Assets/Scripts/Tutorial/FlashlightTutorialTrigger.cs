@@ -5,11 +5,11 @@ using UnityEngine;
 public class FlashlightTutorialTrigger : TutorialTrigger {
 
 	[SerializeField]
-	GameObject flashlightGameObject;
+	PointToLight flashlight;
 
 	protected override void OnPlayerEnter ()
 	{
-		if (flashlightGameObject != null && flashlightGameObject.activeSelf)
+		if (flashlight != null && flashlight.IsOn)
 			Destroy (gameObject);
 		else
 			PointToLight.FlashlightToggleEvent += OnFlashlightToggle;
