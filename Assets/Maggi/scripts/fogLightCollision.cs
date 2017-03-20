@@ -6,11 +6,12 @@ using UnityEngine;
 public class fogLightCollision : MonoBehaviour, ILightSource
 {
     public float detectionRange;
-
     private List<GameObject> visibleStuff;
+   // public LayerMask mask;
 
     public void Start()
     {
+        detectionRange = this.transform.localScale.z;
         visibleStuff = new List<GameObject>();
     }
 
@@ -64,12 +65,34 @@ public class fogLightCollision : MonoBehaviour, ILightSource
         ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
         if (monster != null)
         {
+            //check layer
+
+            LayerMask mask;
+
+            int layer = other.gameObject.layer;
+
+            //if enemy
+            //if (layer == 8)
+            //{
+                mask = ~((1 << 13) | (1 << 8) | (1 << 11));
+           // }
+     //       else
+         //   {//light layer is number 13
+
+       //     }
+
+            ///notes:
+            ///use ilighttriggerable for both enemies and crystals
+            ///enemies and crystals need different masks
+
             RaycastHit hitInfo = new RaycastHit();
-            LayerMask mask = ~((1 << 13) | (1 << 8) | (1<<11));
+
             Vector3 lightToMon = other.gameObject.transform.position - transform.position;
             Ray ray = new Ray(transform.position, lightToMon);
 
-            bool hit = Physics.Raycast(ray, out hitInfo, GetRadius(), mask);
+//            float rayLength = Mathf.Min(lightToMon.magnitude, GetRadius());
+
+            bool hit = Physics.Raycast(ray, out hitInfo, lightToMon.magnitude, mask);
 
             if (hit)
             {
@@ -77,8 +100,8 @@ public class fogLightCollision : MonoBehaviour, ILightSource
                 {
                     monster.UndetectLightsource(this);
                     visibleStuff.Remove(this.gameObject);
-                    return;
                 }
+                return;
             }
 
             if (visibleStuff.Contains(other.gameObject))

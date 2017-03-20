@@ -21,7 +21,7 @@ public class CrystalScript : MonoBehaviour{
     public float emissionGrowthFactor;
 
     public float RadiusGrowthFactor;
-    private float currentRadius = 0;
+    //private float currentRadius = 0;
 
     private List<Material> crystalMats;
 
