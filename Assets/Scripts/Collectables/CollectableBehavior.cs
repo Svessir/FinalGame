@@ -8,6 +8,9 @@ public class CollectableBehavior : MonoBehaviour
 	[SerializeField]
 	float movementSpeed = 3f;
 
+	[SerializeField]
+	float travelTime = 0.5f;
+
 	private bool isCollected = false;
 	public bool IsCollected {get{ return isCollected; }}
 
@@ -22,7 +25,7 @@ public class CollectableBehavior : MonoBehaviour
 	{
 		isCollected = true;
 		StartCoroutine (CollectedMovement());
-		//GetComponent<Collider> ().enabled = false;
+		GetComponent<Collider> ().enabled = false;
 	}
 
 	IEnumerator CollectedMovement() 
@@ -33,7 +36,7 @@ public class CollectableBehavior : MonoBehaviour
 		Vector3 currentPosition = start;
 
 		float startTime = Time.time;
-		float endTime = startTime + ((end - start).magnitude / movementSpeed);
+		float endTime = startTime + travelTime;
 		while (!currentPosition.Equals (end)) 
 		{
 			currentPosition = Vector3.Lerp (start, end, (Time.time - startTime)/(endTime - startTime));
