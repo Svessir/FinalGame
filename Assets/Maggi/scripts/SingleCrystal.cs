@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleCrystal : MonoBehaviour, IChargeable, ILightSource
+public class SingleCrystal : MonoBehaviour, ILightTriggerable, ILightSource
 {
 
     public CrystalScript parent;
@@ -18,12 +19,22 @@ public class SingleCrystal : MonoBehaviour, IChargeable, ILightSource
         visibleStuff = new List<GameObject>();
     }
 
-    public void Charging()
+    //public void Charging()
+    //{
+    //    parent.Charging();
+    //}
+
+    //public void UnCharging()
+    //{
+    //    parent.UnCharging();
+    //}
+
+    public void DetectingLightsource(ILightSource obj)
     {
         parent.Charging();
     }
 
-    public void UnCharging()
+    public void UndetectLightsource(ILightSource obj)
     {
         parent.UnCharging();
     }

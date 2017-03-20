@@ -29,24 +29,24 @@ public class fogLightCollision : MonoBehaviour, ILightSource
         return this.transform;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
-        if (chargeable != null)
-        {
-            chargeable.Charging();
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
+    //    if (chargeable != null)
+    //    {
+    //        chargeable.Charging();
+    //    }
 
 
-    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {
-        IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
-        if (chargeable != null)
-        {
-            chargeable.UnCharging();
-        }
+        //IChargeable chargeable = other.gameObject.GetComponent(typeof(IChargeable)) as IChargeable;
+        //if (chargeable != null)
+        //{
+        //    chargeable.UnCharging();
+        //}
 
         ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
         if (monster != null)
