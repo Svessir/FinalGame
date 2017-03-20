@@ -18,11 +18,15 @@ public class GrabableBehavior : MonoBehaviour
 	private HingeJoint grabableHingeJoint;
 	private Rigidbody grabableRigidbody;
 	private float originalMass;
+	private float originalDrag;
+	private float originalAngularDrag;
 	private Vector3 anchor;
 
 	void Awake () {
 		grabableRigidbody = GetComponent<Rigidbody> ();
 		originalMass = grabableRigidbody.mass;
+		originalDrag = grabableRigidbody.drag;
+		originalAngularDrag = grabableRigidbody.angularDrag;
 	}
 
 	void Update () {
@@ -31,7 +35,6 @@ public class GrabableBehavior : MonoBehaviour
 
 	public void Grab() 
 	{
-		grabableRigidbody.useGravity = false;
 		grabableRigidbody.mass = grabbedMass;
 	}
 
@@ -40,11 +43,12 @@ public class GrabableBehavior : MonoBehaviour
 		grabableRigidbody.useGravity = true;
 		Destroy (grabableHingeJoint);
 		grabableHingeJoint = null;
+		grabableRigidbody.angularDrag = originalAngularDrag;
+		grabableRigidbody.drag = originalDrag;
 	}
 
 	public void SetHinges(GrabbedHingeSettings hingeSettings, Rigidbody grabberRigidbody) 
 	{
-		grabableRigidbody.useGravity = false;
 		grabableHingeJoint = gameObject.AddComponent<HingeJoint> ();
 		grabableHingeJoint.anchor = anchor;
 		grabableHingeJoint.axis = hingeSettings.axis;
@@ -54,12 +58,10 @@ public class GrabableBehavior : MonoBehaviour
 		limits.max = hingeSettings.maxLimit;
 		grabableHingeJoint.limits = limits;
 		grabableHingeJoint.connectedBody = grabberRigidbody;
+		grabableRigidbody.angularDrag = hingeSettings.angularDrag;
+		grabableRigidbody.drag = hingeSettings.drag;
 	}
 
-	public void UseGravity(bool useGravity) 
-	{
-		grabableRigidbody.useGravity = useGravity;
-	}
 
 	public void SetWorldSpaceAnchor(Vector3 anchor)
 	{
@@ -75,4 +77,8 @@ public class GrabbedHingeSettings
 	public float minLimit;
 
 	public float maxLimit;
+
+	public float angularDrag = 3f;
+
+	public float drag = 0.5f;
 }

@@ -43,7 +43,6 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(lights.Count);
         eye = eyeTransform.position;
         if (player == null) {
             Debug.Log("no player in scene");
@@ -96,6 +95,7 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
     }
     public void UndetectLightsource(ILightSource obj)
     {
+        //Debug.Log("undetected");
         lights.Remove(obj);
     }
 
@@ -108,7 +108,6 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
             targetFound = true;
         }
         foreach (ILightSource light in lights) {
-            Vector3 dir = light.GetTransform().position - eye;
             float val = GetValue(light);
             if (val > BestVal) {
                 BestVal = val;

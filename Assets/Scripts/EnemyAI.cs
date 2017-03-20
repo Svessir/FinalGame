@@ -37,9 +37,13 @@ public class EnemyAI : MonoBehaviour {
     private GameObject player;
     private Rigidbody rb;
     private bool inAir = false;
-	// Use this for initialization
-	void Start ()
+    private Material mat;
+    private Color passiveColor = new Color(255, 255, 0);
+    private Color aggressiveColor = new Color(255, 0, 0);
+    // Use this for initialization
+    void Start ()
     {
+        mat = GetComponentInChildren<Renderer>().material;
         IgnoredLayers = 1 << 8 | 1 << 11 | 1 << 13;
         if (PrefersHomeNodes) {
             StayHome = true;
@@ -98,11 +102,15 @@ public class EnemyAI : MonoBehaviour {
             return;
         }
         float sightDist = AggressionDist;
-        if (ANGERY > 0) {
+        if (ANGERY > 0){
             sightDist = AggressionDist * 10;
+            mat.SetColor("_EmissionColor", aggressiveColor);
+        }else{
+            mat.SetColor("_EmissionColor", passiveColor);
         }
         if (PlayerInSight(sightDist))
         {
+            mat.SetColor("_EmissionColor", aggressiveColor);
             modifier = AggressiveModifier;
             RotateTowards(player.transform.position);
             MoveTowards(player.transform.position);

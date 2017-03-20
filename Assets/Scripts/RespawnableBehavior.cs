@@ -4,9 +4,6 @@ using UnityEngine;
 
 public abstract class RespawnableBehavior : MonoBehaviour 
 {
-	[SerializeField]
-	private CheckPointManager checkpointManager;
-
 	public abstract void Respawn (Vector3 checkpointLocation);
 
 	void OnEnable() 
@@ -21,14 +18,14 @@ public abstract class RespawnableBehavior : MonoBehaviour
 
 	private void Subscribe()
 	{
-		if (checkpointManager != null)
-			checkpointManager.CheckpointReachedEvent += OnCheckpointReached;
+		CheckPointManager.CheckpointReachedEvent += OnCheckpointReached;
+		RespawnManager.PlayerRespawnEvent += Respawn;
 	}
 
 	private void UnSubscribe()
 	{
-		if (checkpointManager != null)
-			checkpointManager.CheckpointReachedEvent -= OnCheckpointReached;
+		CheckPointManager.CheckpointReachedEvent -= OnCheckpointReached;
+		RespawnManager.PlayerRespawnEvent -= Respawn;
 	}
 
 	/**

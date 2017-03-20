@@ -8,6 +8,7 @@ public class PointToLight : MonoBehaviour {
 
 	public GameObject flashLight;
 	public bool animated = false;
+    private bool on = false;
 	//public GameObject MousePointer;
 	private float lightDepth;
 
@@ -20,10 +21,16 @@ public class PointToLight : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(KeyCode.F)) {
-			flashLight.SetActive (!flashLight.activeSelf);
+            if (on)
+            {
+                flashLight.transform.position = Vector3.up * 99999;
+            }
+            else
+            {
+                flashLight.transform.position = flashLight.transform.parent.position;
 
-			if (FlashlightToggleEvent != null)
-				FlashlightToggleEvent (flashLight.activeSelf);
+            }
+            on = !on;
 		}
 
 		if (!flashLight.activeSelf) {

@@ -10,7 +10,7 @@ class CheckPointManager : MonoBehaviour {
 	[SerializeField]
 	private CheckPoint currentCheckpoint;
 
-	public event CheckpointReachedAction CheckpointReachedEvent;
+	public static event CheckpointReachedAction CheckpointReachedEvent;
 
 	public CheckPoint CurrentCheckpoint 
 	{

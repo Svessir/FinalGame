@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnManager : MonoBehaviour {
+public delegate void RespawnAction(Vector3 position);
 
-	[SerializeField]
-	private RespawnableBehavior[] respawnables;
+public class RespawnManager : MonoBehaviour {
 
 	[SerializeField]
 	private CheckPointManager checkpointManager;
 
 	private IDeathable DeathableBehavior;
+
+	public static RespawnAction PlayerRespawnEvent;
 
 	void Awake () 
 	{
@@ -37,8 +38,8 @@ public class RespawnManager : MonoBehaviour {
 	*/
 	private void OnDeath() 
 	{
-		foreach(var respawnable in respawnables)
-			respawnable.Respawn(checkpointManager.CurrentCheckpoint.location);
+		if (PlayerRespawnEvent != null)
+			PlayerRespawnEvent (checkpointManager.CurrentCheckpoint.location);
 	}
 
 	private void Subscribe() 
