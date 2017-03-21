@@ -17,7 +17,7 @@ public class fogLightCollision : MonoBehaviour, ILightSource
 
     public float GetIntensity()
     {
-        return 1;
+        return 10;
     }
 
     public float GetRadius()

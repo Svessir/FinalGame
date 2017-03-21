@@ -118,8 +118,10 @@ public class WallWormAI : MonoBehaviour, ILightTriggerable {
         return targetFound;
     }
 
-    float GetValue(ILightSource light) {
-        return Vector3.Distance(eye, light.GetTransform().position) * light.GetIntensity() / light.GetRadius();
+
+    float GetValue(ILightSource light)
+    {
+        return light.GetIntensity() / Vector3.Distance(eye, light.GetTransform().position);
     }
 
     bool PlayerInSight()
