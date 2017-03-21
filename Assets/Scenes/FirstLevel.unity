@@ -5219,7 +5219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 65
+      value: 65.3
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5253,7 +5253,7 @@ Prefab:
     - target: {fileID: 59971780997218078, guid: c117d18cc34314587921d7fc20858830,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: -1.6629982
+      value: -1.663002
       objectReference: {fileID: 0}
     - target: {fileID: 23341415409888164, guid: c117d18cc34314587921d7fc20858830,
         type: 2}
@@ -5275,7 +5275,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4474335098830304, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 999
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014785851491490, guid: c117d18cc34314587921d7fc20858830,
+        type: 2}
+      propertyPath: on
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c117d18cc34314587921d7fc20858830, type: 2}
@@ -5941,12 +5946,12 @@ MonoBehaviour:
   - {x: 57.384563, y: -30.781496, z: 0}
   - {x: 69.18456, y: -8.181497, z: 0}
   Edges:
-  - myList: 010000000200000005000000
-  - myList: 00000000020000000300000005000000
-  - myList: 00000000010000000400000005000000
+  - myList: 0100000005000000
+  - myList: 0000000003000000
+  - myList: 0400000005000000
   - myList: 0100000006000000
   - myList: 0200000006000000
-  - myList: 000000000100000002000000
+  - myList: 0000000002000000
   - myList: 0300000004000000
   Home: 01000000000100
   test: 7

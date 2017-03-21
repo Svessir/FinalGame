@@ -487,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069029501929790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -10.6, z: 0}
+  m_LocalPosition: {x: -92.8, y: 7.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4014469579146434}
@@ -557,7 +557,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400548506441322}
   m_LocalRotation: {x: -0.19730705, y: 0.7124771, z: -0.027930226, w: -0.6728047}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4075478811411552}
@@ -1002,7 +1002,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.28, y: -1.6630001, z: 0}
+  m_ConnectedAnchor: {x: 0.27999878, y: -1.6630001, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1328,6 +1328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashLight: {fileID: 1400548506441322}
   animated: 0
+  on: 0
 --- !u!114 &114044631463139800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1561,6 +1562,8 @@ MonoBehaviour:
     axis: {x: 0, y: 0, z: 1}
     minLimit: -50
     maxLimit: 50
+    angularDrag: 3
+    drag: 0.5
   grabKey: 101
   tractorBeamLength: 10
   distanceGromGrabber: 8

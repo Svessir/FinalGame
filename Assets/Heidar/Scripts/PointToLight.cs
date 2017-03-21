@@ -8,7 +8,7 @@ public class PointToLight : MonoBehaviour {
 
 	public GameObject flashLight;
 	public bool animated = false;
-    private bool on = false;
+    public bool on = false;
 	//public GameObject MousePointer;
 	private float lightDepth;
 
