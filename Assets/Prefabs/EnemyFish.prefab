@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: 4869291776772998}
   - component: {fileID: 54619621635827192}
   - component: {fileID: 114369458094258128}
+  - component: {fileID: 114429956764111632}
+  - component: {fileID: 114366705146395002}
   m_Layer: 8
   m_Name: EnemyFish
   m_TagString: Untagged
@@ -365,6 +367,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotRate: 180
+--- !u!114 &114366705146395002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913201474866516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5fc000ebc40af4ba0b36d5a080e02a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114369458094258128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,7 +394,7 @@ MonoBehaviour:
   drag: 1
   gravity: 10
   RotationRate: 90
-  AggressionDist: 20
+  AggressionDist: 50
   SonarAggressionDist: 80
   SonarSpeed: 45
   SonarCooldown: 12
@@ -389,6 +402,17 @@ MonoBehaviour:
   AggressiveModifier: 2
   PrefersHomeNodes: 1
   PatrolGraph: {fileID: 0}
+--- !u!114 &114429956764111632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913201474866516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5435fcf4558f2a9439aaaf287fc29477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136155191878717950
 CapsuleCollider:
   m_ObjectHideFlags: 1
