@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour {
+public class EnemyAI: RespawnableBehavior{
+
     public float maxSpeed = 2;
     public float acceleration = 1;
     public float drag = 0.5f;
@@ -81,6 +82,7 @@ public class EnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         triggerCD -= Time.deltaTime;
+        // used to delay the triggering of the AI by sonar according to the sonar's propogation speed
         if (triggerTime < 0 && canBeTriggered)
         {
             canBeTriggered = false;
@@ -91,10 +93,13 @@ public class EnemyAI : MonoBehaviour {
             triggerTime -= Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.Space) && Vector3.Distance(transform.position,player.transform.position) < SonarAggressionDist && triggerCD <= 0) {
-            canBeTriggered = true;
-            triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
             triggerCD = SonarCooldown;
-            triggerOrigin = player.transform.position;
+            if (GraphReachable())
+            {
+                canBeTriggered = true;
+                triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
+                triggerOrigin = player.transform.position;
+            }
         }
         eye = eyeTransform.position;
         if (player == null) {
@@ -150,6 +155,21 @@ public class EnemyAI : MonoBehaviour {
             Debug.DrawLine(nodes[CurrentPath[i - 1]], nodes[CurrentPath[i]],Color.green);
         }
     }
+    bool GraphReachable() {
+        RaycastHit hitinfo;
+        foreach (Vector3 loc in nodes) {
+            if (!Physics.Linecast(loc, player.transform.position,out hitinfo, ~IgnoredLayers))
+            {
+                Debug.DrawLine(loc, player.transform.position, Color.green,5);
+                return true;
+            }
+            else {
+                Debug.DrawLine(loc, hitinfo.point, Color.red, 5);
+            }
+        }
+        return false;
+    }
+
     void Triggered()
     {
         int curr = -1;
@@ -342,5 +362,21 @@ public class EnemyAI : MonoBehaviour {
         {
             inAir = false;
         }
+    }
+
+    // for respawning on player death
+
+    private Vector3 myCheckpointLocation;
+
+    void Awake()
+    {
+        myCheckpointLocation = transform.position;
+    }
+    public override void Respawn(Vector3 checkpointLocation)
+    {
+        transform.position = myCheckpointLocation;
+        ANGERY = 0;
+        targetNode = Vector3.up * 99999;
+        CurrentPath.Clear();
     }
 }
