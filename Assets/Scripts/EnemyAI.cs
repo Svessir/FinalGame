@@ -24,6 +24,7 @@ public class EnemyAI: RespawnableBehavior{
     private float ANGERY = 0;
     private float modifier = 1;
     private bool canBeTriggered = false;
+    private bool wasAttackingPlayer = false;
     private float triggerTime;
     private float triggerCD;
     private Vector3 triggerOrigin;
@@ -115,6 +116,7 @@ public class EnemyAI: RespawnableBehavior{
         }
         if (PlayerInSight(sightDist))
         {
+            wasAttackingPlayer = true;
             mat.SetColor("_EmissionColor", aggressiveColor);
             modifier = AggressiveModifier;
             RotateTowards(player.transform.position);
@@ -122,6 +124,10 @@ public class EnemyAI: RespawnableBehavior{
         }
         else
         {
+            if (wasAttackingPlayer) {
+                TrimPath();
+            }
+            wasAttackingPlayer = false;
             if (PatrolGraph == null) {
                 return;
             }
@@ -168,6 +174,28 @@ public class EnemyAI: RespawnableBehavior{
             }
         }
         return false;
+    }
+
+    void TrimPath() {
+        float bestAngle = Vector3.Angle(transform.right, targetNode - eye);
+        int bestindex = -1;
+        foreach (int i in CurrentPath) {
+            if (!Physics.Linecast(transform.position, nodes[i], ~IgnoredLayers)) {
+                float angle = Vector3.Angle(transform.right, nodes[i] - eye);
+                if (angle < bestAngle) {
+                    bestAngle = angle;
+                    bestindex = i;
+                }
+            }
+        }
+        if (bestindex >= 0) {
+            while (CurrentPath[0] != bestindex) {
+                CurrentPath.RemoveAt(0);
+            }
+            targetNodeIndex = bestindex;
+            targetNode = nodes[bestindex];
+            CurrentPath.RemoveAt(0);
+        }
     }
 
     void Triggered()
