@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4426412561953428}
   - component: {fileID: 135440062675583972}
   - component: {fileID: 114349121335803444}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SonarTutorialTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4344190524539740}
   - component: {fileID: 114908173476634206}
   - component: {fileID: 135474387831893616}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GrabberTutorialTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4446367100426372}
   - component: {fileID: 135863511174567990}
   - component: {fileID: 114170201679821568}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FlashlightTutorialTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 0}
   instruction: Press (F) to toggle your flashlight
-  flashlightGameObject: {fileID: 0}
+  flashlight: {fileID: 0}
 --- !u!114 &114349121335803444
 MonoBehaviour:
   m_ObjectHideFlags: 1
