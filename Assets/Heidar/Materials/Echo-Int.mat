@@ -42,7 +42,7 @@ Material:
       second: 0.183
     - first:
         name: _NormalMapStrenght
-      second: 0.3
+      second: 0.495
     - first:
         name: _Radius
       second: 0

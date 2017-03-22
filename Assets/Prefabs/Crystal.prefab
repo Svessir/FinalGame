@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 1395688277323586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: 3.22, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4158457027677336}
   m_Father: {fileID: 4454038084864994}
@@ -235,7 +235,7 @@ MonoBehaviour:
   crystals:
   - {fileID: 114485312615537680}
   minBrightness: 0
-  maxBrightness: 10
+  maxBrightness: 7
   intensityGrowthSpeed: 5
   intensityRegressionSpeed: 5
   timeUntilRegression: 2

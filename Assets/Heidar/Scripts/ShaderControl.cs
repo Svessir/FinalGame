@@ -54,9 +54,13 @@ public class ShaderControl : MonoBehaviour {
 
 			for (int i = 0; i < currentRenderer.materials.Length; i++) {
 				for (int j = 0; j < numberOfMaterials; j++) {
-					if (currentRenderer.materials[i].name == ourMaterials[j].name) {
-						newMaterialArray [i] = ourMaterials[j];
-					}
+					if (currentRenderer.materials [i].name == ourMaterials [j].name) {
+						newMaterialArray [i] = ourMaterials [j];
+					} 
+					//else {
+						//newMaterialArray [i] = currentRenderer.materials [i];
+					//}
+
 				}
 			}
 
