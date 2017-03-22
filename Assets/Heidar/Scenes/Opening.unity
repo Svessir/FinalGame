@@ -1474,33 +1474,16 @@ Prefab:
       propertyPath: tutorialText
       value: 
       objectReference: {fileID: 1053191352}
-    - target: {fileID: 114349121335803444, guid: d86cb7ba266012b4da07f5494743167d,
-        type: 2}
-      propertyPath: tutorialText
-      value: 
-      objectReference: {fileID: 1053191352}
-    - target: {fileID: 114170201679821568, guid: d86cb7ba266012b4da07f5494743167d,
-        type: 2}
-      propertyPath: flashlightGameObject
-      value: 
-      objectReference: {fileID: 1880466663}
     - target: {fileID: 114170201679821568, guid: d86cb7ba266012b4da07f5494743167d,
         type: 2}
       propertyPath: flashlight
       value: 
       objectReference: {fileID: 310501747}
-    - target: {fileID: 1509956701037080, guid: d86cb7ba266012b4da07f5494743167d, type: 2}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907751005001120, guid: d86cb7ba266012b4da07f5494743167d, type: 2}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175548094229442, guid: d86cb7ba266012b4da07f5494743167d, type: 2}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
+    - target: {fileID: 114349121335803444, guid: d86cb7ba266012b4da07f5494743167d,
+        type: 2}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 1053191352}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d86cb7ba266012b4da07f5494743167d, type: 2}
   m_IsPrefabParent: 0
@@ -6673,11 +6656,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1846351968}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1880466663 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1400548506441322, guid: c117d18cc34314587921d7fc20858830,
-    type: 2}
-  m_PrefabInternal: {fileID: 1939368701}
 --- !u!1001 &1881474305
 Prefab:
   m_ObjectHideFlags: 0
@@ -6790,6 +6768,11 @@ Prefab:
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804726547741508, guid: c117d18cc34314587921d7fc20858830,
+        type: 2}
+      propertyPath: raycastIgnore.m_Bits
+      value: 31744
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c117d18cc34314587921d7fc20858830, type: 2}
