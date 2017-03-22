@@ -2472,8 +2472,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603188321}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: -0.0063073495, y: 0.03089922, z: 0.00019513008, w: 0.9995026}
   m_LocalPosition: {x: -52.81978, y: 25.39254, z: -97.58836}
+=======
+  m_LocalRotation: {x: -0.18443023, y: 0.07216723, z: 0.013580093, w: 0.9800985}
+  m_LocalPosition: {x: -27.73338, y: -66.45137, z: -267.23572}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.5, y: 0.9528835, z: 0.5471164}
   m_Children: []
   m_Father: {fileID: 836231496}
@@ -6460,15 +6465,15 @@ Prefab:
     - target: {fileID: 2300000, guid: 744e2f17895024bf8a49fc9b3170968d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d1ee8314d06944622ad5a1c0177dff29, type: 2}
+      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
     - target: {fileID: 2300000, guid: 744e2f17895024bf8a49fc9b3170968d, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
+      objectReference: {fileID: 2100000, guid: d1ee8314d06944622ad5a1c0177dff29, type: 2}
     - target: {fileID: 2300000, guid: 744e2f17895024bf8a49fc9b3170968d, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
+      objectReference: {fileID: 2100000, guid: e5f57d83964f7436bb435779d010ec62, type: 2}
     - target: {fileID: 400002, guid: 744e2f17895024bf8a49fc9b3170968d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 16.7
@@ -6480,7 +6485,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 744e2f17895024bf8a49fc9b3170968d, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: e5f57d83964f7436bb435779d010ec62, type: 2}
+      objectReference: {fileID: 2100000, guid: d1ee8314d06944622ad5a1c0177dff29, type: 2}
     - target: {fileID: 100000, guid: 744e2f17895024bf8a49fc9b3170968d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
