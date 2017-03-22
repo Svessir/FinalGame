@@ -1179,11 +1179,11 @@ Prefab:
     - target: {fileID: 2300006, guid: d4437f88e16524122b1b767449d61f71, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
+      objectReference: {fileID: 2100000, guid: e5f57d83964f7436bb435779d010ec62, type: 2}
     - target: {fileID: 2300006, guid: d4437f88e16524122b1b767449d61f71, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e5f57d83964f7436bb435779d010ec62, type: 2}
+      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
     - target: {fileID: 2300008, guid: d4437f88e16524122b1b767449d61f71, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1900,7 +1900,7 @@ ParticleSystem:
   m_GameObject: {fileID: 683265692}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -6352,7 +6352,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1699188150}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -9052,11 +9052,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 83.8
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.6
+      value: 65.1
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.z
