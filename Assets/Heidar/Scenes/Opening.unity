@@ -1484,6 +1484,11 @@ Prefab:
       propertyPath: tutorialText
       value: 
       objectReference: {fileID: 1053191352}
+    - target: {fileID: 114170201679821568, guid: d86cb7ba266012b4da07f5494743167d,
+        type: 2}
+      propertyPath: instruction
+      value: Press (F) to toggle your flashlight, mouse to move it
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d86cb7ba266012b4da07f5494743167d, type: 2}
   m_IsPrefabParent: 0
@@ -2467,8 +2472,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603188321}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52.4, y: 22.84, z: -56.75}
+  m_LocalRotation: {x: -0.0063073495, y: 0.03089922, z: 0.00019513008, w: 0.9995026}
+  m_LocalPosition: {x: -52.81978, y: 25.39254, z: -97.58836}
   m_LocalScale: {x: 0.5, y: 0.9528835, z: 0.5471164}
   m_Children: []
   m_Father: {fileID: 836231496}
@@ -3244,6 +3249,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 960883293}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &999461885 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4739496277716848, guid: d86cb7ba266012b4da07f5494743167d,
+    type: 2}
+  m_PrefabInternal: {fileID: 306273076}
 --- !u!1 &1000439868
 GameObject:
   m_ObjectHideFlags: 0
@@ -6730,6 +6740,65 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b544816461f324e56a39767fdeb5b114, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1938193213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1509956701037080, guid: d86cb7ba266012b4da07f5494743167d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1938193214}
+  - component: {fileID: 1938193216}
+  - component: {fileID: 1938193215}
+  m_Layer: 14
+  m_Name: MovementTutorialTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1938193214
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4344190524539740, guid: d86cb7ba266012b4da07f5494743167d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938193213}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -93.5, y: 8.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 999461885}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1938193215
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 135474387831893616, guid: d86cb7ba266012b4da07f5494743167d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938193213}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 12.350281
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1938193216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114908173476634206, guid: d86cb7ba266012b4da07f5494743167d,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938193213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06d785afc8d31643be0eadaa414b147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialText: {fileID: 1053191352}
+  instruction: W,A,S,D to move
 --- !u!1001 &1939368701
 Prefab:
   m_ObjectHideFlags: 0
