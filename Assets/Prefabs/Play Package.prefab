@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4075478811411552}
   - component: {fileID: 108112717487096500}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Ambient Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 108979708750456782}
   - component: {fileID: 114956851963457844}
   - component: {fileID: 114851176025039936}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Fog Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,8 +171,8 @@ GameObject:
   - component: {fileID: 92756288871456828}
   - component: {fileID: 124635206834750844}
   - component: {fileID: 81408587927364696}
-  - component: {fileID: 114372542807643704}
   - component: {fileID: 114820043786931410}
+  - component: {fileID: 114372542807643704}
   - component: {fileID: 114315157371049512}
   - component: {fileID: 114558715004625352}
   - component: {fileID: 114518636414794816}
@@ -487,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069029501929790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -92.8, y: 7.3, z: 0}
+  m_LocalPosition: {x: -12.1, y: 68.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4014469579146434}
@@ -557,7 +557,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400548506441322}
   m_LocalRotation: {x: -0.19730705, y: 0.7124771, z: -0.027930226, w: -0.6728047}
-  m_LocalPosition: {x: 0, y: 999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4075478811411552}
@@ -816,6 +816,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 37c2a68d153570a42af90785beed0019, type: 2}
   - {fileID: 2100000, guid: d1ee8314d06944622ad5a1c0177dff29, type: 2}
   - {fileID: 2100000, guid: 36878225bf8b04c6ea029363e38a78ac, type: 2}
+  - {fileID: 2100000, guid: 61198dfa7a3eb46b08101194954f7094, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1002,7 +1003,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27999878, y: -1.6630001, z: 0}
+  m_ConnectedAnchor: {x: 0.27999973, y: -1.663002, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1328,7 +1329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashLight: {fileID: 1400548506441322}
   animated: 0
-  on: 0
+  on: 1
 --- !u!114 &114044631463139800
 MonoBehaviour:
   m_ObjectHideFlags: 1

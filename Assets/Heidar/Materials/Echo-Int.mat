@@ -33,19 +33,19 @@ Material:
       second: 0
     - first:
         name: _Gloss
-      second: 0.75
+      second: 0.268
     - first:
         name: _Matalic
       second: -5.46
     - first:
         name: _Metalic
-      second: 0.9
+      second: 0.183
     - first:
         name: _NormalMapStrenght
       second: 0.3
     - first:
         name: _Radius
-      second: 200
+      second: 0
     - first:
         name: _node_1594
       second: 1
