@@ -938,6 +938,16 @@ Prefab:
       propertyPath: PatrolGraph
       value: 
       objectReference: {fileID: 1356619719}
+    - target: {fileID: 114369458094258128, guid: eaa667fda5b096741b1b8169ce2af020,
+        type: 2}
+      propertyPath: acceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114369458094258128, guid: eaa667fda5b096741b1b8169ce2af020,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 5.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
   m_IsPrefabParent: 0
@@ -1890,7 +1900,7 @@ ParticleSystem:
   m_GameObject: {fileID: 683265692}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -5107,11 +5117,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.2
+      value: -12.1
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 65.2
+      value: 68.7
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6426,7 +6436,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1699188150}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
