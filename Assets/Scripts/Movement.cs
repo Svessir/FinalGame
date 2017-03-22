@@ -18,14 +18,7 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Fire1"))
-        {
-            MouseMove();
-        }
-        else
-        {
-            WasdMove();
-        }
+        WasdMove();
 	}
 
     void Reorient() {

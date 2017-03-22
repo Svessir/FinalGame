@@ -6,7 +6,8 @@ public class FlowStopper : MonoBehaviour {
 
 	public Movement submarine;
 	public GameObject AirPocket;
-	public ParticleSystem particleFlow;
+    public GameObject SuctionThing;
+    public ParticleSystem particleFlow;
 	public ParticleSystem particleFlow2;
 
 	void OnTriggerEnter(Collider other) {
@@ -25,6 +26,7 @@ public class FlowStopper : MonoBehaviour {
 
 			submarine.inAir = false;
 			AirPocket.SetActive (false);
+            SuctionThing.SetActive(false);
 		}
 	}
 
@@ -40,7 +42,8 @@ public class FlowStopper : MonoBehaviour {
 
 			//submarine.inAir = false;
 			AirPocket.SetActive (true);
-		}
+            SuctionThing.SetActive(true);
+        }
 	}
 
 }
