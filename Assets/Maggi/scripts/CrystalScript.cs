@@ -45,11 +45,13 @@ public class CrystalScript : MonoBehaviour{
     void Start()
     {
         crystalMats = new List<Material>();
+        crystals.Clear();
         if (veins.Count != 0)
         {
             foreach (var vein in veins)
             {
                 crystalMats.Add(vein.GetComponentInChildren<Renderer>().material);
+                crystals.Add(vein.GetComponent<SingleCrystal>());
             }
             veins.Clear();
         }
@@ -58,6 +60,7 @@ public class CrystalScript : MonoBehaviour{
         {
             c.parent = this;
         }
+        Debug.Log(crystals.Count);
     }
 
     //maybe change this so that dark things that have low maxBrightness are not as bright as others
