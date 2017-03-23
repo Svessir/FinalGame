@@ -60,7 +60,6 @@ public class CrystalScript : MonoBehaviour{
         {
             c.parent = this;
         }
-        Debug.Log(crystals.Count);
     }
 
     //maybe change this so that dark things that have low maxBrightness are not as bright as others
