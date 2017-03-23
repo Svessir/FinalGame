@@ -16,6 +16,7 @@ public class EnemyAI: RespawnableBehavior{
     public float SonarAggressionTime = 11;
     public float AggressiveModifier = 2;
     public bool PrefersHomeNodes = true;
+    //public bool IgnoreHomeinAnger = false;
 
     public GameObject PatrolGraph;
 
@@ -206,7 +207,7 @@ public class EnemyAI: RespawnableBehavior{
         for (int i = 0; i < nodes.Count; i++)
         {
             float dist = Vector3.Distance(nodes[i], triggerOrigin);
-            if (dist < bestDist && !Physics.Linecast(transform.position, nodes[i], ~IgnoredLayers))
+            if (dist < bestDist && !Physics.Linecast(transform.position, nodes[i], ~IgnoredLayers) && !home[i])
             {
                 bestDist = dist;
                 curr = i;
@@ -235,7 +236,7 @@ public class EnemyAI: RespawnableBehavior{
         int champ = -1;
         for (int i = 0; i < adj.Count; i++) {
             float dist = Vector3.Distance(nodes[adj[i]], triggerOrigin);
-            if (dist < best) {
+            if (dist < best && !home[i]) {
                 best = dist;
                 champ = adj[i];
             }

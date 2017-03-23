@@ -53,7 +53,7 @@ public class PatrolGraph : MonoBehaviour {
                 //used so the raycast does not collide with itself
                 outside.Normalize();
                 outside *= 0.55f;
-                if (!Physics.Linecast(children[i].position-outside, children[j].position+outside,~(3<<8))) {
+                if (!Physics.Linecast(children[i].position-outside, children[j].position+outside,~(3<<8 | 1 << 13))) {
                     Debug.Log("Connected: " + children[i].name + " to " + children[j].name);
                     Edges[i-1].myList.Add(j-1);
                     Edges[j-1].myList.Add(i-1);
@@ -73,6 +73,12 @@ public class PatrolGraph : MonoBehaviour {
         }
         foreach (Collider c in colliders) {
             Destroy(c);
+        }
+        for (int i = 0; i < Nodes.Count; i++) {
+            var el = Edges[i].myList;
+            for (int j = 0; j < el.Count; j++) {
+                Debug.DrawLine(Nodes[i], Nodes[el[j]],Color.cyan,5);
+            }
         }
     }
 }

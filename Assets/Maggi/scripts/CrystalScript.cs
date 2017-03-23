@@ -49,7 +49,7 @@ public class CrystalScript : MonoBehaviour{
         {
             foreach (var vein in veins)
             {
-                crystalMats.Add(vein.GetComponent<Renderer>().material);
+                crystalMats.Add(vein.GetComponentInChildren<Renderer>().material);
             }
             veins.Clear();
         }
