@@ -45,7 +45,10 @@ public class CrystalScript : MonoBehaviour{
     void Start()
     {
         crystalMats = new List<Material>();
-        crystals.Clear();
+        if (veins.Count > 0)
+        {
+            crystals.Clear();
+        }
         if (veins.Count != 0)
         {
             foreach (var vein in veins)
