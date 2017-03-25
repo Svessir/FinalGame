@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void CollectedAction();
+public delegate void CollectedAction(CollectableBehavior collectedObject);
 public delegate void RegisterAction();
 
 public class CollectorManager : MonoBehaviour {
@@ -53,7 +53,7 @@ public class CollectorManager : MonoBehaviour {
 				collectable.Collect ();
 
 				if (CollectedEvent != null)
-					CollectedEvent ();
+					CollectedEvent (collectable);
 			}
 		}
 	}
