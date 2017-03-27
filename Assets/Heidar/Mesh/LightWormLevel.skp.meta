@@ -5,22 +5,22 @@ licenseType: Free
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000
   assetHash:
     serializedVersion: 2
-    Hash: 83ef5762dc0b9ddec3938b7c32bd3450
+    Hash: 71423e8b429c4912ab1fa43bf3a8fd4f
   longitude: -105.242139
   latitude: 40.018309
   northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 33.83522, y: -91.0105, z: -199.9078}
-      lookAt: {x: 51.56558, y: -86.05452, z: -80.74632}
-      up: {x: -0.0060492014, y: 0.9991549, z: -0.040655237}
+      position: {x: 408.2523, y: 78.13553, z: -841.8719}
+      lookAt: {x: 401.27963, y: 48.522434, z: -678.6338}
+      up: {x: -0.0076107606, y: 0.983969, z: 0.17817718}
       fov: 45
       aspectRatio: 0
-      orthoSize: 6527.184
+      orthoSize: 17715.53
       isPerspective: 0
     scenes: []
   serializedVersion: 19
@@ -33,6 +33,15 @@ SketchUpImporter:
     100010: Group 4
     100012: Group 6
     100014: Group 5
+    100016: Chris 1
+    100018: Chris 2
+    100020: FishEscape#1
+    100022: FishSection2
+    100024: Group 10
+    100026: Group 13
+    100028: LightWormLevel2
+    100030: Group 14
+    100032: Group 7
     400000: Chris
     400002: //RootNode
     400004: Group 2
@@ -41,6 +50,15 @@ SketchUpImporter:
     400010: Group 4
     400012: Group 6
     400014: Group 5
+    400016: Chris 1
+    400018: Chris 2
+    400020: FishEscape#1
+    400022: FishSection2
+    400024: Group 10
+    400026: Group 13
+    400028: LightWormLevel2
+    400030: Group 14
+    400032: Group 7
     2300000: Chris
     2300002: //RootNode
     2300004: Group 2
@@ -49,6 +67,13 @@ SketchUpImporter:
     2300010: Group 4
     2300012: Group 6
     2300014: Group 5
+    2300016: Chris 1
+    2300018: Chris 2
+    2300020: FishEscape#1
+    2300022: Group 10
+    2300024: Group 13
+    2300026: Group 14
+    2300028: Group 7
     3300000: Chris
     3300002: //RootNode
     3300004: Group 2
@@ -57,6 +82,13 @@ SketchUpImporter:
     3300010: Group 4
     3300012: Group 6
     3300014: Group 5
+    3300016: Chris 1
+    3300018: Chris 2
+    3300020: FishEscape#1
+    3300022: Group 10
+    3300024: Group 13
+    3300026: Group 14
+    3300028: Group 7
     4300000: Mesh LightWormLevel
     4300002: Mesh Chris
     4300004: Mesh Group 2
@@ -65,6 +97,11 @@ SketchUpImporter:
     4300010: Mesh Group 4
     4300012: Mesh Group 6
     4300014: Mesh Group 5
+    4300016: Mesh Group 10
+    4300018: Mesh Group 13
+    4300020: Mesh FishEscape#1
+    4300022: Mesh Group 7
+    4300024: Mesh Group 14
   materials:
     importMaterials: 1
     materialName: 2
