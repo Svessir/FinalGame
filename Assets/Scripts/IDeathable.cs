@@ -6,6 +6,7 @@ public delegate void DeathAction();
 
 public interface IDeathable
 {
+	event DeathAction BeforeDeathEvent;
 	event DeathAction DeathEvent;
 	void TakeDamage (float damage);
 }
