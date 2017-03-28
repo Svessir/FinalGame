@@ -16,6 +16,7 @@ public class EnemyAI: RespawnableBehavior{
     public float SonarAggressionTime = 11;
     public float AggressiveModifier = 2;
     public bool PrefersHomeNodes = true;
+    public bool UseSpecialRouting = false;
     //public bool IgnoreHomeinAnger = false;
 
     public GameObject PatrolGraph;
@@ -133,6 +134,9 @@ public class EnemyAI: RespawnableBehavior{
                 return;
             }
             if (!ValidTarget(targetNode)) {
+                if (StayHome && home[targetNodeIndex] && NearestViableNode() < 0) {
+                    StayHome = false;
+                }
                 if (ANGERY <= 0)
                 {
                     modifier = 1;
@@ -204,6 +208,7 @@ public class EnemyAI: RespawnableBehavior{
         int curr = -1;
         float bestDist = float.MaxValue;
         CurrentPath.Clear();
+        Vector3 toNode = Vector3.zero;
         for (int i = 0; i < nodes.Count; i++)
         {
             float dist = Vector3.Distance(nodes[i], triggerOrigin);
@@ -217,6 +222,7 @@ public class EnemyAI: RespawnableBehavior{
             Debug.Log("Enemy could not be ANGERY!");
             return;
         }
+        toNode = nodes[curr] - transform.position;
         CurrentPath.Add(curr);
         StayHome = false;
         ANGERY = SonarAggressionTime;
@@ -224,14 +230,22 @@ public class EnemyAI: RespawnableBehavior{
         targetNode = nodes[curr];
         int champ = minDist(edges[curr], bestDist);
         int counter = 0;
-        while (champ >= 0 && counter < 20) {
-            CurrentPath.Add(champ);
-            float champDist = Vector3.Distance(nodes[champ], triggerOrigin);
-            champ = minDist(edges[champ], champDist);
-            counter++;
+        if (UseSpecialRouting)
+        {
+            ExtendCurrentPathSpecial(curr, toNode);
         }
-        ExtendCurrentPath();
+        else
+        {
+            while (champ >= 0 && counter < 20) {
+                CurrentPath.Add(champ);
+                float champDist = Vector3.Distance(nodes[champ], triggerOrigin);
+                champ = minDist(edges[champ], champDist);
+                counter++;
+            }
+            ExtendCurrentPath();
+        }
     }
+
     int minDist(List<int> adj, float best) {
         int champ = -1;
         for (int i = 0; i < adj.Count; i++) {
@@ -243,6 +257,7 @@ public class EnemyAI: RespawnableBehavior{
         }
         return champ;
     }
+
     bool ExtendCurrentPath() {
         bool[] inPath = new bool[nodes.Count];
         for (int i = 0; i < CurrentPath.Count; i++) {
@@ -283,6 +298,46 @@ public class EnemyAI: RespawnableBehavior{
         }
         return true;
     }
+
+
+    bool ExtendCurrentPathSpecial(int curr, Vector3 toNode)
+    {
+        bool[] inPath = new bool[nodes.Count];
+        for (int i = 0; i < CurrentPath.Count; i++)
+        {
+            inPath[CurrentPath[i]] = true;
+        }
+        while (true)
+        {
+            bool failed = true;
+            int best = -1;
+            float bestVal = 200;
+            for (int j = 0; j < edges[curr].Count; j++)
+            {
+                int adj = edges[curr][j];
+                if (!inPath[adj])
+                {
+                    Vector3 toNodeTemp = nodes[adj] - nodes[curr];
+                    float val = Vector3.Angle(toNodeTemp, toNode);
+                    if (val < bestVal) {
+                        bestVal = val;
+                        best = adj;
+                    }
+                    failed = false;
+                }
+            }
+            if (failed)
+            {
+                break;
+            }
+            toNode = nodes[best] - nodes[curr];
+            curr = best;
+            inPath[best] = true;
+            CurrentPath.Add(best);
+        }
+        return true;
+    }
+
     int NearestViableNode()
     {
         int curr = -1;
