@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MockDeathableRespawnable : RespawnableBehavior, IDeathable {
 
+	public event DeathAction BeforeDeathEvent;
 	public event DeathAction DeathEvent;
 
 	void Update () {

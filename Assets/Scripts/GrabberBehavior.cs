@@ -32,7 +32,11 @@ public class GrabberBehavior : MonoBehaviour
 	[SerializeField]
 	private LayerMask raycastIgnore;
 
+	[SerializeField]
+	private GameObject deathableGameObject;
+
 	private Rigidbody grabberRigidbody;
+	private IDeathable deathManager;
 
 	private GrabableBehavior currentlyGrabbed;
 	private bool isGrabKeyPressed = false;
@@ -43,6 +47,10 @@ public class GrabberBehavior : MonoBehaviour
 
 	void Awake() 
 	{
+		if (deathableGameObject != null) {
+			deathManager = deathableGameObject.GetComponent<IDeathable> ();
+			Subscribe ();
+		}
 		raycastIgnore.value = ~raycastIgnore.value;
 		grabberRigidbody = GetComponent<Rigidbody> ();
 		originalRotation = grabberForwardTransform.rotation;
@@ -56,6 +64,34 @@ public class GrabberBehavior : MonoBehaviour
 			WhileGrabbedUpdate (); 
 		else
 			WhileEmptyUpdate();
+	}
+
+	void OnEnable() 
+	{
+		Subscribe ();
+	}
+
+	void OnDisable() 
+	{
+		Unsubscribe ();
+	}
+
+	void Subscribe()
+	{
+		if (deathManager != null)
+			deathManager.BeforeDeathEvent += OnDeath;
+	}
+
+	void Unsubscribe() 
+	{
+		if (deathManager != null)
+			deathManager.BeforeDeathEvent -= OnDeath;
+	}
+
+	void OnDeath() 
+	{
+		if(currentlyGrabbed != null)
+			Drop ();
 	}
 
 	void WhileGrabbedUpdate()
@@ -179,6 +215,7 @@ public class GrabberBehavior : MonoBehaviour
 
 	private void Drop() 
 	{
+		Debug.Log ("DROP!");
 		StartCoroutine (Retract((currentlyGrabbed.transform.position - grabberForwardTransform.position)));
 //		currentlyGrabbed.UseGravity (true);
 		currentlyGrabbed.Drop ();
