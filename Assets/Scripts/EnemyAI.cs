@@ -17,6 +17,9 @@ public class EnemyAI: RespawnableBehavior{
     public bool UseSpecialRouting = false;
     //public bool IgnoreHomeinAnger = false;
 
+    public AudioSource alertSound;
+    public AudioSource seePlayerSound;
+
     public GameObject PatrolGraph;
 
     private int IgnoredLayers;
@@ -101,12 +104,17 @@ public class EnemyAI: RespawnableBehavior{
         float sightDist = AggressionDist;
         if (ANGERY > 0){
             sightDist = AggressionDist * 10;
+           // alertSound.Play();
             mat.SetColor("_EmissionColor", aggressiveColor);
         }else{
             mat.SetColor("_EmissionColor", passiveColor);
         }
         if (PlayerInSight(sightDist))
         {
+            if(wasAttackingPlayer == false)
+            {
+                seePlayerSound.Play();
+            }
             wasAttackingPlayer = true;
             mat.SetColor("_EmissionColor", aggressiveColor);
             modifier = AggressiveModifier;
@@ -458,6 +466,7 @@ public class EnemyAI: RespawnableBehavior{
         {
             if (GraphReachable())
             {
+                alertSound.Play();
                 canBeTriggered = true;
                 triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
                 triggerOrigin = player.transform.position;
