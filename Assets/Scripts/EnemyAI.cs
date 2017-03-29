@@ -90,6 +90,7 @@ public class EnemyAI: RespawnableBehavior{
         if (triggerTime < 0 && canBeTriggered)
         {
             canBeTriggered = false;
+            alertSound.Play();
             Triggered();
             modifier = AggressiveModifier;
         }
@@ -111,8 +112,8 @@ public class EnemyAI: RespawnableBehavior{
         }
         if (PlayerInSight(sightDist))
         {
-            if(wasAttackingPlayer == false)
-            {
+            seePlayerSound.loop = true;
+            if (!seePlayerSound.isPlaying) {
                 seePlayerSound.Play();
             }
             wasAttackingPlayer = true;
@@ -123,6 +124,7 @@ public class EnemyAI: RespawnableBehavior{
         }
         else
         {
+            seePlayerSound.loop = false;
             if (wasAttackingPlayer) {
                 TrimPath();
             }
@@ -466,7 +468,6 @@ public class EnemyAI: RespawnableBehavior{
         {
             if (GraphReachable())
             {
-                alertSound.Play();
                 canBeTriggered = true;
                 triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
                 triggerOrigin = player.transform.position;
