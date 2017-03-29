@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CollectedCounter : MonoBehaviour {
 
-    int numberCollected = 0;
-    int totalNumber;
+    public int numberCollected = 0;
+    public int totalNumber;
 
 	// Use this for initialization
 	void Start () {
