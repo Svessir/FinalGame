@@ -9,8 +9,16 @@ public class ShaderControl : MonoBehaviour {
 	public float speed = 45;
 	public float coolDown = 12;
 
-    public float timer = 0;
-    public bool active;
+    private float timer = 0;
+    private bool active;
+
+	public float  CooldownRatio 
+	{ 
+		get 
+		{
+			return timer/coolDown;
+		} 
+	}
 
     private float length = 500;
 	public GameObject subMarine;

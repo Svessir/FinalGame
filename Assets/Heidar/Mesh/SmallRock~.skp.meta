@@ -1,30 +1,35 @@
 fileFormatVersion: 2
-guid: 595b71532a1788f47befbd935554e7c7
-timeCreated: 1490746174
+guid: 2c7c68a1b9bc54f1d982f3f6d784ecf3
+timeCreated: 1490740401
 licenseType: Free
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 
+  selectedNodes: 0000000001000000
   assetHash:
     serializedVersion: 2
-    Hash: 3d2f7a0f53d292dbad234613cbfce8eb
-  longitude: 0
-  latitude: 0
-  northCorrection: 0
+    Hash: 41c9d403ba78f680a64bbaaf6faa7499
+  longitude: -105.242139
+  latitude: 40.018309
+  northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 0, y: 0, z: 0}
-      lookAt: {x: 0, y: 0, z: 1}
-      up: {x: 0, y: 1, z: 0}
-      fov: 45
-      aspectRatio: 1.33
-      orthoSize: 0
+      position: {x: 5.5114393, y: 6.524063, z: -0.27713782}
+      lookAt: {x: -9.982989, y: -12.47008, z: 0.874383}
+      up: {x: -0.77189857, y: 0.6331523, z: 0.057366244}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
       isPerspective: 1
     scenes: []
   serializedVersion: 19
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mesh SmallRock~
   materials:
     importMaterials: 1
     materialName: 2
