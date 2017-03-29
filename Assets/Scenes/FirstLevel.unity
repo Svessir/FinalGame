@@ -34838,11 +34838,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1006
+      value: -19.4
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -82.5
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.z
@@ -34871,12 +34871,12 @@ Prefab:
     - target: {fileID: 59971780997218078, guid: c117d18cc34314587921d7fc20858830,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.27999878
+      value: 0.2800293
       objectReference: {fileID: 0}
     - target: {fileID: 59971780997218078, guid: c117d18cc34314587921d7fc20858830,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: -1.6629982
+      value: -1.663002
       objectReference: {fileID: 0}
     - target: {fileID: 4019605018498034, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.x
@@ -40140,6 +40140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   veins: []
   crystals: []
+  audio: {fileID: 0}
   minBrightness: 0
   maxBrightness: 8
   intensityGrowthSpeed: 3
