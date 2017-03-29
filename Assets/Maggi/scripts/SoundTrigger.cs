@@ -8,7 +8,10 @@ public class SoundTrigger : RespawnableBehavior {
 
     private void OnTriggerEnter(Collider other)
     {
-        aud.Play();
+        if (other.gameObject.tag == "Player")
+        {
+            aud.Play();
+        }
     }
 
     public override void Respawn(Vector3 checkpointLocation)
