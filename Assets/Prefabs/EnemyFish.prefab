@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 54619621635827192}
   - component: {fileID: 114369458094258128}
   - component: {fileID: 114429956764111632}
+  - component: {fileID: 114639825691631220}
   m_Layer: 8
   m_Name: EnemyFish
   m_TagString: Untagged
@@ -377,8 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce17c3b8380bab4b8b3a52f64d85635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
-  acceleration: 2
+  maxSpeed: 5.5
+  acceleration: 5
   drag: 1
   gravity: 10
   RotationRate: 90
@@ -401,6 +402,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5435fcf4558f2a9439aaaf287fc29477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114639825691631220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913201474866516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2a0a120f73b154ab6a2dc73b56a0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_renderer: {fileID: 137911350788482264}
 --- !u!136 &136155191878717950
 CapsuleCollider:
   m_ObjectHideFlags: 1
