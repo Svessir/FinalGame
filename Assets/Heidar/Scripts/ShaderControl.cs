@@ -12,6 +12,14 @@ public class ShaderControl : MonoBehaviour {
     private float timer = 0;
     private bool active;
 
+	public float  CooldownRatio 
+	{ 
+		get 
+		{
+			return timer/coolDown;
+		} 
+	}
+
     private float length = 500;
 	public GameObject subMarine;
 	public bool animated = false;

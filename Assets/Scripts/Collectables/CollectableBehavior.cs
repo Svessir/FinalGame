@@ -25,5 +25,6 @@ public class CollectableBehavior : MonoBehaviour
 	{
 		isCollected = true;
 		GetComponent<Collider> ().enabled = false;
+		gameObject.SetActive (false);
 	}
 }
