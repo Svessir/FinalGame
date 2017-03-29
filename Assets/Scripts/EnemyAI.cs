@@ -90,7 +90,10 @@ public class EnemyAI: RespawnableBehavior{
         if (triggerTime < 0 && canBeTriggered)
         {
             canBeTriggered = false;
-            alertSound.Play();
+            if (!PlayerInSight(AggressionDist))
+            {
+                alertSound.Play();
+            }
             Triggered();
             modifier = AggressiveModifier;
         }
