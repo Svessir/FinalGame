@@ -5674,24 +5674,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164202365}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &167847136 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100030, guid: d4437f88e16524122b1b767449d61f71, type: 3}
-  m_PrefabInternal: {fileID: 384703943}
---- !u!64 &167847140
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 167847136}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300024, guid: d4437f88e16524122b1b767449d61f71, type: 3}
 --- !u!4 &171851040 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4705427005042590, guid: b76da39ff34a5c5499134dbea9c54481,
@@ -6834,24 +6816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5435fcf4558f2a9439aaaf287fc29477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &249703267 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100022, guid: d4437f88e16524122b1b767449d61f71, type: 3}
-  m_PrefabInternal: {fileID: 384703943}
---- !u!64 &249703269
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 249703267}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!1001 &265470880
 Prefab:
   m_ObjectHideFlags: 0
@@ -10605,11 +10569,11 @@ Prefab:
     - target: {fileID: 2300028, guid: d4437f88e16524122b1b767449d61f71, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: e5f57d83964f7436bb435779d010ec62, type: 2}
+      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
     - target: {fileID: 2300028, guid: d4437f88e16524122b1b767449d61f71, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
+      objectReference: {fileID: 2100000, guid: e5f57d83964f7436bb435779d010ec62, type: 2}
     - target: {fileID: 2300026, guid: d4437f88e16524122b1b767449d61f71, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -22456,24 +22420,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b76da39ff34a5c5499134dbea9c54481, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1169069935 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100020, guid: d4437f88e16524122b1b767449d61f71, type: 3}
-  m_PrefabInternal: {fileID: 384703943}
---- !u!64 &1169069939
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1169069935}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300020, guid: d4437f88e16524122b1b767449d61f71, type: 3}
 --- !u!1001 &1176640528
 Prefab:
   m_ObjectHideFlags: 0
