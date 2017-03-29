@@ -77,7 +77,7 @@ public class PatrolGraph : MonoBehaviour {
         for (int i = 0; i < Nodes.Count; i++) {
             var el = Edges[i].myList;
             for (int j = 0; j < el.Count; j++) {
-                Debug.DrawLine(Nodes[i], Nodes[el[j]],Color.cyan,5);
+                //Debug.DrawLine(Nodes[i], Nodes[el[j]],Color.cyan,5);
             }
         }
     }
