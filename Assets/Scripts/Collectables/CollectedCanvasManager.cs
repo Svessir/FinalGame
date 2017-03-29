@@ -9,6 +9,9 @@ public class CollectedCanvasManager : MonoBehaviour
 	private Text counterText;
 
 	[SerializeField]
+	private RawImage collectableImage;
+
+	[SerializeField]
 	private GameObject collectableFloat;
 
 	[SerializeField]
@@ -16,6 +19,15 @@ public class CollectedCanvasManager : MonoBehaviour
 
 	[SerializeField]
 	private float animationTime = 1.0f;
+
+	[SerializeField]
+	private float fadeOutTime = 5f;
+
+	void Awake() 
+	{
+		collectableImage.color = new Color(collectableImage.color.r, collectableImage.color.g, collectableImage.color.b, 0.0f);
+		counterText.color = new Color(counterText.color.r, counterText.color.g, counterText.color.b, 0.0f);
+	}
 
 	void OnEnable() 
 	{
@@ -42,11 +54,13 @@ public class CollectedCanvasManager : MonoBehaviour
 
 	void UpdateText() 
 	{
-		counterText.text = CollectorManager.Instance.CollectablesFound + "/" + CollectorManager.Instance.TotalNumberOfCollectables;
+		counterText.text = CollectorManager.Instance.CollectablesFound.ToString();
 	}
 
 	IEnumerator CollectableFloatMovement(CollectableBehavior collectable) 
 	{
+		collectableImage.color = new Color(collectableImage.color.r, collectableImage.color.g, collectableImage.color.b, 1.0f);
+		counterText.color = new Color(counterText.color.r, counterText.color.g, counterText.color.b, 1.0f);
 		collectableFloat.SetActive (true);
 		Vector3 startPosition = Camera.main.WorldToScreenPoint (collectable.transform.position);
 		Vector3 endPosition = startPosition + collectableFloatTravelVector;
@@ -62,10 +76,24 @@ public class CollectedCanvasManager : MonoBehaviour
 			yield return new WaitForEndOfFrame ();
 		}
 		collectableFloat.SetActive (false);
-		yield return null;
-	}
 
-	void Update () {
-		
+		float startTime = Time.time;
+		float endTime = startTime + fadeOutTime;
+		float t2 = 0;
+
+		Color textStartColor = counterText.color;
+		Color imageStartColor = collectableImage.color;
+
+		Color textEndColor = new Color(collectableImage.color.r, collectableImage.color.g, collectableImage.color.b, 0.0f);
+		Color imageEndColor = new Color(counterText.color.r, counterText.color.g, counterText.color.b, 0.0f);
+		while (t2 <= 1) 
+		{
+			t2 = (Time.time - startTime) / (endTime - startTime);
+			counterText.color = Color.Lerp (textStartColor, textEndColor, t2);
+			collectableImage.color = Color.Lerp (imageStartColor, imageEndColor, t2);
+			yield return new WaitForEndOfFrame ();
+		}
+
+		yield return null;
 	}
 }
