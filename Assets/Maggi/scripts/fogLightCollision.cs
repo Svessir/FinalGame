@@ -52,6 +52,7 @@ public class fogLightCollision : MonoBehaviour, ILightSource
         ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
         if (monster != null)
         {
+            Debug.Log("Exited" + other.gameObject);
             if (visibleStuff.Contains(other.gameObject))
             {
                 visibleStuff.Remove(other.gameObject);
@@ -65,6 +66,7 @@ public class fogLightCollision : MonoBehaviour, ILightSource
         ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
         if (monster != null)
         {
+            if (other.isTrigger) return;
             //check layer
 
             LayerMask mask;
@@ -101,6 +103,7 @@ public class fogLightCollision : MonoBehaviour, ILightSource
             }
 
             bool hit = Physics.Raycast(ray, out hitInfo, length + lightToMon.magnitude, mask);
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * (length + lightToMon.magnitude));
 
             if (hit)
             {

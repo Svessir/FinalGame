@@ -8,6 +8,8 @@ public class CrystalScript : MonoBehaviour{
 
     public List<SingleCrystal> crystals;
 
+    public AudioSource audio;
+
     public float minBrightness;
     public float maxBrightness;
 
@@ -37,6 +39,12 @@ public class CrystalScript : MonoBehaviour{
 
     private float intensity = 0;
 
+    private bool isLitFam = false;
+
+    private float initialVolume;
+
+    
+
     //used later for the outward visibility of light to monsters
     //private float maxRadius;
     //private float minRadius;
@@ -63,6 +71,8 @@ public class CrystalScript : MonoBehaviour{
         {
             c.parent = this;
         }
+
+        initialVolume = audio.volume;
     }
 
     //maybe change this so that dark things that have low maxBrightness are not as bright as others
@@ -85,12 +95,41 @@ public class CrystalScript : MonoBehaviour{
     {
         if (isCharging)
         {
+            isLitFam = true;
             Charge();
         }else
         {
             Uncharge();
         }
+        if(currentBrightness <= minBrightness + 0.1)
+        {
+            isLitFam = false;
+        }
+        HandleSound();
 
+    }
+
+    private void HandleSound()
+    {
+        audio.volume = initialVolume * GetIntensity();
+        if (isLitFam)
+        {
+            if (audio.isPlaying)
+            {
+                return;
+            }
+            audio.Play();
+        }
+        else
+        {
+            if (!audio.isPlaying)
+            {
+                return;
+            }
+            audio.Stop();
+        }
+
+        
     }
 
     //light source is charging this crystal

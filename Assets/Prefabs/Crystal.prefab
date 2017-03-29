@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4454038084864994}
   - component: {fileID: 114899594155090808}
+  - component: {fileID: 82270089738660114}
   m_Layer: 13
   m_Name: Crystal
   m_TagString: Untagged
@@ -171,6 +172,92 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943801877903138}
   m_Mesh: {fileID: 4300000, guid: b8be84ef74905704f9b173454ce3ffde, type: 3}
+--- !u!82 &82270089738660114
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004806311153062}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f02e1d5896da2614ebff1f65df90f1ab, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.407
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.033333335
+      value: 1
+      inSlope: -2.0952919
+      outSlope: -2.0952919
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.60897905
+      value: 0.13583332
+      inSlope: -0.68324876
+      outSlope: -0.68324876
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.0007407479
+      inSlope: -0.033346657
+      outSlope: -0.033346657
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!108 &108787863301630046
 Light:
   m_ObjectHideFlags: 1
@@ -234,6 +321,7 @@ MonoBehaviour:
   veins: []
   crystals:
   - {fileID: 114485312615537680}
+  audio: {fileID: 82270089738660114}
   minBrightness: 0
   maxBrightness: 7
   intensityGrowthSpeed: 5
