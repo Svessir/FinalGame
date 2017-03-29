@@ -8,7 +8,9 @@ public class CrystalScript : MonoBehaviour{
 
     public List<SingleCrystal> crystals;
 
-    public AudioSource audio;
+    private AudioSource audio;
+
+    public List<AudioSource> audios;
 
     public float minBrightness;
     public float maxBrightness;
@@ -71,6 +73,10 @@ public class CrystalScript : MonoBehaviour{
         {
             c.parent = this;
         }
+
+        int megas = Random.Range(0, audios.Count);
+
+        audio = audios[megas];
 
         initialVolume = audio.volume;
     }

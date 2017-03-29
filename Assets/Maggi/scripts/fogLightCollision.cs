@@ -52,7 +52,7 @@ public class fogLightCollision : MonoBehaviour, ILightSource
         ILightTriggerable monster = other.gameObject.GetComponent(typeof(ILightTriggerable)) as ILightTriggerable;
         if (monster != null)
         {
-            Debug.Log("Exited" + other.gameObject);
+
             if (visibleStuff.Contains(other.gameObject))
             {
                 visibleStuff.Remove(other.gameObject);
