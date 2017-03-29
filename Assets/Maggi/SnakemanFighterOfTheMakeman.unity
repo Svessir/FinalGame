@@ -286,6 +286,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   light: {fileID: 467553881}
   lightCollider: {fileID: 565482313}
+  physicalCollider: {fileID: 0}
 --- !u!135 &565482315
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -472,6 +473,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   light: {fileID: 144681645}
   lightCollider: {fileID: 1344813214}
+  physicalCollider: {fileID: 0}
 --- !u!135 &1344813211
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -612,3 +614,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2012055389
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 57.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 36.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+  m_IsPrefabParent: 0

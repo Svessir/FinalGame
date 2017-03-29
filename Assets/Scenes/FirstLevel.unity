@@ -1183,7 +1183,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &28039817
 Prefab:
@@ -1328,7 +1328,7 @@ Transform:
   - {fileID: 1949172923}
   - {fileID: 730335176}
   m_Father: {fileID: 201917693}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &34863588
 MonoBehaviour:
@@ -2714,7 +2714,7 @@ Transform:
   m_Children:
   - {fileID: 44578239}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &133954340
 MonoBehaviour:
@@ -2901,7 +2901,7 @@ ParticleSystem:
   m_GameObject: {fileID: 156805186}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -6121,6 +6121,7 @@ Transform:
   m_LocalPosition: {x: 604.2, y: -108.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1470814474}
   - {fileID: 902872872}
   - {fileID: 966824271}
   - {fileID: 1555537428}
@@ -7056,7 +7057,7 @@ Transform:
   - {fileID: 1527801124}
   - {fileID: 134558532}
   m_Father: {fileID: 201917693}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &269485776
 GameObject:
@@ -7323,7 +7324,7 @@ ParticleSystem:
   m_GameObject: {fileID: 337223626}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -10364,7 +10365,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869291776772998, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114369458094258128, guid: eaa667fda5b096741b1b8169ce2af020,
         type: 2}
@@ -11927,7 +11928,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4454038084864994, guid: 4172eb72a4fdd2345806ba084da21f1b, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1004806311153062, guid: 4172eb72a4fdd2345806ba084da21f1b, type: 2}
       propertyPath: m_Name
@@ -13988,7 +13989,7 @@ ParticleSystem:
   m_GameObject: {fileID: 845637310}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -17158,7 +17159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869291776772998, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114369458094258128, guid: eaa667fda5b096741b1b8169ce2af020,
         type: 2}
@@ -17382,7 +17383,7 @@ Transform:
   - {fileID: 1687176242}
   - {fileID: 670934572}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &892405871
 Prefab:
@@ -17479,7 +17480,7 @@ ParticleSystem:
   m_GameObject: {fileID: 898265631}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -22042,7 +22043,7 @@ Transform:
   - {fileID: 948677053}
   - {fileID: 1523032098}
   m_Father: {fileID: 201917693}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 160}
 --- !u!1 &1127106960
 GameObject:
@@ -24367,7 +24368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4260318999580074, guid: c3f359b9eba70dd47ac388b25611fcf7, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1436764291792686, guid: c3f359b9eba70dd47ac388b25611fcf7, type: 2}
       propertyPath: m_Name
@@ -24984,6 +24985,48 @@ Transform:
   m_Father: {fileID: 766895150}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1348257015
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 201917693}
+    m_Modifications:
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 59.70996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 35.939995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b2b260c23337c5e43aaca15b2c2466f3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1356619719
 GameObject:
   m_ObjectHideFlags: 0
@@ -26379,6 +26422,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4705427005042590, guid: b76da39ff34a5c5499134dbea9c54481,
     type: 2}
   m_PrefabInternal: {fileID: 452581904}
+--- !u!4 &1470814474 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4503641403172604, guid: b2b260c23337c5e43aaca15b2c2466f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1348257015}
 --- !u!1 &1472873136
 GameObject:
   m_ObjectHideFlags: 0
@@ -26608,7 +26656,7 @@ Transform:
   - {fileID: 1541131334}
   - {fileID: 1908578956}
   m_Father: {fileID: 201917693}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1553930937
 GameObject:
@@ -26794,7 +26842,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1588774271}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -30864,7 +30912,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1699188150}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -34152,7 +34200,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869291776772998, guid: eaa667fda5b096741b1b8169ce2af020, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114369458094258128, guid: eaa667fda5b096741b1b8169ce2af020,
         type: 2}
@@ -34649,7 +34697,7 @@ Transform:
   - {fileID: 237296713}
   - {fileID: 102508239}
   m_Father: {fileID: 201917693}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1001 &1860187312
 Prefab:
@@ -34660,7 +34708,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 667.5
+      value: 628.5
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
@@ -35357,7 +35405,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4260318999580074, guid: c3f359b9eba70dd47ac388b25611fcf7, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1436764291792686, guid: c3f359b9eba70dd47ac388b25611fcf7, type: 2}
       propertyPath: m_Name
@@ -36683,7 +36731,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2011186302}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
