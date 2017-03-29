@@ -11,8 +11,6 @@ public class EnemyAI: RespawnableBehavior{
     public float RotationRate = 90;
     public float AggressionDist = 5;
     public float SonarAggressionDist = 80;
-    public float SonarSpeed = 45;
-    public float SonarCooldown = 11;
     public float SonarAggressionTime = 11;
     public float AggressiveModifier = 2;
     public bool PrefersHomeNodes = true;
@@ -94,15 +92,6 @@ public class EnemyAI: RespawnableBehavior{
         }
         else {
             triggerTime -= Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Vector3.Distance(transform.position,player.transform.position) < SonarAggressionDist && triggerCD <= 0) {
-            triggerCD = SonarCooldown;
-            if (GraphReachable())
-            {
-                canBeTriggered = true;
-                triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
-                triggerOrigin = player.transform.position;
-            }
         }
         eye = eyeTransform.position;
         if (player == null) {
@@ -462,5 +451,17 @@ public class EnemyAI: RespawnableBehavior{
         ANGERY = 0;
         targetNode = Vector3.up * 99999;
         CurrentPath.Clear();
+    }
+
+    public void SonarActivated(float SonarSpeed){
+        if (Vector3.Distance(transform.position, player.transform.position) < SonarAggressionDist)
+        {
+            if (GraphReachable())
+            {
+                canBeTriggered = true;
+                triggerTime = Vector3.Distance(transform.position, player.transform.position) / SonarSpeed;
+                triggerOrigin = player.transform.position;
+            }
+        }
     }
 }

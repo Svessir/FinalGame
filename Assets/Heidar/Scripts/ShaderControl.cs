@@ -8,22 +8,24 @@ public class ShaderControl : MonoBehaviour {
 	public float currentRadius = -5;
 	public float speed = 45;
 	public float coolDown = 12;
-    private float timer = 0;
-	private float length = 500;
+
+    public float timer = 0;
+    public bool active;
+
+    private float length = 500;
 	public GameObject subMarine;
 	public bool animated = false;
 
 	Material[] ourMaterials;
 	private int numberOfMaterials;
-
+    private EnemyAI[] fishes;
 	AudioSource sonarSound;
-
-	bool active;
 
 	public static event SonarAction SonarEvent;
 
 	// Use this for initialization
 	void Start () {
+        fishes = GameObject.FindObjectsOfType<EnemyAI>();
         if (length / speed > coolDown)
         {
             Debug.Log(length / speed);
@@ -96,6 +98,9 @@ public class ShaderControl : MonoBehaviour {
 			if (animated || (Input.GetKeyDown(KeyCode.Space) && timer <= 0)) {
                 timer = coolDown;
 				active = true;
+                foreach (EnemyAI f in fishes) {
+                    f.SonarActivated(speed);
+                }
 				setMaterialCenter ();
 				sonarSound.Play();
 
