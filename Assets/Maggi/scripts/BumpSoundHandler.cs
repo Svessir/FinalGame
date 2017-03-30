@@ -11,14 +11,23 @@ public class BumpSoundHandler : RespawnableBehavior {
 
     private float deathTime;
 
+    private Rigidbody rb;
+    private Vector3 vel;
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         lastBump = Time.time;
         deathTime = Time.time;
     }
 
+    private void FixedUpdate() {
+        vel = rb.velocity;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        Vector3 normal = collision.contacts[0].normal;
+        audio.volume = Vector3.Dot(normal, -vel)/10;
         StartCoroutine(PlayCrashSound());
     }
 
