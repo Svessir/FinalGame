@@ -74,11 +74,13 @@ public class CrystalScript : MonoBehaviour{
             c.parent = this;
         }
 
-        int megas = Random.Range(0, audios.Count);
+		if (audios.Count > 0) {
+			int megas = Random.Range(0, audios.Count);
 
-        audio = audios[megas];
+			audio = audios[megas];
 
-        initialVolume = audio.volume;
+			initialVolume = audio.volume;
+		}
     }
 
     //maybe change this so that dark things that have low maxBrightness are not as bright as others
@@ -117,6 +119,9 @@ public class CrystalScript : MonoBehaviour{
 
     private void HandleSound()
     {
+		if (audio == null)
+			return;
+		
         audio.volume = initialVolume * GetIntensity();
         if (isLitFam)
         {
