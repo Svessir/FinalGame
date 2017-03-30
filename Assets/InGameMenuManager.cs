@@ -83,7 +83,6 @@ public class InGameMenuManager : MonoBehaviour {
 			case 2:
 				print("Should quit");
 				Application.Quit();
-				UnityEditor.EditorApplication.isPlaying = false;
 				break;
 
 			default:
