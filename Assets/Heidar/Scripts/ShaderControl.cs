@@ -10,7 +10,9 @@ public class ShaderControl : MonoBehaviour {
 	public float coolDown = 12;
 
     private float timer = 0;
-    private bool active;
+	private bool active;
+	[HideInInspector]
+	public bool inMenu = false;
 
 	public float  CooldownRatio 
 	{ 
@@ -83,7 +85,7 @@ public class ShaderControl : MonoBehaviour {
 	
 	void FixedUpdate () {
 
-		if (!active) {
+		if (!active || inMenu) {
 			return;
 		}
 
@@ -101,6 +103,9 @@ public class ShaderControl : MonoBehaviour {
 
 	void Update()
     {
+		if (inMenu) {
+			return;
+		}
         timer -= Time.deltaTime;
         if (!active) {
 			if (animated || (Input.GetKeyDown(KeyCode.Space) && timer <= 0)) {
