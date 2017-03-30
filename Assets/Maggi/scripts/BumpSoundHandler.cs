@@ -7,10 +7,13 @@ public class BumpSoundHandler : RespawnableBehavior {
 
     public AudioSource audio;
 
+    private float lastBump;
+
     private float deathTime;
 
     private void Start()
     {
+        lastBump = Time.time;
         deathTime = Time.time;
     }
 
@@ -24,7 +27,12 @@ public class BumpSoundHandler : RespawnableBehavior {
         yield return null;
         if(Time.time - deathTime > 0.5f)
         {
-            audio.Play();
+            if(Time.time - lastBump > 1)
+            {
+                audio.Play();
+                lastBump = Time.time;
+            }
+            
         }
     }
 
