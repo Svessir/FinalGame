@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 114558715004625352}
   - component: {fileID: 114518636414794816}
   - component: {fileID: 114058139564377056}
+  - component: {fileID: 114247811023209646}
   m_Layer: 0
   m_Name: Fog Camera
   m_TagString: MainCamera
@@ -508,7 +509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1069029501929790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.7, y: 67.2, z: 0}
+  m_LocalPosition: {x: 308, y: -72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4014469579146434}
@@ -1037,7 +1038,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27999973, y: -1.663002, z: 0}
+  m_ConnectedAnchor: {x: 0.27999878, y: -1.663002, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1586,6 +1587,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 0}
+--- !u!114 &114247811023209646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402986094830714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5620d71a3d8c4a308776e0ec4e08cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114315157371049512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2019,7 +2031,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1904401253925888}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 1
   playOnAwake: 1
@@ -4668,7 +4680,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1417438092436596}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 1
   playOnAwake: 1
@@ -7317,7 +7329,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1930288335750178}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1

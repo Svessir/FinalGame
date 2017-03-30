@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0.32074028, b: 0.4044118, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.005
@@ -3120,7 +3120,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705538866}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54c1e62a3861e724db5e60df71ac7343, type: 3}
   m_Name: 
@@ -6094,6 +6094,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1460217147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460217135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5620d71a3d8c4a308776e0ec4e08cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475546259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6372,6 +6383,11 @@ Prefab:
       propertyPath: sonarTrigger
       value: 
       objectReference: {fileID: 773169637}
+    - target: {fileID: 114351695290317366, guid: f12b366b49f04418ab92cf5d7729dd6b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
   m_IsPrefabParent: 0

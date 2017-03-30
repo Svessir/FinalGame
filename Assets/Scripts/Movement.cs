@@ -18,8 +18,11 @@ public class Movement : MonoBehaviour {
 	private ShaderControl shaderControl;
 	private PointToLight pointToLight;
 
+	public bool lastScene = false;
+
 	void Start () {
 		menu = FindObjectOfType<InGameMenuManager> ();
+		if (lastScene) { return; }
 		shaderControl = FindObjectOfType<ShaderControl> ();
 		pointToLight = FindObjectOfType<PointToLight> ();
         rb = GetComponent<Rigidbody>();
@@ -31,7 +34,7 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			ToggleMenu ();
 		}
-		if (inMenu) {
+		if (inMenu || lastScene) {
 			return;
 		}
         WasdMove();
@@ -39,8 +42,10 @@ public class Movement : MonoBehaviour {
 
 	public void ToggleMenu() {
 		inMenu = !inMenu;
-		shaderControl.inMenu = inMenu;
-		pointToLight.animated = inMenu;
+		if (!lastScene) {
+			shaderControl.inMenu = inMenu;
+			pointToLight.animated = inMenu;
+		}
 		if (inMenu) {
 			menu.StartMenu ();
 		} else {
