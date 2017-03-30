@@ -13,6 +13,10 @@ public class InGameMenuManager : MonoBehaviour {
 	public Transform checkpoint;
 	public Transform quit;
 
+	public mouseIsOver newGameMouse;
+	public mouseIsOver retryMouse;  
+	public mouseIsOver quitMouse;   
+
 	public int selectedMenuItem = 1;
 
 	public float outMoveDistamce = 0.1f;
@@ -37,7 +41,6 @@ public class InGameMenuManager : MonoBehaviour {
 		closingMenu = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (!inMenu) {
 			
@@ -46,7 +49,7 @@ public class InGameMenuManager : MonoBehaviour {
 	
 		Vector3 wholeMenuPos = wholeMenu.localPosition;
 		if (closingMenu) {
-			wholeMenuPos.z = (wholeMenuPos.z * 5 + 2650) / 6;
+			wholeMenuPos.z = (wholeMenuPos.z * 5 + 2710) / 6;
 			wholeMenu.localPosition = wholeMenuPos;
 			return;
 		} else {
@@ -68,7 +71,19 @@ public class InGameMenuManager : MonoBehaviour {
 			selectedMenuItem = 0;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return)) {
+
+		if (newGameMouse.isSelected) {
+			selectedMenuItem = 0;
+		}
+		if (retryMouse.isSelected) {
+			selectedMenuItem = 1;
+		}
+		if (quitMouse.isSelected) {
+			selectedMenuItem = 2;
+		}
+
+
+		if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0) && (newGameMouse.isSelected || retryMouse.isSelected || quitMouse.isSelected)  ) {
 			switch (selectedMenuItem)
 			{
 			case 0:
