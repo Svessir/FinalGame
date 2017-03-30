@@ -19,7 +19,9 @@ public class MenuManager : MonoBehaviour {
 		mainCamera.speed = 0;
 		title.speed = 0;
 		inputManager = FindObjectOfType<Movement> ();
+		shaderControl = FindObjectOfType<ShaderControl> ();
 		inputManager.enabled = false;
+		shaderControl.inMenu = true;
 
 	}
 	
@@ -33,6 +35,7 @@ public class MenuManager : MonoBehaviour {
 				Destroy (titleObject);
 				TutorialTriggers.SetActive (true);
 				inputManager.enabled = true;
+				shaderControl.inMenu = false;
 				Destroy (this);
 			}
 			return;
