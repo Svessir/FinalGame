@@ -8,10 +8,13 @@ public class CollectableBehavior : MonoBehaviour
 	[SerializeField]
 	float movementSpeed = 3f;
 
-	[SerializeField]
-	float travelTime = 0.5f;
+    [SerializeField]
+    float travelTime = 0.5f;
 
-	private bool isCollected = false;
+    [SerializeField]
+    AudioSource pickSound;
+
+    private bool isCollected = false;
 	public bool IsCollected {get{ return isCollected; }}
 
 	void Start () {
@@ -24,7 +27,8 @@ public class CollectableBehavior : MonoBehaviour
 	public void Collect() 
 	{
 		isCollected = true;
-		GetComponent<Collider> ().enabled = false;
+        pickSound.Play();
+        GetComponent<Collider> ().enabled = false;
 		gameObject.SetActive (false);
 	}
 }
