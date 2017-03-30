@@ -14,7 +14,10 @@ public class CollectedCanvasManager : MonoBehaviour
 	[SerializeField]
 	private GameObject collectableFloat;
 
-	[SerializeField]
+    [SerializeField]
+    private RawImage collectableFloatImage;
+
+    [SerializeField]
 	private Vector3 collectableFloatTravelVector;
 
 	[SerializeField]
@@ -68,12 +71,20 @@ public class CollectedCanvasManager : MonoBehaviour
 		float start_time = Time.time;
 		float end_time = start_time + animationTime;
 
-		while(!currentPosition.Equals(endPosition))
+        Color floatImageStartColor = collectableImage.color;
+        Color floatImageEndColor = new Color(counterText.color.r, counterText.color.g, counterText.color.b, 0.0f);
+
+        while (!currentPosition.Equals(endPosition))
 		{
 			float t = (Time.time - start_time) / (end_time - start_time);
 			currentPosition = Vector3.Lerp (startPosition, endPosition, t);
 			collectableFloat.transform.position = currentPosition;
-			yield return new WaitForEndOfFrame ();
+            float remaining = (Time.time - start_time);
+            if (remaining <= 1)
+            {
+                collectableFloatImage.color = Color.Lerp(floatImageStartColor, floatImageEndColor, remaining);
+            }
+            yield return new WaitForEndOfFrame ();
 		}
 		collectableFloat.SetActive (false);
 
@@ -91,7 +102,8 @@ public class CollectedCanvasManager : MonoBehaviour
 			t2 = (Time.time - startTime) / (endTime - startTime);
 			counterText.color = Color.Lerp (textStartColor, textEndColor, t2);
 			collectableImage.color = Color.Lerp (imageStartColor, imageEndColor, t2);
-			yield return new WaitForEndOfFrame ();
+
+            yield return new WaitForEndOfFrame ();
 		}
 
 		yield return null;

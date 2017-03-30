@@ -180,8 +180,9 @@ MonoBehaviour:
   counterText: {fileID: 114431915503400350}
   collectableImage: {fileID: 114075163847873802}
   collectableFloat: {fileID: 1199983216285150}
-  collectableFloatTravelVector: {x: 0, y: 100, z: 0}
-  animationTime: 1
+  collectableFloatImage: {fileID: 114058137814023452}
+  collectableFloatTravelVector: {x: 0, y: 200, z: 0}
+  animationTime: 3
   fadeOutTime: 5
 --- !u!114 &114431915503400350
 MonoBehaviour:
@@ -451,5 +452,5 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
