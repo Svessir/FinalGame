@@ -23,7 +23,6 @@ public class InGameMenuManager : MonoBehaviour {
 	public DeathManager player;
 	private Movement inputManager;
 
-	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<DeathManager> ();
 		inputManager = FindObjectOfType<Movement> ();

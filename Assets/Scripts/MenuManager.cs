@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour {
 	public GameObject titleObject;
 	public GameObject Submarine;
 	public GameObject TutorialTriggers;
+	private Movement inputManager;
+	private ShaderControl shaderControl;
 
 	private bool started = false;
 
@@ -16,6 +18,9 @@ public class MenuManager : MonoBehaviour {
 	void Start () {
 		mainCamera.speed = 0;
 		title.speed = 0;
+		inputManager = FindObjectOfType<Movement> ();
+		inputManager.enabled = false;
+
 	}
 	
 	// Update is called once per frame
@@ -27,12 +32,13 @@ public class MenuManager : MonoBehaviour {
 				//Destroy (title);
 				Destroy (titleObject);
 				TutorialTriggers.SetActive (true);
+				inputManager.enabled = true;
 				Destroy (this);
 			}
 			return;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) {
+		if (Input.anyKey) {
 			started = true;
 			Submarine.transform.localPosition = Vector3.zero;
 			mainCamera.speed = 1;
