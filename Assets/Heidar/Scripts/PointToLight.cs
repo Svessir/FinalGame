@@ -16,6 +16,12 @@ public class PointToLight : MonoBehaviour {
 
 	public bool IsOn { get{ return on; } }
 
+	void Start() {
+		on = !on;
+		FlipLightSwitch ();
+	}
+
+
 	void Update () {
 		
 		if (animated) {
@@ -23,19 +29,7 @@ public class PointToLight : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(KeyCode.F)) {
-            if (on)
-            {
-                flashLight.transform.position = Vector3.up * 99999;
-            }
-            else
-            {
-                flashLight.transform.position = flashLight.transform.parent.position;
-
-            }
-            on = !on;
-
-			if (FlashlightToggleEvent != null)
-				FlashlightToggleEvent (on);
+			FlipLightSwitch ();
 		}
 
 		if (!flashLight.activeSelf) {
@@ -54,5 +48,21 @@ public class PointToLight : MonoBehaviour {
 		v3 = v3 - flashLight.transform.parent.position;
 		flashLight.transform.localRotation = Quaternion.LookRotation (v3);
 
+	}
+
+	void FlipLightSwitch(){
+		if (on)
+		{
+			flashLight.transform.position = Vector3.up * 99999;
+		}
+		else
+		{
+			flashLight.transform.position = flashLight.transform.parent.position;
+
+		}
+		on = !on;
+
+		if (FlashlightToggleEvent != null)
+			FlashlightToggleEvent (on);
 	}
 }
