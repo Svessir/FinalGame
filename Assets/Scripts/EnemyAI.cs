@@ -43,8 +43,8 @@ public class EnemyAI: RespawnableBehavior{
     private Rigidbody rb;
     private bool inAir = false;
     private Material mat;
-    private Color passiveColor = new Color(255, 255, 0);
-    private Color aggressiveColor = new Color(255, 0, 0);
+    private Color passiveColor = new Color(100, 100, 0);
+    private Color aggressiveColor = new Color(100, 0, 0);
     // Use this for initialization
     void Start ()
     {
