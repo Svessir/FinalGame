@@ -3329,6 +3329,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c9cf38dfee1ba400592fa64d4a3251aa, type: 3}
   m_PrefabInternal: {fileID: 84882584}
+--- !u!114 &773169637 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114907792662131638, guid: c117d18cc34314587921d7fc20858830,
+    type: 2}
+  m_PrefabInternal: {fileID: 1939368701}
+  m_Script: {fileID: 11500000, guid: 3914b9b9d64014f55b2baea1ead60850, type: 3}
 --- !u!1 &787758098
 GameObject:
   m_ObjectHideFlags: 0
@@ -6362,6 +6368,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 1728645306965360, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842148716054974, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967810889795146, guid: f12b366b49f04418ab92cf5d7729dd6b,
+        type: 2}
+      propertyPath: sonarTrigger
+      value: 
+      objectReference: {fileID: 773169637}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
   m_IsPrefabParent: 0
