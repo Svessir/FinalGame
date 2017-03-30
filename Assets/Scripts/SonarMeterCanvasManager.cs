@@ -40,6 +40,11 @@ public class SonarMeterCanvasManager : MonoBehaviour {
 		}
 	}
 
+	void OnDestroy()
+	{
+		Unsubscribe ();
+	}
+
 	void OnDisable() {
 		Unsubscribe ();
 	}

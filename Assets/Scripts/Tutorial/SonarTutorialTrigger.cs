@@ -14,9 +14,13 @@ public class SonarTutorialTrigger : TutorialTrigger
 		ShaderControl.SonarEvent -= OnSonar;
 	}
 
-	private void OnSonar() 
+	void OnDestroy() 
 	{
 		ShaderControl.SonarEvent -= OnSonar;
-		Destroy (gameObject);
+	}
+
+	private void OnSonar() 
+	{
+		//Destroy (gameObject);
 	}
 }
