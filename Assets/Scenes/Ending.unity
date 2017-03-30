@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -230,8 +230,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -403,8 +403,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -483,8 +483,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 246cc59c7a84ea44f87f6b70acfe30c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   target: {fileID: 2050922910}
   offset: {x: 0, y: 0, z: -30}
   smoothTime: 0.3
@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   mode: 0
   intensity: 0.151
   chromaticAberration: 5
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e50e925fb93c78246bf995d9dc3a2330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   type: 3
   adaptiveTextureSize: 256
   remapCurve:
@@ -548,8 +548,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02536f33053638549ab5c50ff3ecc0de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   tweakMode: 0
   screenBlendMode: 1
   hdr: 0
@@ -590,8 +590,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   distanceFog: 1
   excludeFarPixels: 1
   useRadialDistance: 0
@@ -610,8 +610,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Resolution: 1
   DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
 --- !u!81 &138636831
@@ -714,8 +714,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -999,8 +999,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3914b9b9d64014f55b2baea1ead60850, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   currentRadius: 600
   speed: 46
   coolDown: 12
@@ -1048,8 +1048,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -1149,8 +1149,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -98529514, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1213,8 +1213,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -1375,56 +1375,6 @@ Transform:
   m_Father: {fileID: 247798388}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &561082460
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332604042511492, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728645306965360, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1606476022630426, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &584967922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,8 +1416,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -4384,7 +4334,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 829362729
+  randomSeed: 40076844
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4560,7 +4510,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       minMaxState: 0
     startSize:
-      scalar: 60
+      scalar: 120
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7080,8 +7030,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -7096,8 +7046,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -7156,8 +7106,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dbffacd383ffb54f8b475f678296bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &716670968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7167,8 +7117,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ed4382a7c707454bb017695cb6f17d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   waitForSeconds: 5
   fadeInTime: 1
   counterText: {fileID: 121159905}
@@ -10125,7 +10075,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &921925850
@@ -10209,8 +10159,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -10370,7 +10320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: c9cf38dfee1ba400592fa64d4a3251aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 2100000, guid: ec7bac28f34524037b11bf972d1edeaf, type: 2}
     - target: {fileID: 400000, guid: c9cf38dfee1ba400592fa64d4a3251aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10428,7 +10378,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3369da1bb99fa484ebf12b0af3124a6e, type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 2100000, guid: d1ee8314d06944622ad5a1c0177dff29, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3369da1bb99fa484ebf12b0af3124a6e, type: 3}
@@ -10474,8 +10424,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -10576,8 +10526,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b4bb4c5d382ff540a4e1b10a5aaa06d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   currentCheckpoint: {fileID: 0}
 --- !u!114 &1203156781
 MonoBehaviour:
@@ -10589,8 +10539,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f4ea3455bb34a7458860056e084db90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   checkpointManager: {fileID: 1203156780}
 --- !u!114 &1203156782
 MonoBehaviour:
@@ -10602,8 +10552,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33c38f0163f67794390812b2360d589c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!135 &1203156783
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10671,8 +10621,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -10769,8 +10719,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -10867,8 +10817,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -13806,8 +13756,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14000,8 +13950,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14133,6 +14083,7 @@ GameObject:
   - component: {fileID: 1713486398}
   - component: {fileID: 1713486397}
   - component: {fileID: 1713486399}
+  - component: {fileID: 1713486400}
   m_Layer: 0
   m_Name: movementObject
   m_TagString: Untagged
@@ -14149,8 +14100,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be073e4953f48c4899fe1d38f99197b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   maxSpeed: 10
   acceleration: 10
   drag: 0.3
@@ -14186,6 +14137,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1713486400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1713486396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25db1493f72544d908cb68b1426c967f, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1 &1734223892
 GameObject:
   m_ObjectHideFlags: 0
@@ -14227,8 +14189,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14357,8 +14319,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14455,8 +14417,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14541,8 +14503,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d09e1d8225d14439b47f80d4f7c5616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &1838582858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14553,8 +14515,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   SampleCount: 5
   ScatteringCoef: 0.99
   ExtinctionCoef: 0.0085
@@ -14693,8 +14655,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14791,8 +14753,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -14874,8 +14836,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -14892,8 +14854,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
@@ -14973,7 +14935,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &2032800041
@@ -15042,8 +15004,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4661484e13332cf4aa582d05f60f0318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   audio: {fileID: 0}
 --- !u!114 &2050922912
 MonoBehaviour:
@@ -15055,8 +15017,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cefb796b9573bd4c81e116bddcfaee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &2050922913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15067,8 +15029,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1785f3f8100b4f42962cb2cb1f84a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!54 &2050922915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15095,8 +15057,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a535523484d5ef4295caf6612d18440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   goalPitch: 0.5
   speed: 0.001
 --- !u!82 &2050922918
@@ -15255,8 +15217,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
@@ -15340,8 +15302,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e099b92731ca149e59e43ed2227a6e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   perlinScale: 4.56
   waveSpeed: 0.5
   waveHeight: 5
