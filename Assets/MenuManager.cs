@@ -27,7 +27,6 @@ public class MenuManager : MonoBehaviour {
 				//Destroy (title);
 				Destroy (titleObject);
 				TutorialTriggers.SetActive (true);
-				print ("yas queen");
 				Destroy (this);
 			}
 			return;

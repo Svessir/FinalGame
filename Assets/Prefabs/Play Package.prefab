@@ -1019,7 +1019,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 3
+  m_AngularDrag: 8
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1743,6 +1743,7 @@ MonoBehaviour:
   currentRadius: 600
   speed: 46
   coolDown: 12
+  inMenu: 0
   subMarine: {fileID: 1873619482956212}
   animated: 0
 --- !u!114 &114956851963457844
@@ -1924,7 +1925,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1904401253925888}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 1
   playOnAwake: 1
@@ -4573,7 +4574,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1417438092436596}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 1
   playOnAwake: 1
@@ -7222,7 +7223,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1930288335750178}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1

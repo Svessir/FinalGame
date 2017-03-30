@@ -11,15 +11,44 @@ public class Movement : MonoBehaviour {
     public bool inAir = false;
     private float gravity = 10f;
     private Rigidbody rb;
+
+
+	private bool inMenu = false;
+	private InGameMenuManager menu;
+	private ShaderControl shaderControl;
+	private PointToLight pointToLight;
+
 	void Start () {
+		menu = FindObjectOfType<InGameMenuManager> ();
+		shaderControl = FindObjectOfType<ShaderControl> ();
+		pointToLight = FindObjectOfType<PointToLight> ();
         rb = GetComponent<Rigidbody>();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			ToggleMenu ();
+		}
+		if (inMenu) {
+			return;
+		}
         WasdMove();
 	}
+
+	public void ToggleMenu() {
+		inMenu = !inMenu;
+		shaderControl.inMenu = inMenu;
+		pointToLight.animated = inMenu;
+		if (inMenu) {
+			menu.StartMenu ();
+		} else {
+			menu.EndMenu ();
+		}
+
+	}
+
 
     void Reorient() {
 		
