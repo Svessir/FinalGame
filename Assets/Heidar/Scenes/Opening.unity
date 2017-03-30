@@ -2889,8 +2889,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603188321}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.9, y: 18.239998, z: -57.36}
+  m_LocalRotation: {x: -0.09466717, y: 0.003884918, z: 0.00036942383, w: 0.99550134}
+  m_LocalPosition: {x: 98.59551, y: -7.778221, z: -71.3409}
   m_LocalScale: {x: 0.5, y: 0.9528835, z: 0.5471164}
   m_Children: []
   m_Father: {fileID: 836231496}
@@ -6359,24 +6359,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 1728645306965360, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842148716054974, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114967810889795146, guid: f12b366b49f04418ab92cf5d7729dd6b,
         type: 2}
       propertyPath: sonarTrigger
       value: 
       objectReference: {fileID: 773169637}
-    - target: {fileID: 114351695290317366, guid: f12b366b49f04418ab92cf5d7729dd6b,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f12b366b49f04418ab92cf5d7729dd6b, type: 2}
   m_IsPrefabParent: 0
