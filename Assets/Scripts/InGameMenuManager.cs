@@ -55,10 +55,10 @@ public class InGameMenuManager : MonoBehaviour {
 		}
 
 
-		if (Input.GetKeyDown(KeyCode.W)) {
+		if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.UpArrow)) {
 			selectedMenuItem -= 1;
 		}
-		if (Input.GetKeyDown(KeyCode.S)) {
+		if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
 			selectedMenuItem += 1;
 		}
 
@@ -68,7 +68,7 @@ public class InGameMenuManager : MonoBehaviour {
 			selectedMenuItem = 0;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return)) {
 			switch (selectedMenuItem)
 			{
 			case 0:
