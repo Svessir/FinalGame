@@ -2992,6 +2992,7 @@ GameObject:
   - component: {fileID: 156805189}
   - component: {fileID: 156805187}
   - component: {fileID: 156805188}
+  - component: {fileID: 156805190}
   m_Layer: 12
   m_Name: Stream
   m_TagString: Untagged
@@ -3007,7 +3008,7 @@ ParticleSystem:
   m_GameObject: {fileID: 156805186}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -3054,7 +3055,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 146652470
+  randomSeed: 828562948
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5699,6 +5700,92 @@ Transform:
   m_Father: {fileID: 1855309298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!82 &156805190
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 156805186}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5433c245ed4473f429c0aa8789a3361d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.033333335
+      value: 1
+      inSlope: -2.0952919
+      outSlope: -2.0952919
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.60897905
+      value: 0.13583332
+      inSlope: -0.68324876
+      outSlope: -0.68324876
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.0007407479
+      inSlope: -0.033346657
+      outSlope: -0.033346657
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &164202365
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,7 +6406,7 @@ ParticleSystem:
   m_GameObject: {fileID: 213535208}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -10268,7 +10355,7 @@ ParticleSystem:
   m_GameObject: {fileID: 337223626}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -10315,7 +10402,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 527719708
+  randomSeed: -1429627157
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14708,6 +14795,7 @@ GameObject:
   - component: {fileID: 500137240}
   - component: {fileID: 500137239}
   - component: {fileID: 500137238}
+  - component: {fileID: 500137242}
   m_Layer: 12
   m_Name: Air Pocket
   m_TagString: Air
@@ -14778,6 +14866,92 @@ Transform:
   m_Father: {fileID: 451551240}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &500137242
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 500137237}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5433c245ed4473f429c0aa8789a3361d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.033333335
+      value: 1
+      inSlope: -2.0952919
+      outSlope: -2.0952919
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.60897905
+      value: 0.13583332
+      inSlope: -0.68324876
+      outSlope: -0.68324876
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.0007407479
+      inSlope: -0.033346657
+      outSlope: -0.033346657
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &538455927 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1092088068194048, guid: b76da39ff34a5c5499134dbea9c54481,
@@ -17132,7 +17306,7 @@ ParticleSystem:
   m_GameObject: {fileID: 845637310}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -17179,7 +17353,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 212091281
+  randomSeed: -638551829
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -20657,7 +20831,7 @@ ParticleSystem:
   m_GameObject: {fileID: 898265631}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -30288,7 +30462,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1588774271}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -34410,7 +34584,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1699188150}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -38233,11 +38407,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 330.3
+      value: 308
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -63
+      value: -72
       objectReference: {fileID: 0}
     - target: {fileID: 4166705670635168, guid: c117d18cc34314587921d7fc20858830, type: 2}
       propertyPath: m_LocalPosition.z
@@ -38263,10 +38437,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 54843447651501100, guid: c117d18cc34314587921d7fc20858830,
+    - target: {fileID: 59971780997218078, guid: c117d18cc34314587921d7fc20858830,
         type: 2}
-      propertyPath: m_AngularDrag
-      value: 8
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.27999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 59971780997218078, guid: c117d18cc34314587921d7fc20858830,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -1.663002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c117d18cc34314587921d7fc20858830, type: 2}
@@ -39025,7 +39204,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5433c245ed4473f429c0aa8789a3361d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -40372,7 +40551,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2011186302}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  speed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
